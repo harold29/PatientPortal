@@ -1,0 +1,26 @@
+<div id="login-form" class="formbox">
+  <h4 class="white title-bold">
+      Ingresar
+  </h4>
+  <%= form_for(:user, :url => session_path(:user)) do |f| %>
+      <%# devise_error_messages! #%>
+    <div class="form-field">
+      <%= f.text_field :email, class: "field", placeholder: "Nombre de Usuario" %>
+    </div>
+    <div class="form-field">
+      <%= f.password_field :password, class: "field", placeholder: "Contraseña" %>
+    </div>
+    <div class="form-field" id="button-container">
+      <%= f.check_box :remember_me %>
+        <%= f.label :Recordarme, id: "remember-label" %> 
+        <%= f.submit 'Entrar', id: "login-button" %>
+    </div>
+    <!-- <div class="form-field" id="button-container">
+      
+    </div> -->
+    <div class="form-field" id="recover-container">
+      <%= link_to "¿Olvidaste tu contraseña?", new_password_path(:user), { :id => "pass-recover" }  %>
+    </div>
+  <% end %>
+</div>
+<div class="decoration-spd"></div>

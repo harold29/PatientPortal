@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  init_date: 2016-08-10
+  name: MyString
+  obs: MyText
+
+two:
+  init_date: 2016-08-10
+  name: MyString
+  obs: MyText

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blood_type: MyString
+  iee: MyString
+  married: MyString
+  studies: MyString
+  case_file: MyString
+  religion: MyString
+
+two:
+  blood_type: MyString
+  iee: MyString
+  married: MyString
+  studies: MyString
+  case_file: MyString
+  religion: MyString

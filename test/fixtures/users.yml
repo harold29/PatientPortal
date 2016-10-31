@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  last_name: MyString
+  gender: MyString
+  role: 1
+  age: 1
+  birthday: 2016-08-10
+  type: 
+  access_token: MyString
+  id_token: MyString
+  disable: false
+  verification_token: MyString
+  validated: false
+
+two:
+  name: MyString
+  last_name: MyString
+  gender: MyString
+  role: 1
+  age: 1
+  birthday: 2016-08-10
+  type: 
+  access_token: MyString
+  id_token: MyString
+  disable: false
+  verification_token: MyString
+  validated: false

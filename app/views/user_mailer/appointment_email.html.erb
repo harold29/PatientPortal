@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1> ¡Cita creada, <%= @user.name %>! </h1>
+    <p>
+      Tu cita fue creada exitosamente. Espera el correo de confirmación por parte de tu medico.
+
+      La cita creada es la siguiente:
+
+      <div style="background: gray;">
+        <h3>  </h3>
+        <ul>
+          <li> Fecha: <%= @appointment.appointment_date %> </li>
+          <li> Lugar: <%= @clinic.name %> </li>
+          <li> Area Medica: <%= @service.name %> </li>
+        </ul>
+      </div>
+    </p>
+    <% if !@user.validated %>
+      <p>
+        Por favor, recuerde realizar la validacion de su codigo de seguridad para obtener acceso a sus informes y estudios medicos.
+      </p>  
+    <% end %>
+    
+    <p>!Gracias por su solicitud! !Que tenga un gran dia! </p>
+  </body>
+</html>

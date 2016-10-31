@@ -1,0 +1,89 @@
+<div id="winterfell">
+  <% if user_signed_in? %>
+    <ul class="tabs" data-tabs id="msc-patients-tabs">  
+      <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Solicitud de Citas</a></li>
+      <li class="tabs-title"><a class="title-link" href="#panel2">Reportes</a></li>
+      <li class="tabs-title"><a class="title-link" href="#panel3">Historial Médico</a></li>
+      <li class="tabs-title"><a class="title-link" href="#panel4">Guía del Paciente</a></li>
+      <li class="tabs-title"><a class="title-link" href="#panel5">Datos del Paciente</a></li>
+      <li class="tabs-title" id="logout-button"><%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => :delete %></li>
+    </ul>
+    <div class="tabs-content" id="broken-tower" data-tabs-content="msc-patients-tabs">
+      <div class="tabs-panel is-active" id="panel1">
+        <div class="row panel-row">
+          <div class="large-4 medium-4 small-4 large-offset-1 medium-offset-1 column">
+            <%= render 'appointmentform'  %>
+          </div>
+          <div class="large-5 medium-5 small-5 large-offset-1 medium-offset-1 small-offset-1 column" id="right-container">
+
+            <%# Validator container - One of aux containers of right side of the screen by mosin #%>
+            <div class="row" id="validation-container">
+              <% if !current_user.validated %>
+                <div class="row" id="available-box">
+                  Usted posee solo <span id="available-apps"></span> disponibles. Para obtener mas debe validar su cuenta.
+                </div>
+              
+                <div class="row" id="validation-form-box">
+                  <%= form_tag(validate_user_patients_path, method: "post", remote: true, id: "validation-form", html: { "data-abide": "" }) do %>
+                    <div class="small-8 columns">
+                      <%= text_field_tag("verification_token", nil, placeholder: "Codigo de Validacion")  %>  
+                    </div>
+                    <div class="small-3 columns">
+                      <%= submit_tag("Enviar Codigo", class: "postfix")  %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end  %>
+            </div>
+
+            <%# Calendar container - The aux container for calendar. by mosin #%>
+            <div id="calendar-container" class="row aux-container">
+              <h4 id="calendar-title">
+                Fecha
+              </h4>
+              <div id="calendar" class="row">
+                
+              </div>
+            </div>
+  
+            <%# Clock container - Aux container for appointment hour selection. by mosin #%>
+            <div id="hours-container" class="row aux-container">
+              <h4 id="hours-title">
+                Horas
+              </h4>
+              <div id="hours" class="row">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tabs-panel" id="panel2">
+        <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+      </div>
+      <div class="tabs-panel" id="panel3">
+        <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+      </div>
+      <div class="tabs-panel" id="panel4">
+        <div class="row">
+          <h1 class="section-title">
+            Datos del Paciente
+          </h1>
+          <ul class="accordion" data-accordion data-multi-expand="true">
+            <li class="accordion-item" data-accordion-item>
+              <a href="#" class="accordion-title"> Google Calendar </a>
+              <div class="accordion-content" data-tab-content>
+                <%#<%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+
+                <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tabs-panel" id="panel5">
+        <%= render 'userdatashow'  %>
+      </div>
+    </div>
+  <% end %>  
+</div>

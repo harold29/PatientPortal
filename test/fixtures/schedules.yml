@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: MyString
+  hour: 2016-08-10 17:46:15
+  available: false
+
+two:
+  day: MyString
+  hour: 2016-08-10 17:46:15
+  available: false

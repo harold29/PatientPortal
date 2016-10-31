@@ -1,0 +1,29 @@
+# 
+# Postgresql database
+# 
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  host: localhost
+  username: mscadmin
+  password: 23920486hj.PC
+
+development:
+  <<: *default
+  database: santacarmen_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: santacarmen_test
+
+production:
+  <<: *default
+  database: santacarmen
+  username: santacarmen
+  password: <%= ENV['SANTACARMEN_DATABASE_PASSWORD'] %>

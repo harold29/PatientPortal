@@ -1,0 +1,48 @@
+<div id="register" class="formbox">
+  <h4 class="blue-5 title-bold">
+      Nuevo Registro
+  </h4>
+  <%= form_for(:user, url: registration_path(:user), html: {"data-abide": " "} ) do |f| %>
+    <%# devise_error_messages! #%>
+    <div class="form-field">
+      <%= f.text_field :name, placeholder: "Nombre", 'required' => " ", 'pattern' => "[a-zA-Z]+"  %>
+      <span class="form-error">
+        Este campo puede llenarse solo con letras. Es requerido.
+      </span>
+    </div>
+    <div class="form-field">
+      <%= f.text_field :last_name, placeholder: "Apellido", 'required' => " ", 'pattern' => "[a-zA-Z]+" %>
+      <span class="form-error">
+        Este campo puede llenarse solo con letras. Es requerido.
+      </span>
+    </div>
+    <div class="form-field">
+      <%= f.text_field :birthday, placeholder: "Fecha de nacimiento", 'required' => " ", 'pattern' => "[/^(\d{1,2})-(\d{1,2})-(\d{4})$/]"  %>
+      <span class="form-error">
+        Este campo puede llenarse solo con numeros en el formato dd-mm-aaaa. Es requerido.
+      </span>
+    </div>
+    <div class="form-field">
+      <%= f.email_field :email, placeholder: "Email", 'required' => " " %>
+      <span class="form-error">
+        Formato incorrecto. Es requerido.
+      </span>
+    </div>
+    <div class="form-field">
+      <%= f.password_field :password, placeholder: "Contraseña", 'required' => " " %>
+      <span class="form-error">
+        Introduzca una contraseña por favor.
+      </span>
+    </div>
+    <div class="form-field">
+      <%= f.password_field :password_confirmation, placeholder: "Confirme la Contraseña", 'required' => " ", 'data-equalto' => "user_password" %>
+      <span class="form-error">
+        Las contraseñas deben coincidir.
+      </span>
+    </div>
+    <div class="form-field" id="button-container">
+      <%= f.submit "Entrar", id: "register-button" %>
+    </div>
+  <% end %>
+</div>
+<div class="decoration-ha"></div>

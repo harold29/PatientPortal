@@ -1,0 +1,152 @@
+<div id="casterly-rock">
+  <% if user_signed_in? %>
+     <ul class="tabs" data-tabs id="msc-doctors-tabs">  
+      <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Pacientes</a></li>
+      <li class="tabs-title"><a class="title-link" href="#panel2">Citas</a></li>
+      <li class="tabs-title"><a class="title-link" href="#panel3">Horarios</a></li>
+      <li class="tabs-title"><a class="title-link" href="#panel4">Perfil</a></li>
+      <li class="tabs-title" id="logout-button"><%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => :delete %></li>
+    </ul>
+  <% end %>
+  <div class="tabs-content" id="lord-hall" data-tabs-content="msc-doctors-tabs">
+    <div class="tabs-panel is-active " id="panel1">
+      <h3 class="admin-title">
+        Mis Pacientes
+      </h3>
+      <div class="row panel-row">
+        <table>
+          <thead>
+            <tr>
+              <th> Nombre y Apellido </th>
+              <th> Edad </th>
+              <th> Numero de Archivo </th>
+              <th> Citas Creadas </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if !@patients.nil? %>
+              <% @patients.each do |patient| %>
+                <div class="patient-box">
+                  <% user = User.find_by_id(patient.user_id) %>
+                  <tr>
+                    <td> <%= user.name %> <%= user.last_name %> </td>
+                    <td> <%= user.age %> </td>
+                    <td> <%= patient.case_file %></td>
+                      <% app = Appointment.find_by_patient_id(patient.id) %>
+                    <td> <%= app.size %> </td>
+                  </tr>
+                </div>
+              <% end %>    
+            <% else  %>
+              <td> Por ahora no hay pacientes disponibles </td>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tabs-panel" id="panel2">
+      <h3 class="admin-title">
+        Citas en mi Area
+      </h3>
+      <div class="row panel-row">
+        
+      </div>
+      <div class="row panel-row">
+        <table>
+          <thead>
+            <tr>
+              <th> Nombre del Paciente </th>
+              <th> Fecha </th>
+              <!-- <th> Hora </th> -->
+              <th> Estado de la Cita </th>
+              <th width="300"> Acciones </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if !@appointments.nil? %>
+              <% @appointments.each do |appointment| %>
+                <div class="patient-box">
+                  <% patient = Patient.find_by_id(appointment.patient_id) %>
+                  <% user = User.find_by_id(patient.user_id) %>
+                  <tr>
+                    <td> <%= user.name %> <%= user.last_name %> </td>
+                    <td> <%= appointment.appointment_date %> </td>
+                    <td> <% if appointment.accepted %> Aceptada <% else %> Negada <% end %> </td>
+                    <td> 
+                      <%= form_tag(appointment_status_path, method: "post", remote: true, class: "status-form", id:'appointment-status-form')  do %> 
+                        <%= hidden_field_tag('appointment_id', appointment.id.to_s)  %>
+                        <%= radio_button_tag('status-' + appointment.id.to_s, 'true', appointment.accepted, class: "radio-status-form") %> 
+                        <%= label_tag 'status-' + appointment.id.to_s + '_true', 'Confirmar', class: 'option-label' %>
+                        <%= radio_button_tag('status-' + appointment.id.to_s, 'false',!appointment.accepted, class: "radio-status-form") %>
+                        <%= label_tag 'status-' + appointment.id.to_s + '_false', 'Negada', class: 'option-label' %>
+                      <% end %> 
+                    </td>
+                  </tr>
+                </div>
+              <% end %>    
+            <% else %>
+              <td> No hay citas creadas hasta la fecha </td>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tabs-panel" id="panel3">
+      <h3 class="admin-title">
+        Horarios de Trabajo
+      </h3>
+      <div class="row panel-row">
+        <table>
+          <thead>
+            <tr>
+              <th> Dia </th>
+              <th> Hora </th>
+              <th> Disponibilidad </th>
+              <th> Acciones </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if !@schedules.nil? %>
+              <% @schedules.each do |schedule| %>
+                <div class="patient-box">
+                  <tr>
+                    <td> <%= schedule.day %> </td>
+                    <% hour = schedule.hour.to_s.scan(/([01]\d|2[0-3]):?([0-5]\d)/)  %>
+                    <td> <%= hour[1][0] %>:<%= hour[1][1] %> </td>
+                    <td> 
+                      <% if schedule.available %> 
+                        DIsponible
+                      <% else %> 
+                        No Disponible 
+                      <% end %> 
+                    </td>
+                    <td> 
+                      <a href=""> Editar </a>
+                      <a href=""> Eliminar </a>
+                    </td>
+                  </tr>
+                </div>
+              <% end %>    
+            <% else %>
+              <td> No hay horarios creados hasta la fecha. Crear uno </td>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tabs-panel" id="panel4">
+      <div class="row">
+        <%= form_tag(update_doctor_admin_path, method: 'post', remote:true, class: 'doctor_form') do %>
+          <%= text_field_tag("admin_ci", nil, placeholder: "Cedula Profesional", value: @doc.professional_document ) %>
+          <% specialty = Specialty.all %>
+          <%= select_tag :specialty_id, options_from_collection_for_select(specialty, "id", "name"), prompt: "Especialidad" %>
+          <%# text_field_tag("admin_ci", nil, placeholder: "Cedula Profesional", value: @doc.professional_document ) #%>
+          <%# services =  #%>
+        <% end %> 
+      </div>
+      <div class="row">
+        
+      </div>
+    </div>
+  </div>
+</div>

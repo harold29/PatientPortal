@@ -1,0 +1,13 @@
+<div class="row" id="user-data-container">
+  <%= form_tag(update_sensitive_info_patients_path, method: 'post', remote: true, id: "update-patient-form", class: "form") do %>  
+    <div class="row field-container" id="name-field">
+      <%= text_field_tag('name', nil, value: current_user.name, disabled: true)  %>       <%= text_field_tag('last_name', nil, value: current_user.last_name, disabled: true)  %>
+    </div>
+    <div class="large-6 medium-6 small-6 column">
+      <div class="row field-container" id="name-field"></div>
+    </div>
+    <div class="large-6 medium-6 small-6 column">
+      <div class="row field-container" id="-field"></div>
+    </div>
+  <% end %> 
+</div>

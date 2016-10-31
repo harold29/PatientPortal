@@ -1,0 +1,29 @@
+<div id="new-appointment-form" class="formbox">
+  <h4 class="form-title" id="appointment-form-title">
+    Solicitud de Citas
+  </h4>
+  <%= form_tag(add_appointment_patients_path, method: "post", remote: true, id: "appointment_form", class: "form") do %>
+    <div class="row form-field">
+      <% @clinics = Clinic.all %>
+      <%= select_tag "clinic", options_from_collection_for_select(@clinics, "id", "name", prompt: "Centro Medico"), prompt:  "Centro Medico" %>
+    </div>
+    <div class="row form-field">
+      <% @services = Service.all %>
+      <%= select_tag :service_id, options_for_select(@services.map { |c| [c.name, c.id, {:'data-clinic' => c.clinic_id}]}), prompt: "Area Medica", disabled: true  %>
+    </div>
+    <div class="row form-field">
+      <%= text_field_tag('appointment_date', nil, placeholder: "Fecha", disabled: true) %>
+    </div>
+    <div class="row form-field">
+      <%= text_field_tag("appointment_hour", nil, placeholder: "Hora", disabled: true)  %>
+    </div>
+    <div class="row">
+      <p class="alert-text">
+        El centro médico de su elección lo contactará por vía telefónica para confirmar su cita. 
+      </p>
+    </div>
+    <div class="row form-field">
+      <%= submit_tag("Enviar Solicitud")  %>
+    </div>
+  <% end %>
+</div>

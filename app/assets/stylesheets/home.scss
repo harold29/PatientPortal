@@ -1,0 +1,142 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$white-msc: #FFFFFF;
+$gray-msc: #D8CDD0;
+$lightgray-msc: #999999;
+$blue-msc: #01ABC7;
+$black-msc: #4C4C4C;
+
+
+body, h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-image: url("home.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+
+.background-snd {
+  background-image: url("pattern.png");
+  background-repeat: repeat-x repeat-y;
+  background-color: transparent;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+
+#the-wall {
+  
+}
+
+.formbox {
+  .form-field {
+    .field {
+      font-style: italic;
+    }
+  }
+}
+
+#login-form {
+  background-color: $blue-msc;
+  color: white;
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-top: 90%;
+  box-shadow: 6px 6px 5px $black-msc;
+  .title-bold {
+    font-size: 1.6em; 
+  }
+
+  #button-container {
+    font-weight: bold;
+    #remember-label {
+      color: white;
+    }
+    #login-button {
+      float: right;
+      background-color: $blue-msc;
+      color: white;
+      padding-right: 5%;
+      padding-left: 5%;
+      padding-bottom: 1%;
+      padding-top: 1%;
+      border: 0;  
+      &:hover {
+        background-color: $white-msc;
+        color: $blue-msc;
+      }
+    }
+  }
+  #recover-container {
+    font-size: 0.8em;
+    text-align: center;
+  }
+  #pass-recover {
+    color: white;
+  }
+}
+
+.decoration-spd {
+  background-color: white;
+  height: 6px;
+  width: 90%;
+}
+
+#rf-container {
+    margin-right: 10%;
+    width: 35%;
+}
+
+#register {
+  background-color: $white-msc;
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-top: 30%;
+  box-shadow: 6px 6px 5px $black-msc;
+  .title-bold {
+    color: $blue-msc;
+    font-weight: bold;
+    margin-bottom: 5%;
+  }
+
+  .form-field {
+    font-style: italic;
+    input {
+      border: 1px solid $blue-msc;
+    }
+  }
+
+  #button-container {
+    text-align: right;
+    #register-button {
+      padding-left: 6%;
+      padding-right: 6%;
+      color: white;
+      background-color: $blue-msc;
+      border: none;
+      &:hover {
+        color: $blue-msc;
+        background-color: white;
+      }
+    }
+  }
+}
+
+.decoration-ha {
+  height: 6px;
+  width: 90%;
+  background-color: $blue-msc;
+  float: right;
+}

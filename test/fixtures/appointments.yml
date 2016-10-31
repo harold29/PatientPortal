@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  accepted: false
+  appointment_date: 2016-08-11
+  gcal_doc: false
+  gcal_patient: false
+
+two:
+  accepted: false
+  appointment_date: 2016-08-11
+  gcal_doc: false
+  gcal_patient: false

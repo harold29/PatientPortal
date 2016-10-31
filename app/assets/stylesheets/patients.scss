@@ -1,0 +1,87 @@
+// Place all the styles related to the Patients controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$blue-msc: #01ABC7;
+$black-msc: #4C4C4C;
+
+body {
+  background-image: url("home2.jpg");
+}
+
+#winterfell {
+  #msc-patients-tabs {
+    margin-top: 2%;
+    .tabs-title {
+      float: left;
+      text-align: center;
+      width: 16.66%;
+      a {
+        font-size: 0.9em;
+        font-weight: bold;
+        color: $black-msc;
+        padding-top: 6%;
+        padding-bottom: 6%;
+      }
+    }
+    .is-active {
+      background-color: $blue-msc;
+      a {
+        background: none;
+        color: white;
+      }
+    }
+  }
+  
+  #broken-tower {
+    #panel1 {
+      
+    }
+
+    #panel2 {
+
+    }
+
+    #panel3 {
+
+    }
+
+    #panel4 {
+
+    }
+  }
+}
+
+// Blocks inside #broken-tower
+
+//Panel 1
+
+.panel-row {
+  #left-container {
+
+  }
+
+  #right-container {
+    position: relative;
+    
+    #validation-container {
+      position: absolute;
+    }
+
+    #calendar-container {
+      position: absolute;
+      display: none;
+    }
+
+    #hours-container {
+      position: absolute;
+      display: none;
+    }
+  }
+}
+
+
+
+///////// ---- ///////// 
+
+
