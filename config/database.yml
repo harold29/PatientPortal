@@ -25,5 +25,15 @@ test:
 production:
   <<: *default
   database: santacarmen
-  username: santacarmen
-  password: <%= ENV['SANTACARMEN_DATABASE_PASSWORD'] %>
+  username: mscdbowner
+  password: s1cs3mp3rtyr4nn15
+  #password: <%= ENV['SANTACARMEN_DATABASE_PASSWORD'] %>
+
+postgresql_settings: &postgresql_settings
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: mscdbowner
+  password: s1cs3mp3rtyr4nn15
+  host: 10.142.0.3
+  database: santacarmen

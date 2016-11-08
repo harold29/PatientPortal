@@ -1,0 +1,4 @@
+api_version: 1
+entrypoint: rails s -p 3000
+runtime: custom
+vm: true

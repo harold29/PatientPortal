@@ -4,9 +4,32 @@
 
 $blue-msc: #01ABC7;
 $black-msc: #4C4C4C;
+$blue-hover-msc: #0D6A78;
+$gray3-msc: #999999;
+$gray-occupied-day-msc: #ADADAD;
 
 body {
-  background-image: url("home2.jpg");
+  //background-image: url("home2.jpg");
+}
+
+input::-webkit-input-placeholder {
+   color: $gray3-msc;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+   color: $gray3-msc;  
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+   color: $gray3-msc;  
+}
+
+input:-ms-input-placeholder {  
+   color: $gray3-msc;  
+}
+
+select option:first-child{
+  color: $gray3-msc !important;
 }
 
 #winterfell {
@@ -34,8 +57,252 @@ body {
   }
   
   #broken-tower {
+    border: none;
+    background-color: transparent;
     #panel1 {
-      
+      padding: 3rem;
+      #new-appointment-form {
+        background-color: $blue-msc;
+        color: white;
+        padding-left: 13%;
+        padding-right: 13%;
+        padding-top: 7%;
+        padding-bottom: 4%;
+        #appointment_date, #appointment_hour {
+          font-style: italic;
+        }
+        #appointment-form-title {
+          font-weight: bold;
+          font-size: 1.25em;
+          margin-bottom: 5%;
+        }
+        #appointment-form-text {
+          font-size: 0.77em;
+          font-style: italic;
+          padding-right: 3%;
+          padding-left: 3%;
+        }
+        .button-container {
+          text-align: right;
+          input {
+            color: $blue-msc;
+            border: none;
+            padding-right: 7%;
+            font-weight: bold;
+            text-align: center;
+            padding-left: 7%;
+            font-size: 0.9em;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            &:hover {
+              color: white;
+              background-color: $blue-msc;
+            }
+          }
+        }
+      }
+
+      #validation-container {
+        color: white;
+        padding-right: 10%;
+        #available-box {
+          background-color: $blue-msc;
+          padding: 5%;
+          font-size: 1.2em;
+          font-weight: bold;
+          padding-right: 9%;
+          //margin-right: 10%;
+          //padding-right: 10%;
+          .button-row {
+            margin-top: 2%;
+          }
+          .access-button {
+            color: $blue-msc;
+            background-color: white;
+            float: right;
+            font-size: 0.8em;
+            font-weight: bold;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            padding-left: 10%;
+            padding-right: 10%;
+            &:hover {
+              background-color: $blue-msc;
+              color: white;
+            }
+          }  
+        }
+        #validation-form-box {
+          background-color: $blue-msc;
+        }
+        .decoration-right {
+          background-color: white;
+          height: 6px;
+          width: 90%;
+          float: right;
+        }
+        #validation-form-box {
+          background-color: $blue-msc;
+          padding: 3%;
+          padding-top: 6%;
+          //margin-top: 5%;
+          margin-top: 18%;
+          #verification_token {
+            font-style: italic;
+          }
+          #validation-form {
+            display: inline-block;
+            width: 100%;
+            .postfix {
+              background-color: white;
+              color: $blue-msc;
+              font-weight: bold;
+              background-color: white;
+              border: 0;
+              padding: 8%;
+              padding-left: 20%;
+              padding-right: 20%;
+              font-size: 0.8em;
+              &:hover {
+                color: white;
+                background-color: $blue-msc;
+
+              }
+            }
+          }
+          #helptext-verification {
+            font-size: 0.77em;
+            font-style: italic;
+            padding-left: 3%;
+          }
+        }
+      }
+
+      #calendar-container {
+        background-color: white;
+        #calendar-title {
+          background-color: $blue-msc;
+          color: white;
+          font-weight: 800;
+          font-size: 1.3em;
+          width: 25%;
+          text-align: center;
+          position: absolute;
+          padding-top: 0.5%;
+          padding-bottom: 0.5%;
+          margin-top: 0%;
+          top: 4%;
+        }
+
+        #calendar {
+          .fc-head {
+            border: 0;
+          }
+
+          .fc-toolbar {
+            margin-top: 5%;
+            margin-bottom: 2%;
+          }
+
+          .fc-center {
+            text-align: center;
+            h2 {
+              font-size: 1.2em;
+              color: $blue-msc;
+              font-weight: bold;
+              width: 40%;
+              display: inline-block;
+            }
+          }
+
+          .fc-head-container {
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+          
+          .fc-widget-content {
+            padding-top: 0;
+          }
+
+          .fc-today {
+            border: 4px solid $blue-hover-msc !important; 
+          }
+
+
+          .fc-day-grid-container {
+            //height: auto;
+            //width: 550px;
+          }
+
+          .fc-day-header {
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+
+          .fc-widget-header {
+            color: $blue-msc;
+            font-style: italic;
+            table {
+              margin-bottom: 0;
+            }
+          }
+
+          .fc-bg {
+            display: none;
+          }
+
+          .fc-content-skeleton tbody {
+            display: none;
+          }
+
+          .fc-view.fc-month-view.fc-basic-view {
+            margin-right: 5%;
+            margin-bottom: 5%;
+            margin-left: 5%;
+          }
+
+          .fc-day-number {
+            height: 60px;
+            width: 60px;
+            //border: 1px solid black #temporary
+            background-color: $blue-msc;
+            border: 2px solid white;
+            color: white;
+            padding-bottom: 0.3em;
+            padding-top: 0;
+            padding-left: 0.4em;
+            padding-right: 0.4em;
+            &:hover {
+              background-color: $blue-hover-msc;  
+            }
+          }
+
+          .fc-view.fc-month-view.fc-basic-view {
+            margin-right: 8%;
+            margin-bottom: 8%;
+            margin-left: 8%;
+          }
+
+          .fc-day-header, .fc-day-number {
+            font-size: 0.67em;
+            text-align: center;
+            vertical-align: bottom;
+            font-weight: bold;
+          }
+
+          table {
+            border-collapse: initial;
+            border-spacing: 0;
+          }
+
+          .fc-month-view {
+            table {
+              margin-bottom: 0;              
+            }
+          }
+
+        }
+      }
     }
 
     #panel2 {

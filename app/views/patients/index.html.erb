@@ -14,25 +14,35 @@
           <div class="large-4 medium-4 small-4 large-offset-1 medium-offset-1 column">
             <%= render 'appointmentform'  %>
           </div>
-          <div class="large-5 medium-5 small-5 large-offset-1 medium-offset-1 small-offset-1 column" id="right-container">
+          <div class="large-6 medium-6 small-6 column" id="right-container">
 
             <%# Validator container - One of aux containers of right side of the screen by mosin #%>
             <div class="row" id="validation-container">
               <% if !current_user.validated %>
-                <div class="row" id="available-box">
+                <div class="item" id="available-box">
                   Usted posee solo <span id="available-apps"></span> disponibles. Para obtener mas debe validar su cuenta.
+                  <div class="row button-row">
+                    <%= button_tag("Acceder", class: "access-button", id: "access-button", type: "button") %>    
+                  </div>
                 </div>
+                <div id="vc-deco" class="item decoration-right"></div>
               
-                <div class="row" id="validation-form-box">
+                <div class="item" id="validation-form-box">
                   <%= form_tag(validate_user_patients_path, method: "post", remote: true, id: "validation-form", html: { "data-abide": "" }) do %>
-                    <div class="small-8 columns">
-                      <%= text_field_tag("verification_token", nil, placeholder: "Codigo de Validacion")  %>  
-                    </div>
-                    <div class="small-3 columns">
-                      <%= submit_tag("Enviar Codigo", class: "postfix")  %>
+                    <div class="">
+                      <div class="small-8 columns">
+                        <%= text_field_tag("verification_token", nil, placeholder: "Codigo de Validacion")  %>  
+                      </div>
+                      <div class="small-4 columns">
+                        <%= submit_tag("Enviar Codigo", class: "postfix")  %>
+                      </div>  
                     </div>
                   <% end %>
+                  <div id="helptext-verification">
+                    Codigo de validacion entregado por Medica Santa Carmen
+                  </div>
                 </div>
+                <div class="decoration-right item"></div>
               <% end  %>
             </div>
 
@@ -41,7 +51,7 @@
               <h4 id="calendar-title">
                 Fecha
               </h4>
-              <div id="calendar" class="row">
+              <div id="calendar" class="">
                 
               </div>
             </div>

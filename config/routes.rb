@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get 'available_schedules'
       post 'update_sensitive_info'
       post 'pre_add'
+      get 'month_status'
     end
   end
 
@@ -32,4 +33,5 @@ Rails.application.routes.draw do
 
   get 'patient/:id' => 'patients#index'
   get 'q/avapp' => 'patients#available_appointment'
+  get 'q/month_status' => 'patients#month_status'
 end

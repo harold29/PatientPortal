@@ -14,6 +14,10 @@ $ ->
   on_change_fields()
   calendar_management()
 
+  on_validation_click()
+
+  
+
 
 
 
@@ -72,17 +76,25 @@ calendar_management = () ->
       dayClick: (date, jsEvent, view) -> 
         $("#appointment_date").val(date.format("DD-MM-YYYY"))
         $("#appointment_date").attr("data-date",date.format("YYYY-MM-DD"))
+        console.log("POTEITO VOLADOR")
         serviceid = $("#service_id").val() 
+        console.log("POTEITO VOLADOR2")
         schedule_ajax date.format("YYYY-MM-DD"), serviceid #ajax request sending for schedule hours
       monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
       monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
       dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
       dayNamesShort: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+      aspectRatio: 1,
+      height: "parent",
+      contentHeight: "auto",
       header: {
-        left: 'Fecha',
+        left: '',
         center: 'prev, title, next',
         right: ''
       }
+    get_date_cal()
+    on_calendar_change_event()
+
       
 hours_management = (schedule_hours) ->
   $('#appointment_hour').click (event) ->
@@ -120,7 +132,37 @@ schedule_ajax = (appdate, serviceid) ->
         console.log("success...")
         console.log("hours: " + data)
 
+#
+# Effects function for fade out
+#
+
+on_validation_click = () ->
+  $("#access-button").click (event) ->
+    $("#available-box").fadeOut()
+    $("#vc-deco").fadeOut()
 
 
+#
+# Set up days
+#
+
+# $(".fc-day-number").addClass () ->
+#   $(".")
+
+get_date_cal = () ->
+  console.log("get_date_cal function enabled")
+  $(".fc-day-number").click (event) ->
+    console.log("pre-click")
+    $("#appointment_date").val(moment($(this).data("date")).format("DD-MM-YYYY"))
+    console.log("post-click")
+    $("#appointment_date").attr("data-date", moment($(this).data("date")).format("YYYY-MM-DD"))
+    serviceid = $("#service_id").val()
+    schedule_ajax moment($(this).data("date")).format("YYYY-MM-DD"), serviceid
   
 
+on_calendar_change_event = () ->
+  console.log("calendar change function attached")
+  $(".fc-button").click (event) ->
+    console.log("calendar change button clicked")
+    get_date_cal()
+    #get_date_cal

@@ -81,6 +81,32 @@ class PatientsController < ApplicationController
     end    
   end
 
+  def available_days 
+    #hours = Schedule.where("name_id = ?")
+
+  end
+
+  def day_status(day)
+    schedules = Schedule.where("service_id = ? AND available = ? AND day = ?", params[:service_id], true, day)
+    if schedules.size != 0
+      false
+    else 
+      true
+    end
+  end
+
+  def month_status
+    elem_list = []
+    params[:month_days].each do |day|
+      if day_status(day)
+        elem_list.push(day)
+      end
+    end
+    respond_to do |format|
+      format.json {render json: elem_list}
+    end
+  end
+
   def update_sensitive_info
 
   end
