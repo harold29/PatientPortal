@@ -2,13 +2,13 @@
   <h4 class="white title-bold">
       Ingresar
   </h4>
-  <%= form_for(:user, :url => session_path(:user)) do |f| %>
+  <%= form_for(:user, :url => session_path(:user), html: {id: "form-login"}) do |f| %>
       <%# devise_error_messages! #%>
     <div class="form-field">
-      <%= f.text_field :email, class: "field", placeholder: "Nombre de Usuario" %>
+      <%= f.text_field :email, class: "field", placeholder: "Nombre de Usuario", 'data-validation':"email", 'data-validation-error-msg':"Por favor introduzca un correo electronico" %>
     </div>
     <div class="form-field">
-      <%= f.password_field :password, class: "field", placeholder: "Contraseña" %>
+      <%= f.password_field :password, class: "field", placeholder: "Contraseña", 'data-validation':"required", 'data-validation-error-msg':"Por favor introduzca su contraseña" %>
     </div>
     <div class="form-field" id="button-container">
       <%= f.check_box :remember_me %>

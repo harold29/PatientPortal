@@ -1,5 +1,6 @@
 class Appointment < ApplicationRecord
   before_create :set_default_values
+  #validate 
 
   belongs_to :patient
 

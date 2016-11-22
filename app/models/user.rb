@@ -61,6 +61,6 @@ class User < ApplicationRecord
     self.role = 2
     self.disable = false
     self.validated = false
-    self.verification_token = SecureRandom.urlsafe_base64
+    self.verification_token = SecureRandom.urlsafe_base64(5)
   end
 end

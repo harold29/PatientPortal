@@ -39,7 +39,7 @@ class RegistrationsController < Devise::RegistrationsController
         respond_with resource, location: after_inactive_sign_up_path_for(resource)
       end
     else
-      clean_up_passwords_resource
+      #clean_up_passwords resource#_resource
       set_minimum_password_length
       respond_with resource
     end

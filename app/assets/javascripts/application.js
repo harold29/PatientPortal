@@ -15,6 +15,7 @@
 //= require foundation
 //= require foundation.abide.js
 //= require moment
+//= require moment/es.js
 //= require fullcalendar
 //= require fullcalendar/gcal
 //= require turbolinks

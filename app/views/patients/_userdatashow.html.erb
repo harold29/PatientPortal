@@ -1,13 +1,66 @@
+<% if !current_user.validated %>
+  <div class="user-data-validation-form row">
+    <%= form_tag(validate_user_patients_path, method: "post", remote: true, id: "validation-form", html: { "data-abide": "" }) do %>
+      <div class="">
+        <div class="small-4 columns">
+          <%= text_field_tag("verification_token", nil, placeholder: "Codigo de Validacion", 'data-validation': "length", 'data-validation-length': "7", 'data-validation-error-msg':"El codigo de validacion debe tener 7 caracteres")  %>  
+        </div>
+        <div class="small-5 columns">
+          <p class="info-text">
+            Codigo de validacion entregado por Medica Santa Carmen          
+          </p>
+        </div>
+        <div class="small-3 columns" id="button-container">
+          <%= submit_tag("Enviar Codigo", class: "postfix")  %>
+        </div>  
+      </div>
+    <% end %>  
+  </div>
+<% end %>
+
 <div class="row" id="user-data-container">
-  <%= form_tag(update_sensitive_info_patients_path, method: 'post', remote: true, id: "update-patient-form", class: "form") do %>  
-    <div class="row field-container" id="name-field">
-      <%= text_field_tag('name', nil, value: current_user.name, disabled: true)  %>       <%= text_field_tag('last_name', nil, value: current_user.last_name, disabled: true)  %>
+  <ul class="tabs" data-tabs id="sub-tabs-patient-data">
+    <li class="tabs-title large-4 is-active"><a href="#patient-data-subtab" aria-selected="true">Datos del Paciente</a></li>
+    <li class="tabs-title large-4"><a href="#emergency-contact-subtab">Contactos de Emergencia</a></li>
+    <li class="tabs-title large-4"><a href="#md-subtab">Medico Tratante</a></li>
+  </ul>
+
+  <div class="tabs-content" data-tabs-content="sub-tabs-patient-data">
+    <div class="tabs-panel is-active" id="patient-data-subtab">
+      <%= form_tag(update_sensitive_info_patients_path, method: 'post', remote: true, id: "update-patient-form", class: "form") do %>  
+        <div class="row field-container" id="name-field">
+          <%= text_field_tag('name', nil, value: current_user.name, disabled: true)  %>       <%= text_field_tag('last_name', nil, value: current_user.last_name, disabled: true)  %>
+        </div>
+        <div class="large-6 medium-6 small-6 column">
+          <div class="row field-container" id="name-field"></div>
+        </div>
+        <div class="large-6 medium-6 small-6 column">
+          <div class="row field-container" id="-field"></div>
+        </div>
+      <% end %>    
     </div>
-    <div class="large-6 medium-6 small-6 column">
-      <div class="row field-container" id="name-field"></div>
+    <div class="tabs-panel" id="emergency-contact-subtab">
+      <div class="form-container">
+        <%#= form_for(patient_emc_patients_path, method: 'post', remote: true, id: 'em-patient-form', class: 'em-patient-form form') do %>
+        <%# end #%>
+        <div id="em-fc-1" class="em-form-container large-4 medium-4 small-4 column">
+          <%= form_for(:relative, url: patient_emc_patients_path(:relative), html: {id: "em-patient-form-0", class: "em-patient-form"}) do |f|  %>
+            <%= f.text_field :name, placeholder: "Nombre y Apellido", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su nombre"  %>
+            <%= f.select :kinship, options_for_select([['Madre', 'madre'], ['Padre', 'padre'], ['Hermano', 'hermano'], ['Tio', 'tio'], ['Tia', 'tia'], ['Esposo', 'esposo'], ['Esposa', 'esposa'], ['Otro', 'otro'] ])  %>
+            <%= f.text_field :phone1, placeholder: "Telefono Movil", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Movil"  %>
+            <%= f.text_field :phone2, placeholder: "Telefono Particular", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Particular"  %>
+          <% end %>  
+        </div>
+        <div id="em-fc-2" class="em-fc-2 em-form-container large-4 medium-4 small-4 column">
+          
+        </div>
+        <div id="em-fc-3" class="em-fc-3 em-form-container large-4 medium-4 small-4 column">
+          
+        </div>
+      </div>
     </div>
-    <div class="large-6 medium-6 small-6 column">
-      <div class="row field-container" id="-field"></div>
+    <div class="tabs-panel" id="md-subtab">
+      
     </div>
-  <% end %> 
+  </div>
 </div>

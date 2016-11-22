@@ -2,42 +2,37 @@
   <h4 class="blue-5 title-bold">
       Nuevo Registro
   </h4>
-  <%= form_for(:user, url: registration_path(:user), html: {"data-abide": " "} ) do |f| %>
+  <%= form_for(:user, url: registration_path(:user), html: { id: "registration-form" } ) do |f| %>
     <%# devise_error_messages! #%>
     <div class="form-field">
-      <%= f.text_field :name, placeholder: "Nombre", 'required' => " ", 'pattern' => "[a-zA-Z]+"  %>
-      <span class="form-error">
-        Este campo puede llenarse solo con letras. Es requerido.
+      <%= f.text_field :name, placeholder: "Nombre", 'required' => " ", 'pattern' => "[a-zA-Z]+", 'data-validation':"required", 'data-validation-error-msg':"Por favor introduzca su nombre", 'data-validation-error-msg-container': "#name-error-container"  %>
+      <span class="form-error-field" id="name-error-container">
+        
       </span>
     </div>
     <div class="form-field">
-      <%= f.text_field :last_name, placeholder: "Apellido", 'required' => " ", 'pattern' => "[a-zA-Z]+" %>
+      <%= f.text_field :last_name, placeholder: "Apellido", 'required' => " ", 'pattern' => "[a-zA-Z]+", 'data-validation':"required", 'data-validation-error-msg':"Por favor introduzca su apellido" %>
       <span class="form-error">
-        Este campo puede llenarse solo con letras. Es requerido.
       </span>
     </div>
     <div class="form-field">
-      <%= f.text_field :birthday, placeholder: "Fecha de nacimiento", 'required' => " ", 'pattern' => "[/^(\d{1,2})-(\d{1,2})-(\d{4})$/]"  %>
+      <%= f.text_field :birthday, placeholder: "Fecha de nacimiento", 'required' => " ", 'pattern' => "[/^(\d{1,2})-(\d{1,2})-(\d{4})$/]", 'data-validation':"birthdate", 'data-validation-error-msg':"Por favor introduzca su fecha de cumpleaños"  %>
       <span class="form-error">
-        Este campo puede llenarse solo con numeros en el formato dd-mm-aaaa. Es requerido.
       </span>
     </div>
     <div class="form-field">
-      <%= f.email_field :email, placeholder: "Email", 'required' => " " %>
+      <%= f.email_field :email, placeholder: "Email", 'required' => " ", 'data-validation':"email", 'data-validation-error-msg':"Por favor introduzca un correo electronico" %>
       <span class="form-error">
-        Formato incorrecto. Es requerido.
       </span>
     </div>
-    <div class="form-field">
-      <%= f.password_field :password, placeholder: "Contraseña", 'required' => " " %>
+    <div class="form-field password-field">
+      <%= f.password_field :password, placeholder: "Contraseña", 'required' => " ", 'data-validation':"strength", 'data-validation-error-msg':"La Contraseña no es suficientemente fuerte", 'data-validation-strength':"1", 'name': "pass_confirmation" %>
       <span class="form-error">
-        Introduzca una contraseña por favor.
       </span>
     </div>
-    <div class="form-field">
-      <%= f.password_field :password_confirmation, placeholder: "Confirme la Contraseña", 'required' => " ", 'data-equalto' => "user_password" %>
+    <div class="form-field confirmation-field">
+      <%= f.password_field :password_confirmation, placeholder: "Confirme la Contraseña", 'required' => " ", 'data-equalto' => "user_password", 'name': "pass", 'data-validation': "confirmation", 'data-validation-error-msg':"Las contraseñas no coinciden" %>
       <span class="form-error">
-        Las contraseñas deben coincidir.
       </span>
     </div>
     <div class="form-field" id="button-container">

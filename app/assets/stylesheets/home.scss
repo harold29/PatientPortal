@@ -33,7 +33,7 @@ body {
 
 
 #the-wall {
-  
+  position: relative;
 }
 
 .formbox {
@@ -95,6 +95,9 @@ body {
 #rf-container {
     margin-right: 10%;
     width: 35%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 #register {
@@ -103,8 +106,12 @@ body {
   padding-right: 7%;
   padding-top: 5%;
   padding-bottom: 5%;
-  margin-top: 30%;
+  margin-top: 15%;
   box-shadow: 6px 6px 5px $black-msc;
+  //position: absolute;
+  width: 85%;
+  float: right;
+
   .title-bold {
     color: $blue-msc;
     font-weight: bold;
@@ -115,7 +122,24 @@ body {
     font-style: italic;
     input {
       border: 1px solid $blue-msc;
+      margin-bottom: 3% !important;
     }
+    .form-error {
+      display: block !important;
+    }
+  }
+
+  .password-field {
+    input {
+      margin-bottom: 3% !important;
+    }
+    .form-error {
+      //margin-top: 2%;
+    }
+  }
+
+  .confirmation-field {
+    //margin-top: 5%;
   }
 
   #button-container {
@@ -138,7 +162,7 @@ body {
 
 .decoration-ha {
   height: 6px;
-  width: 90%;
+  width: 70%;
   background-color: $blue-msc;
   float: right;
 }

@@ -1,21 +1,29 @@
-<div id="new-appointment-form" class="formbox">
+<% if !current_user.validated %>
+  <div id="new-appointment-form" class="formbox disabled-appointment-form">
+<% else %>
+  <div id="new-appointment-form" class="formbox">
+<% end %>  
   <h4 class="form-title" id="appointment-form-title">
     Solicitud de Citas
   </h4>
-  <%= form_tag(add_appointment_patients_path, method: "post", remote: true, id: "appointment_form", class: "form") do %>
-    <div class="rform-field">
+  <%= form_tag(add_appointment_patients_path, method: "post", remote: true, id: "appointment_form", class: "form", novalidate: "novalidate", 'data-abide': ' ') do %>
+    <div class="form-field">
       <% @clinics = Clinic.all %>
-      <%= select_tag "clinic", options_from_collection_for_select(@clinics, "id", "name", prompt: "Centro Medico"), prompt:  "Centro Medico" %>
+      <% if !current_user.validated %>
+        <%= select_tag "clinic", options_from_collection_for_select(@clinics, "id", "name", prompt: "Centro Medico"), prompt:  "Centro Medico", 'required': " ", disabled: true, class: 'disabled-select' %>
+      <% else %>
+        <%= select_tag "clinic", options_from_collection_for_select(@clinics, "id", "name", prompt: "Centro Medico"), prompt:  "Centro Medico", 'required': " ", class: '' %>
+      <% end %>
     </div>
     <div class=" form-field">
       <% @services = Service.all %>
-      <%= select_tag :service_id, options_for_select(@services.map { |c| [c.name, c.id, {:'data-clinic' => c.clinic_id}]}), prompt: "Area Medica", disabled: true  %>
+      <%= select_tag :service_id, options_for_select(@services.map { |c| [c.name, c.id, {:'data-clinic' => c.clinic_id}]}), prompt: "Area Medica", disabled: true, 'required': " ", class: 'disabled-select' %>
     </div>
     <div class=" form-field">
-      <%= text_field_tag('appointment_date', nil, placeholder: "Fecha", disabled: true) %>
+      <%= text_field_tag('appointment_date', nil, placeholder: "Fecha", disabled: true, 'required': " ", readonly: true) %>
     </div>
     <div class=" form-field">
-      <%= text_field_tag("appointment_hour", nil, placeholder: "Hora", disabled: true)  %>
+      <%= text_field_tag("appointment_hour", nil, placeholder: "Hora", disabled: true, 'required': " ", readonly: true)  %>
     </div>
     <div class="">
       <p class="alert-text" id="appointment-form-text">
@@ -23,7 +31,7 @@
       </p>
     </div>
     <div class=" form-field button-container">
-      <%= submit_tag("Enviar Solicitud")  %>
+      <%= submit_tag("Enviar Solicitud", disabled: true)  %>
     </div>
   <% end %>
 </div>

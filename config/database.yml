@@ -35,5 +35,5 @@ postgresql_settings: &postgresql_settings
   pool: 5
   username: mscdbowner
   password: s1cs3mp3rtyr4nn15
-  host: 10.142.0.3
+  host: 35.185.2.47
   database: santacarmen

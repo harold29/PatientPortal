@@ -19,8 +19,8 @@
             <%# Validator container - One of aux containers of right side of the screen by mosin #%>
             <div class="row" id="validation-container">
               <% if !current_user.validated %>
-                <div class="item" id="available-box">
-                  Usted posee solo <span id="available-apps"></span> disponibles. Para obtener mas debe validar su cuenta.
+                <div class="item visible-box" id="available-box">
+                  Usted posee solo <span id="available-apps"></span> solicitudes disponibles. Para obtener mas debe validar su cuenta.
                   <div class="row button-row">
                     <%= button_tag("Acceder", class: "access-button", id: "access-button", type: "button") %>    
                   </div>
@@ -31,7 +31,7 @@
                   <%= form_tag(validate_user_patients_path, method: "post", remote: true, id: "validation-form", html: { "data-abide": "" }) do %>
                     <div class="">
                       <div class="small-8 columns">
-                        <%= text_field_tag("verification_token", nil, placeholder: "Codigo de Validacion")  %>  
+                        <%= text_field_tag("verification_token", nil, placeholder: "Codigo de Validacion", 'data-validation': "length", 'data-validation-length': "7", 'data-validation-error-msg':"El codigo de validacion debe tener 7 caracteres")  %>  
                       </div>
                       <div class="small-4 columns">
                         <%= submit_tag("Enviar Codigo", class: "postfix")  %>
@@ -41,8 +41,13 @@
                   <div id="helptext-verification">
                     Codigo de validacion entregado por Medica Santa Carmen
                   </div>
+                  <% if flash[:notice] %>
+                    <div class="form-error">
+                      <%= flash[:notice] %>
+                    </div>
+                  <% end %>
+                  <div class="decoration-right item verification-deco"></div>
                 </div>
-                <div class="decoration-right item"></div>
               <% end  %>
             </div>
 
@@ -61,9 +66,23 @@
               <h4 id="hours-title">
                 Horas
               </h4>
+              <h5 id="hour-day">
+                
+              </h5>
               <div id="hours" class="row">
                 
               </div>
+              <div class="row" id="color-explaining">
+                <div id="blue-exp" class="column large-6 medium-6 small-6">
+                  <div id="blue-color-exp"></div>
+                  <span class="exp-text"> Horarios disponibles </span>
+                </div>
+                <div id="gray-exp" class="column large-6 medium-6 small-6">
+                  <div id="gray-color-exp"></div>
+                  <span class="exp-text"> Horarios No disponibles </span>
+                </div>
+              </div>
+              <div class="decoration-left major-container-deco"></div>
             </div>
           </div>
         </div>

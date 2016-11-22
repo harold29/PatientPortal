@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       post 'update_sensitive_info'
       post 'pre_add'
       get 'month_status'
+      post 'patient_emc'
     end
   end
 
