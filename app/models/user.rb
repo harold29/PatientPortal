@@ -58,7 +58,7 @@ class User < ApplicationRecord
   private
 
   def set_default_values
-    self.role = 2
+    self.role = 3
     self.disable = false
     self.validated = false
     self.verification_token = SecureRandom.urlsafe_base64(5)

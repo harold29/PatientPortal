@@ -48,6 +48,29 @@ select option:first-child{
   display: block;
 }
 
+#msc-patients-tabs, .tabs {
+  margin-top: 2%;
+  .tabs-title, .tabs-button {
+    float: left;
+    text-align: center;
+    width: 16.66%;
+    a {
+      font-size: 0.9em;
+      font-weight: bold;
+      color: $black-msc;
+      padding-top: 6%;
+      padding-bottom: 6%;
+    }
+  }
+  .is-active {
+    background-color: $blue-msc;
+    a {
+      background: none;
+      color: white;
+    }
+  }
+}
+
 #winterfell {
   #msc-patients-tabs {
     margin-top: 2%;
@@ -544,6 +567,21 @@ select option:first-child{
             a {
               background-color: $blue-msc;
               color: white;
+            }
+          }
+        }
+
+        #emergency-contact-subtab {
+          #em-fc-3 {
+            border: 1px dashed black;
+            padding: 3%;
+            #em-aggregator {
+              #em-aggregator-title {
+                text-align: center;
+                padding: 25%;
+                padding-bottom: 30%;
+                padding-top: 30%;
+              }
             }
           }
         }

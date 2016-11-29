@@ -16,7 +16,9 @@
       </span>
     </div>
     <div class="form-field">
-      <%= f.text_field :birthday, placeholder: "Fecha de nacimiento", 'required' => " ", 'pattern' => "[/^(\d{1,2})-(\d{1,2})-(\d{4})$/]", 'data-validation':"birthdate", 'data-validation-error-msg':"Por favor introduzca su fecha de cumpleaños"  %>
+      <%= f.text_field :birthday, placeholder: "Fecha de nacimiento"%>
+      <%# , 'required' => " ", 'data-validation':"birthdate", 'data-validation-error-msg':"Por favor introduzca su fecha de cumpleaños"  #%>
+        <%# 'pattern' => "[/^(\d{1,2})/(\d{1,2})/(\d{4})$/]", #%>
       <span class="form-error">
       </span>
     </div>
@@ -26,12 +28,14 @@
       </span>
     </div>
     <div class="form-field password-field">
-      <%= f.password_field :password, placeholder: "Contraseña", 'required' => " ", 'data-validation':"strength", 'data-validation-error-msg':"La Contraseña no es suficientemente fuerte", 'data-validation-strength':"1", 'name': "pass_confirmation" %>
+      <%= f.password_field :password, placeholder: "Contraseña", 'required' => " "%>
+      <%# , 'data-validation':"strength", 'data-validation-error-msg':"La Contraseña no es suficientemente fuerte", 'data-validation-strength':"1", 'name': "pass_confirmation"  #%>
       <span class="form-error">
       </span>
     </div>
     <div class="form-field confirmation-field">
-      <%= f.password_field :password_confirmation, placeholder: "Confirme la Contraseña", 'required' => " ", 'data-equalto' => "user_password", 'name': "pass", 'data-validation': "confirmation", 'data-validation-error-msg':"Las contraseñas no coinciden" %>
+      <%= f.password_field :password_confirmation, placeholder: "Confirme la Contraseña", 'required' => " " %>
+      <%# , 'data-equalto' => "user_password", 'name': "pass", 'data-validation': "confirmation", 'data-validation-error-msg':"Las contraseñas no coinciden" #%>
       <span class="form-error">
       </span>
     </div>

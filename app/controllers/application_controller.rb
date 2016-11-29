@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     session[:user_id] = resource.id
     case resource.role  
-    when "0"
+    when 1
       "/roottoor/#{resource.id}"
-    when "1"
-      "/admin/#{resource.id}"
-    when "2"
+    when 2
+      "/doctor/#{resource.id}"
+    when 3
       "/patient/#{resource.id}"
     else
       "/patient/#{resource.id}"

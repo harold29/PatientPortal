@@ -1,0 +1,181 @@
+<div id="dorne">
+  <% if user_signed_in? %>
+    <ul class="tabs" data-tabs id="msc-doctors-tabs">  
+      <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Citas</a></li>
+      <li class="tabs-title"><a class="title-link" href="#panel2">Reportes</a></li>
+      <li class="tabs-title"><a class="title-link" href="#panel3">Historial de Citas</a></li>
+      <li class="tabs-title"><a class="title-link" href="#panel4">Pacientes</a></li>
+      <li class="tabs-button" id="logout-button"><%= link_to 'Cerrar Sesion', destroy_user_session_path %></li>
+    </ul>
+    <div class="tabs-content" id="harsh-desert" data-tabs-content="msc-doctors-tabs">
+      <div class="tabs-panel is-active" id="panel1">
+        <div class="appointment-list-container">
+          <div class="appointment-list-title-row row">
+            <h5 class="title">
+              Citas Pendientes
+            </h5>
+          </div>
+          <div class="appointment-list-head row">
+            <div class="col-title column large-2 medium-2 small-2">
+              Nombre del Paciente
+            </div>
+            <div class="col-title column large-3 medium-3 small-3">
+              Area Medica
+            </div>
+            <div class="col-title column large-2 medium-2 small-2">
+              Clinica
+            </div>
+            <div class="col-title column large-2 medium-2 small-2">
+              Medico Tratante
+            </div>
+            <div class="col-title column large-2 medium-2 small-2">
+              Fecha
+            </div>
+            <div class="col-title column large-1 medium-1 small-1">
+              Acciones
+            </div>
+          </div>
+          <div class="appointment-list-elements-subcontainer">
+            <% if !@appointments.nil? %>
+              <% @appointments.each do |app| %>
+                <div class="row appointment-row">
+                  <% user = User.find_by_id(Patient.find_by_id(app.patient_id).user_id) %>
+                  <div class="patient-name-col column large-2 medium-2 small-2">
+                    <%= user.name %> <%= user.last_name %>
+                  </div>
+                  <% service = Service.find_by_id(app.service_id) %>
+                  <div class="service-name-col column large-3 medium-3 small-3">
+                    <%= service.name %>
+                  </div>
+                  <div class="clinic-name-col column large-2 medium-2 small-2">
+                    <%= Clinic.find_by_id(service.clinic_id).name  %>
+                  </div>
+                  <div class="doctor-name-col column large-2 medium-2 small-2">
+                    <%= current_user.name %> <%= current_user.last_name %>
+                  </div>
+                  <div class="date-col column large-2 medium-2 small-2">
+                    <% schedule = Schedule.find_by_id(app.schedule_id) %>
+                    <% if !schedule.nil? %>
+                      <%= schedule.day.strftime("%d/%m/%Y") %> <%= schedule.hour.strftime("%H:%M") %> 
+                    <% else %>
+                      <div class="table-error-msg">
+                        ¡Error 501!
+                      </div>
+                    <% end %>
+                  </div>
+                  <div class="actions-col column large-1 medium-1 small-1">
+                    <a class="action-button left-action-button" id="check-elem-<%= app.id %>" <% if !app.accepted %> data-open="confirmation-accepted-<%= app.id.to_s %>" <% end %> >
+                      <% if app.accepted %>
+                        <i id="check-<%= app.id.to_s %>" class="fi-check check-accepted" data-appointment=<%= app.id.to_s %>></i>
+                      <% else %>
+                        <i id="check-<%= app.id.to_s %>" data-appointment=<%= app.id.to_s %> class="fi-check check-not-accepted"></i>             
+                      <% end %>
+                    </a>
+                    <!-- <a class="action-button left-action-button" <% if !app.accepted %> data-open="confirmation-accepted-<%= app.id.to_s %>" <% end %> >
+                      <span data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="2" title="Aceptar Cita." class="has-tip top inside-img-button">
+                        <% if app.accepted %>
+                          <i id="check-<%= app.id.to_s %>" class="fi-check check-accepted" data-appointment=<%= app.id.to_s %>></i>
+                        <% else %>
+                          <i id="check-<%= app.id.to_s %>" data-appointment=<%= app.id.to_s %> class="fi-check check-not-accepted"></i>             
+                        <% end %>
+                      </span>
+                    </a> -->
+                    <%# if !app.accepted #%>
+                      <div class="reveal" id="confirmation-accepted-<%= app.id.to_s %>" data-reveal>
+                        <h1>Confirmacion</h1>
+                        <p class="lead">¿Esta usted seguro de que desea <span class="modal-keyword">Aceptar</span> la cita?</p>
+                        <button class="close-button" data-close aria-label="Close modal" type="button">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <button class="confirm-button check-button" data-close aria-label="Close modal" data-appointment=<%= app.id.to_s %> type="button">Aceptar</button>
+                      </div>
+                    <%# end #%>
+                    <a class="action-button middle-action-button" id="x-element-<%= app.id %>" <% if app.accepted %>data-open="confirmation-not-accepted-<%= app.id.to_s %>" <% end %> >
+                      <% if app.accepted %>
+                        <i id="x-<%= app.id.to_s %>" data-appointment=<%= app.id.to_s %> class="fi-x x-accepted"></i>
+                      <% else %>
+                        <i id="x-<%= app.id.to_s %>" class="fi-x x-not-accepted" data-appointment=<%= app.id.to_s %>></i>   
+                      <% end %>
+                    </a>
+                    <!-- <a class="action-button middle-action-button" <% if app.accepted %>data-open="confirmation-not-accepted-<%= app.id.to_s %>" <% end %> >
+                      <span data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="2" title="Rechazar Cita." class="has-tip top inside-img-button">
+                        <% if app.accepted %>
+                          <i id="x-<%= app.id.to_s %>" data-appointment=<%= app.id.to_s %> class="fi-x x-accepted"></i>
+                        <% else %>
+                          <i id="x-<%= app.id.to_s %>" class="fi-x x-not-accepted" data-appointment=<%= app.id.to_s %>></i>                   
+                        <% end %>
+                      </span>
+                    </a> -->
+                    <%# if app.accepted #%>
+                      <div class="reveal" id="confirmation-not-accepted-<%= app.id.to_s %>" data-reveal>
+                        <h1>Confirmacion</h1>
+                        <p class="lead">¿Esta usted seguro de que desea <span class="modal-keyword">Cancelar</span> la cita?</p>
+                        <button class="close-button" data-close aria-label="Close modal" type="button">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <button class="cancel-button confirm-button" data-close aria-label="Close modal" data-appointment=<%= app.id.to_s %> type="button">Aceptar</button>
+                      </div>
+                    <%# end #%>
+                    <a href=""  class="mail-button">
+                      <span data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="2" title="Enviar Mensaje a Paciente." class="has-tip top inside-img-button">
+                        <i class="fi-mail"></i>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <h4 class="empty-title">
+                No tiene pacientes todavia
+              </h4>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="tabs-panel" id="panel2">
+      
+      </div>
+      <div class="tabs-panel" id="panel3">
+        <% patients = Patient.find_by_doctor_id(@doctor.id)  %>
+        <div id="patients-list-container">
+          <div id="patients-list-head">
+            <div class="column large-4 medium-4 small-4 name-col-title">
+              Nombre y Apellido
+            </div>
+            <div class="column large-4 medium-4 small-4 last-app-col-title">
+              Ultima Visita
+            </div>
+            <div class="column large-4 medium-4 small-4 action-col-title">
+              Acciones
+            </div>
+          </div>
+          <div id="patient-list-elements-subcontainer">
+            <% if !patients.nil? %>
+              <% patients.each do |patient| %>
+                <% user = User.find_by_id(patient.user_id) %>
+                <div class="column large-4 medium-4 small-4 name-col">
+                  <%= user.name user.last_name %>
+                </div>
+                <div class="column large-4 medium-4 small-4 last-app-col">
+                  Vacio
+                </div>
+                <div class="column large-4 medium-4 small-4 action-col">
+                  <a href="" class="patient-see-more-button">
+                    Ver Mas
+                  </a>
+                </div>
+              <% end %>
+            <% else %>
+              <h4 class="empty-title">
+                No tiene pacientes todavia
+              </h4>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="modal-container">
+  
+</div>

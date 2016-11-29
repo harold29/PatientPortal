@@ -21,6 +21,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :doctors do
+    member do
+      get 'index'
+      post 'accept_appointment'
+      post 'cancel_appointment'
+    end
+  end
+
   resource :admin do
     member do
       get 'index'
@@ -35,4 +43,6 @@ Rails.application.routes.draw do
   get 'patient/:id' => 'patients#index'
   get 'q/avapp' => 'patients#available_appointment'
   get 'q/month_status' => 'patients#month_status'
+
+  get 'doctor/:id' => 'doctors#index'
 end

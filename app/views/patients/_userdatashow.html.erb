@@ -44,6 +44,9 @@
         <%#= form_for(patient_emc_patients_path, method: 'post', remote: true, id: 'em-patient-form', class: 'em-patient-form form') do %>
         <%# end #%>
         <div id="em-fc-1" class="em-form-container large-4 medium-4 small-4 column">
+          <h4 class="form-title">
+            Contacto Principal
+          </h4>
           <%= form_for(:relative, url: patient_emc_patients_path(:relative), html: {id: "em-patient-form-0", class: "em-patient-form"}) do |f|  %>
             <%= f.text_field :name, placeholder: "Nombre y Apellido", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su nombre"  %>
             <%= f.select :kinship, options_for_select([['Madre', 'madre'], ['Padre', 'padre'], ['Hermano', 'hermano'], ['Tio', 'tio'], ['Tia', 'tia'], ['Esposo', 'esposo'], ['Esposa', 'esposa'], ['Otro', 'otro'] ])  %>
@@ -52,10 +55,23 @@
           <% end %>  
         </div>
         <div id="em-fc-2" class="em-fc-2 em-form-container large-4 medium-4 small-4 column">
+          <h4 class="form-title">
+            Contacto Secundario
+          </h4>
+          <%= form_for(:relative, url: patient_emc_patients_path(:relative), html: {id: "em-patient-form-1", class: "em-patient-form"}) do |f|  %>
+            <%= f.text_field :name, placeholder: "Nombre y Apellido", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su nombre"  %>
+            <%= f.select :kinship, options_for_select([['Madre', 'madre'], ['Padre', 'padre'], ['Hermano', 'hermano'], ['Tio', 'tio'], ['Tia', 'tia'], ['Esposo', 'esposo'], ['Esposa', 'esposa'], ['Otro', 'otro'] ])  %>
+            <%= f.text_field :phone1, placeholder: "Telefono Movil", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Movil"  %>
+            <%= f.text_field :phone2, placeholder: "Telefono Particular", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Particular"  %>
+          <% end %>  
           
         </div>
         <div id="em-fc-3" class="em-fc-3 em-form-container large-4 medium-4 small-4 column">
-          
+          <div id="em-aggregator">
+            <h5 id="em-aggregator-title">
+              Agregar Otro
+            </h5>
+          </div>
         </div>
       </div>
     </div>

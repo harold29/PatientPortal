@@ -15,7 +15,6 @@ $ ->
     form: '#validation-form',
     borderColorOnError: '#FE3102'
 
-
   on_change_fields()
   calendar_management()
 
@@ -214,7 +213,7 @@ verification_form_status = () ->
   )
 
 add_form_em = () ->
-  $(".em-form-container").click (event) ->
+  $("#em-fc-3").click (event) ->
     $(this).html($("#em-fc-1").clone())
 # disabled_form = () ->
 #   $("#access-button").click (event) ->

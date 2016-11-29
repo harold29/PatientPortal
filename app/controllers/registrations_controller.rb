@@ -39,7 +39,8 @@ class RegistrationsController < Devise::RegistrationsController
         respond_with resource, location: after_inactive_sign_up_path_for(resource)
       end
     else
-      #clean_up_passwords resource#_resource
+      clean_up_passwords resource 
+      #abort("potato")#_resource
       set_minimum_password_length
       respond_with resource
     end
@@ -58,7 +59,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    params.require(:user).permite(:name, :last_name, :email, :birthday, :age, :password, :password_confirmation, :current_password, )
+    params.require(:user).permit(:name, :last_name, :email, :birthday, :age, :password, :password_confirmation, :current_password, )
   end
 
   def new
