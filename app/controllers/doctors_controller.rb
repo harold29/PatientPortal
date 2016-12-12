@@ -1,23 +1,22 @@
 class DoctorsController < ApplicationController
+
+  include Calendar
+
+  # Calendar = Google::Apis::CalendarV3
+
   def index
     if params[:id].to_i != session[:user_id]
       not_found
     else
+      @cal = init_calendar
+      @calendar = get_calendar_list(@cal)
       @doctor = Doctor.find_by_user_id(current_user.id)
+      # @calendar = Calendar.new(current_user)
       if !@doctor.nil?
         @appointments = Appointment.where(service_id: @doctor.service_id)
       end
     end
   end
-
-  # def pending_appointments 
-  #   app = Appointment.find_by_service_id(doc.service_id)
-  #   if user_signed_in?
-  #     if app.nil?
-  #       doc = Doctor.find_by_user_id(current_user.id)
-  #     end
-  #   end
-  # end
 
   def appointment_actions
     if user_signed_in?

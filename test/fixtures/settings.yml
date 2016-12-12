@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  cal_sync: 
+  calendar_id: MyString
+  send_notifications: 
+
+two:
+  user: two
+  cal_sync: 
+  calendar_id: MyString
+  send_notifications: 

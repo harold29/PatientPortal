@@ -13,12 +13,7 @@ class User < ApplicationRecord
   has_one :doctor
 
   def self.from_omniauth(auth, user_id)
-    # where(provider: auth.provider, uid:auth.uid).first_or_create do |user|
-    #   user.gmail_email = auth.info.email
-    #   user.password = Devise.friendly_token[0,20]
-    #   user.name = auth.info.fist_name
-    #   user.last_name = auth.info.last_name
-    # end
+    logger.debug auth.to_s
 
     data = auth.info
     user = User.where(:gmail_email => data["email"]).first
@@ -28,11 +23,12 @@ class User < ApplicationRecord
       user.gmail_email = data.email
       user.provider = auth.provider
       user.uid = auth.uid
+      user.auth_token = auth.credentials.token
+      user.token_refresh = auth.credentials.refresh_token
       image = data.image
     end
     
     user.save
-
     user
   end
 

@@ -251,8 +251,9 @@ Devise.setup do |config|
   #--- Uncomment if devise and google are working together
   # 
   #config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :google_oauth2, "835790794723-bitngll5d8d8atu7a9643easifbqfk44.apps.googleusercontent.com", "Ge64d2-37G1N3HtbOdcqwO86", { }
-
+  # config.omniauth :google_oauth2, "835790794723-bitngll5d8d8atu7a9643easifbqfk44.apps.googleusercontent.com", "Ge64d2-37G1N3HtbOdcqwO86", { }
+  config.omniauth :google_oauth2, "631237719552-t3mcqo5lgbp2a0akhmafg8c7smg2te92.apps.googleusercontent.com", "I2zNUxSFlXF57IriG5Gn01Vs", scope: "email,calendar"
+ 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

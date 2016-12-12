@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get 'index'
       post 'accept_appointment'
       post 'cancel_appointment'
+      post 'set_default_calendar'
     end
   end
 

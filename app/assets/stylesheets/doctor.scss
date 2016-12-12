@@ -642,7 +642,7 @@ $red-msc4: #BE0B00;
 
 .tabs {
   .tabs-title, .tabs-button {
-    width: 20% !important;
+    //width: 20% !important;
   }
 }
 
@@ -653,22 +653,22 @@ $red-msc4: #BE0B00;
   text-align: center;
   background-color: transparent;
   border: 0px;
+  .title-row {
+    background-color: $blue4-msc;
+    color: white;
+    .title {
+      text-transform: uppercase;
+      text-align: left;
+      font-size: 1.2em;
+      font-weight: 800;
+      line-height: 1.5em;
+      padding-left: 2%;
+      padding-top: 1%;
+    }
+  }
   #panel1 {
     .appointment-list-container {
       background-color: $msc-white;
-    }
-    .appointment-list-title-row {
-      background-color: $blue4-msc;
-      color: white;
-      .title {
-        text-transform: uppercase;
-        text-align: left;
-        font-size: 1.2em;
-        font-weight: 800;
-        line-height: 1.5em;
-        padding-left: 2%;
-        padding-top: 1%;
-      }
     }
     .appointment-list-head {
       background-color: $gray-msc5;
@@ -723,6 +723,16 @@ $red-msc4: #BE0B00;
           }
         }
       }
+    }
+  }
+  #panel5 {
+    .accordion-title {
+      background-color: $gray-msc5;
+      color: $gray-msc1;
+      font-weight: 900;
+      font-size: 1.2em;
+      border-bottom: 2px solid $msc-white;
+      text-align: left;
     }
   }
 }

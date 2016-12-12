@@ -1,0 +1,29 @@
+<% if !@cal.authorization.expired? && user_signed_in? %>
+  <div class="calendar-selection-list-container">
+    <div class="calendar-selection-list-head row">
+      <div class="col-title column large-2 medium-2 small-2">
+        Nombre del Calendario
+      </div>
+    </div>
+    <div class="calendar-selection-list-subcontainer">
+      <% if !@calendar.items.nil? %>
+        <% @calendar.items.each do |item| %>
+          <!-- <a class="row calendar-selection-list-element" data-cal="<%= item.id %>">
+            <div class="calendar-inside-text">
+              <%= item.summary  %>
+            </div>
+          </a> -->
+          <div class="row calendar-selection-list-element">
+            <%= label_tag "calendar_" + item.id, item.summary, class: "calendar-selection-label"  %>
+            <%= radio_button_tag "calendar", item.id, false, "data-cal": item.id, class: "calendar-selection-item" %>
+          </div>
+        <% end %>
+      <% end %>
+      <a id="add-calendar-button" class="row calendar-selection-list-element">
+        <div class="calendar-inside-text">
+          <span>+</span> Agregar Calendario
+        </div>
+      </a>
+    </div>
+  </div>
+<% end %>

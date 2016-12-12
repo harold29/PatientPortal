@@ -43,13 +43,13 @@ class PatientsController < ApplicationController
   def add_appointment
     if user_signed_in?
       patient = Patient.find_by_user_id(current_user.id)
-      schedule = Schedule.where("day = ? AND hour = ?", params[:appointment_date], params[:appointment_hour])
+      schedule = Schedule.where("day = ? AND hour = ?", params[:appointment_date], params[:appointment_hour])[0]
       appointment = Appointment.create(service_id: params[:service_id], accepted: false, appointment_date: params[:appointment_date], patient_id: patient.id, schedule_id: schedule.id)
       if (appointment.persisted?)
         service = Service.find_by_id(params[:service_id])
         clinic = Clinic.find_by_id(service.clinic_id)
         #schedule = Schedule.where("day = ? AND hour = ?", params[:appointment_date], params[:appointment_hour])
-        schedule.first.update(available: false)
+        schedule.update(available: false)
         UserMailer.appointment_email(appointment, current_user, service, clinic).deliver_later
         respond_to do |format|
           format.json { render json: appointment, status: :created }

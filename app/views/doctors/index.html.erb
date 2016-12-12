@@ -5,12 +5,13 @@
       <li class="tabs-title"><a class="title-link" href="#panel2">Reportes</a></li>
       <li class="tabs-title"><a class="title-link" href="#panel3">Historial de Citas</a></li>
       <li class="tabs-title"><a class="title-link" href="#panel4">Pacientes</a></li>
+      <li class="tabs-title"><a href="#panel5" class="title-link">Configuracion</a></li>
       <li class="tabs-button" id="logout-button"><%= link_to 'Cerrar Sesion', destroy_user_session_path %></li>
     </ul>
     <div class="tabs-content" id="harsh-desert" data-tabs-content="msc-doctors-tabs">
       <div class="tabs-panel is-active" id="panel1">
         <div class="appointment-list-container">
-          <div class="appointment-list-title-row row">
+          <div class="appointment-list-title-row title-row row">
             <h5 class="title">
               Citas Pendientes
             </h5>
@@ -71,15 +72,6 @@
                         <i id="check-<%= app.id.to_s %>" data-appointment=<%= app.id.to_s %> class="fi-check check-not-accepted"></i>             
                       <% end %>
                     </a>
-                    <!-- <a class="action-button left-action-button" <% if !app.accepted %> data-open="confirmation-accepted-<%= app.id.to_s %>" <% end %> >
-                      <span data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="2" title="Aceptar Cita." class="has-tip top inside-img-button">
-                        <% if app.accepted %>
-                          <i id="check-<%= app.id.to_s %>" class="fi-check check-accepted" data-appointment=<%= app.id.to_s %>></i>
-                        <% else %>
-                          <i id="check-<%= app.id.to_s %>" data-appointment=<%= app.id.to_s %> class="fi-check check-not-accepted"></i>             
-                        <% end %>
-                      </span>
-                    </a> -->
                     <%# if !app.accepted #%>
                       <div class="reveal" id="confirmation-accepted-<%= app.id.to_s %>" data-reveal>
                         <h1>Confirmacion</h1>
@@ -97,15 +89,6 @@
                         <i id="x-<%= app.id.to_s %>" class="fi-x x-not-accepted" data-appointment=<%= app.id.to_s %>></i>   
                       <% end %>
                     </a>
-                    <!-- <a class="action-button middle-action-button" <% if app.accepted %>data-open="confirmation-not-accepted-<%= app.id.to_s %>" <% end %> >
-                      <span data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="2" title="Rechazar Cita." class="has-tip top inside-img-button">
-                        <% if app.accepted %>
-                          <i id="x-<%= app.id.to_s %>" data-appointment=<%= app.id.to_s %> class="fi-x x-accepted"></i>
-                        <% else %>
-                          <i id="x-<%= app.id.to_s %>" class="fi-x x-not-accepted" data-appointment=<%= app.id.to_s %>></i>                   
-                        <% end %>
-                      </span>
-                    </a> -->
                     <%# if app.accepted #%>
                       <div class="reveal" id="confirmation-not-accepted-<%= app.id.to_s %>" data-reveal>
                         <h1>Confirmacion</h1>
@@ -133,7 +116,9 @@
         </div>
       </div>
       <div class="tabs-panel" id="panel2">
-      
+        <%# @events.items.each do |e| #%>
+          POTATO: <%# e.summary #%>
+        <%# end #%>
       </div>
       <div class="tabs-panel" id="panel3">
         <% patients = Patient.find_by_doctor_id(@doctor.id)  %>
@@ -146,7 +131,7 @@
               Ultima Visita
             </div>
             <div class="column large-4 medium-4 small-4 action-col-title">
-              Acciones
+              Asistencia
             </div>
           </div>
           <div id="patient-list-elements-subcontainer">
@@ -171,6 +156,36 @@
               </h4>
             <% end %>
           </div>
+        </div>
+      </div>
+      <div id="panel4" class="tabs-panel">
+        
+      </div>
+      <div id="panel5" class="tabs-panel">
+        <div class="" id="configuration-options-container">
+          <div class="configuration-options-title-row title-row row">
+            <h5 class="title">
+              Configuracion
+            </h5>
+          </div>
+          <ul class="accordion" data-accordion>
+            <li class="accordion-item" data-accordion-item>
+              <a href="#" class="accordion-title">Google</a>
+              <div class="accordion-content" data-tab-content>
+                <% if @cal.authorization.expired? %>
+                  <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+                <% else %>
+                  <%= render "calendarinfo"  %>
+                <% end %>        
+              </div>
+            </li>
+            <li class="accordion-item" data-accordion-item>
+              <a href="#" class="accordion-title">Datos del Usuario</a>
+              <div class="accordion-content" data-tab-content>
+                I would start in the open state, due to using the `is-active` state class.
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

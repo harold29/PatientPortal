@@ -1,8 +1,8 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :google_oauth2, ENV["835790794723-bitngll5d8d8atu7a9643easifbqfk44.apps.googleusercontent.com"], ENV["Ge64d2-37G1N3HtbOdcqwO86"],
+  provider :google_oauth2, "631237719552-t3mcqo5lgbp2a0akhmafg8c7smg2te92.apps.googleusercontent.com", "I2zNUxSFlXF57IriG5Gn01Vs",
     {
-      :name => "google",
-      :scope => "email, calendar",
-      :prompt => "select_account"
+      :name => 'google',
+      :scope => 'userinfo.email userinfo.profile https://www.googleapis.com/auth/calendar',
+      :prompt => 'select_account'
     }
 end

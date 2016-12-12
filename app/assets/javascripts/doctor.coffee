@@ -42,7 +42,6 @@ accept_appointment = (button) ->
         $("#check-" + app_id).addClass('check-accepted')
         $("#check-" + app_id).removeClass('check-not-accepted')
         $("#check-elem-" + app_id).attr("data-open","potato")
-        $("#check-elem-" + app_id).attr("aria-controls","potato")
         $("#x-" + app_id).removeClass("x-not-accepted")
         $("#x-" + app_id).addClass('x-accepted')
         #$("#x-" + app_id).attr("data-open", "confirmation-not-accepted-"+app_id)
@@ -77,6 +76,17 @@ cancel_appointment = (button) ->
         $("#check-elem-" + app_id).attr("data-open", "confirmation-accepted-"+app.id)
     error: (data, status, jqXHR) ->
 
+# 
+# 
+#
 
+select_calendar = () ->
+  $(".calendar-selection-item").click (event) ->
+    console.log("calendar-selected")
+    $.ajax
+      url: "/doctors/set_default_calendar",
+      type: "POST",
+      data: {calendar_id: }
 
-
+change_calendar = (button) ->
+   

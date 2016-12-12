@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124210421) do
+ActiveRecord::Schema.define(version: 20161206151813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,22 +140,6 @@ ActiveRecord::Schema.define(version: 20161124210421) do
     t.index ["user_id"], name: "index_patients_on_user_id", using: :btree
   end
 
-  create_table "people", force: :cascade do |t|
-    t.string   "name"
-    t.string   "last_name"
-    t.datetime "birthday"
-    t.integer  "zipcode"
-    t.boolean  "approved"
-    t.string   "role"
-    t.integer  "age"
-    t.string   "street"
-    t.string   "colony"
-    t.string   "gender"
-    t.string   "msc_token"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "relatives", force: :cascade do |t|
     t.string   "name"
     t.string   "kinship"
@@ -183,6 +167,16 @@ ActiveRecord::Schema.define(version: 20161124210421) do
     t.datetime "updated_at", null: false
     t.integer  "clinic_id"
     t.index ["clinic_id"], name: "index_services_on_clinic_id", using: :btree
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.boolean  "cal_sync"
+    t.string   "calendar_id"
+    t.boolean  "send_notifications"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["user_id"], name: "index_settings_on_user_id", using: :btree
   end
 
   create_table "specialties", force: :cascade do |t|
@@ -234,6 +228,8 @@ ActiveRecord::Schema.define(version: 20161124210421) do
     t.string   "provider"
     t.string   "gmail_email"
     t.string   "uid"
+    t.string   "auth_token"
+    t.string   "token_refresh"
     t.index ["address_id"], name: "index_users_on_address_id", using: :btree
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -263,6 +259,7 @@ ActiveRecord::Schema.define(version: 20161124210421) do
   add_foreign_key "relatives", "patients"
   add_foreign_key "schedules", "services"
   add_foreign_key "services", "clinics"
+  add_foreign_key "settings", "users"
   add_foreign_key "specialties", "specialties"
   add_foreign_key "states", "countries"
   add_foreign_key "users", "addresses"

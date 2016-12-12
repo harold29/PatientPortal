@@ -39,6 +39,8 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'omniauth-google-oauth2'
 gem 'rails-latex'
+gem 'google-api-client', '~> 0.9'
+gem 'googleauth'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
