@@ -6,7 +6,7 @@ class Setting < ApplicationRecord
   private
 
   def set_default_values
-    self.cal_sync = false
-    self.send_notifications = false
+    self.cal_sync = true
+    self.send_notifications = true
   end
 end

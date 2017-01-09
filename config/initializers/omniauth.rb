@@ -3,6 +3,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     {
       :name => 'google',
       :scope => 'userinfo.email userinfo.profile https://www.googleapis.com/auth/calendar',
-      :prompt => 'select_account'
+      :prompt => 'consent',
+      :skip_jwt => true
     }
 end

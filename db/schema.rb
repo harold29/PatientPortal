@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206151813) do
+ActiveRecord::Schema.define(version: 20161221144349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -158,6 +158,7 @@ ActiveRecord::Schema.define(version: 20161206151813) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "service_id"
+    t.string   "dayname"
     t.index ["service_id"], name: "index_schedules_on_service_id", using: :btree
   end
 
@@ -176,6 +177,16 @@ ActiveRecord::Schema.define(version: 20161206151813) do
     t.boolean  "send_notifications"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.boolean  "workday_mon"
+    t.boolean  "workday_tue"
+    t.boolean  "workday_wed"
+    t.boolean  "workday_thu"
+    t.boolean  "workday_fri"
+    t.boolean  "workday_sat"
+    t.boolean  "workday_sun"
+    t.integer  "appointment_block"
+    t.time     "initial_work_hour"
+    t.time     "final_work_hour"
     t.index ["user_id"], name: "index_settings_on_user_id", using: :btree
   end
 

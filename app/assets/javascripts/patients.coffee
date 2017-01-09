@@ -180,6 +180,9 @@ get_date_cal = () ->
           $("#appointment_date").attr("data-date", moment($(this).data("date")).format("YYYY-MM-DD"))
           serviceid = $("#service_id").val()
           schedule_ajax moment($(this).data("date")).format("YYYY-MM-DD"), serviceid
+          $("#calendar-container").hide()
+        else
+          $("#calendar-container").hide()
   
 
 on_calendar_change_event = () ->

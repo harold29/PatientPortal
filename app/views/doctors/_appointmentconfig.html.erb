@@ -1,0 +1,94 @@
+<% if user_signed_in? %>
+  <% doc = Doctor.find_by_user_id(current_user.id) %>
+  <% if !doc.nil? %>
+    <% serv = Service.find_by_id(doc.service_id) %>
+    <div class="container" id="appointment-config-container">
+      <div class="row header" id="service-header">
+        <div class="column large-6 medium-6 small-6">
+          Centro Médico
+        </div>
+      </div>
+      <div class="row subcontainer" id="service-subcontainer">
+        <% clinics = Clinic.all %>
+        <% if !serv.nil? %>
+          <%= select_tag "clinic", options_from_collection_for_select(clinics, "id", "name", serv.clinic_id), prompt:  "Centro Medico", 'required': " "%>
+        <% else %>
+          <%= select_tag "clinic", options_from_collection_for_select(clinics, "id", "name", "Centro Medico"), prompt:  "Centro Medico", 'required': " "%>
+        <% end %>
+      </div>
+      <div class="row header" id="service-header">
+        <div class="column large-6 medium-6 small-6">
+          Área Médica
+        </div>
+      </div>
+      <div class="row subcontainer" id="service-subcontainer">
+        <% services = Service.all %>
+        <% if !doc.service_id.nil? %>
+          <%= select_tag :service_id, options_for_select(services.map { |c| [c.name, c.id, {:'data-clinic' => c.clinic_id}]}, serv.id), prompt: "Área Médica" , disabled: true, 'required': " ", class: 'disabled-select' %>
+        <% else %>
+          <%= select_tag :service_id, options_for_select(services.map { |c| [c.name, c.id, {:'data-clinic' => c.clinic_id}]}), prompt: "Área Médica", disabled: true, 'required': " ", class: 'disabled-select' %>
+        <% end %>  
+      </div>
+      <div class="row header" id="schedule-header">
+        <div class="column large-6 medium-6 small-6">
+          Horario del Servicio
+        </div>
+      </div>
+      <div id="schedule-configuration-container">
+        <% days = ["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]  %>
+        <%# Each day is represented at server level as number. 0 corresponds to Monday, 1 to Tuesday and etc by mosin #%>
+        <div class="row subcontainer schedule-subcontainer">
+          <h2 class="subtitle">Seleccione sus días laborales</h2>
+          <% days.each_with_index do |day, index| %>
+            <div class="columns workday-container">
+              <%if !@w_days.nil? %>
+                <% if @w_days.include? day %>
+                  <%= check_box_tag "workday-" + day.downcase, index, true, {class: "day_check_box", id: "workday-" + day.downcase } %>
+                <% else %>
+                  <%= check_box_tag "workday-" + day.downcase, index, false, {class: "day_check_box", id: "workday-" + day.downcase } %>
+                <% end %>
+              <% else %>
+                <%= check_box_tag "workday-" + day.downcase, index, false, {class: "day_check_box", id: "workday-" + day.downcase } %>
+              <% end %>
+              <div class="day-label">
+                <%= label_tag "workday-" + day.downcase, day, class:  "day_label", id: day.downcase + "-label" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <h3 class="subtitle row">
+          Horario de trabajo
+        </h3>
+        <div class="row subcontainer schedule-subcontainer">
+          <% time = Time.now  %>
+          <div class="column large-2 medium-2 field-col">
+            <%= select_hour time, prompt: "Hora", field_name: "initial-hour"  %>:
+            <%= select_minute time, prompt: "Minuto", field_name: "initial-minute"  %>  
+          </div>
+          <div class="column" id="letter-mid-col" >a</div>
+          <div class="column large-2 medium-2 field-col">
+            <%= select_hour time, prompt: "Hora", field_name: "final-hour" %>:
+            <%= select_minute time, prompt: "Minuto", field_name: "final-minute" %>  
+          </div>
+          <div class="column large-3 medium-3 large-offset-2" id="duration-label-col">
+            <%= label_tag :appointment_block, "Duración de la Consulta", class: "subtitle" %>
+          </div>
+          <div class="column large-3 medium-3" id="duration-field">
+            <% duration = [10, 15, 20, 25, 30, 45, 60, 120, 240] %>
+            <%= select_tag :appointment_block, options_for_select(duration), 'required': " ", class: 'appointment-block' %>
+            <%# number_field_tag :appointment_block, nil, in: 10..200, step: 10, class: "appointment-block" %><span> Minutos </span>
+          </div>
+        </div>
+        <%#
+        <div class="row subcontainer schedule-subcontainer">
+          <%= label_tag :appointment_block, "Duración de la Consulta", class: "subtitle" 
+          <%= number_field_tag :appointment_block, nil, in: 10..200, step: 10, class: "appointment-block"<span> Minutos </span>
+        </div>
+        #%>
+      </div>
+      <div class="row">
+        <%= button_tag "Guardar", id: "appointment_submit_button"  %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

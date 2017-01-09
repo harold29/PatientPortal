@@ -14,5 +14,8 @@ module Msc
 
     #Add custom fonts folder to rails pipeline
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    #Configure locale
+    config.i18n.default_locale = 'es'
   end
 end

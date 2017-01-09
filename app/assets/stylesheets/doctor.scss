@@ -608,6 +608,8 @@ $red-msc4: #BE0B00;
 .fi-zoom-in:before { content: "\f219"; }
 .fi-zoom-out:before { content: "\f21a"; }
 
+// ======================= MODALS ==========================
+
 .reveal {
   text-align: center;
   border-bottom: 5px solid $blue4-msc !important;
@@ -639,6 +641,35 @@ $red-msc4: #BE0B00;
     }
   }
 }
+
+// #add-calendar-modal {
+//   padding-left: 4%;
+//   padding-right: 4%;
+//   h1 {
+//     margin-bottom: 5%;
+//   }
+
+//   .form-field {
+//     font-style: italic;
+//   }
+  
+//   #add-calendar-submit {
+//     background-color: $blue4-msc;
+//     color: white;
+//     border: none;
+//     width: 30%;
+//     padding-top: 10px;
+//     padding-bottom: 10px;
+//     font-weight: 800;
+//     margin-top: 3%;
+//     &:hover {
+//       background-color: white;
+//       color: $blue4-msc;
+//     }
+//   }
+// }
+
+// ===========================END MODALS============================
 
 .tabs {
   .tabs-title, .tabs-button {
@@ -733,6 +764,225 @@ $red-msc4: #BE0B00;
       font-size: 1.2em;
       border-bottom: 2px solid $msc-white;
       text-align: left;
+    }
+
+    .accordion-content {
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-bottom: 3%;
+
+      .calendar-notifications-row {
+        border-bottom: 2px solid white;
+        background-color: $gray-msc5;
+        .checked-icon {
+          display: none !important;
+        }
+        label {
+          display: inline-block;
+          text-align: left;
+          float: left;
+          width: 100%;
+        }
+        input {
+          display: none;
+          &:checked + .column {
+            .checked-icon {
+              display: inline-block !important;
+            }
+          }
+        }
+
+        &:hover {
+          background-color: $gray-msc4;
+        }
+      }
+
+      .calendar-selection-list-head, .header {
+        padding-bottom: 15px;
+        padding-top: 15px;
+        background-color: $blue4-msc;
+        color: white;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        font-weight: 800;
+        text-align: left;
+      }
+      input[type="radio"] {
+        visibility: hidden;
+        display: none;
+        & + .column {
+          .checked-icon {
+            display: none;
+          }
+          .no-checked-icon {
+            visibility: visible;
+            display: block;
+          }
+        }
+
+        &:checked + .column {
+          .checked-icon {
+            visibility: visible;
+            display: block;
+          } 
+          .no-checked-icon {
+            visibility: hidden !important;
+            display: none;            
+          }
+        }
+      }
+
+      .calendar-selection-list-element {
+        background-color: $gray-msc5;
+        border-bottom: 2px solid white !important;
+        &:hover {
+          background-color: $gray-msc4;
+        }
+      }
+      
+      .icon-container {
+        .status-icon {
+          font-size: 1.8em !important;
+          padding-top: 5px !important;
+          padding-bottom: 5px !important;
+        }
+        .checked-icon {
+          color: $green-msc4;
+        }
+
+        .no-checked-icon {
+          color: $red-msc4;
+        }
+      }
+
+      label {
+        cursor: pointer;
+        text-align: left;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        font-size: 1.2em;
+        &:hover {
+
+        }
+      }
+
+      // .subcontainer {
+      //   select {
+      //     margin-bottom: 0;
+      //   }
+      // }
+
+      #schedule-configuration-container {
+        padding: 20px;
+        border: 1px solid $gray-msc4; 
+      }
+      .subtitle {
+        font-size: 1.4em;
+        text-align: left;
+        color: $gray-msc1;
+        padding-left: 0;
+        padding-top: 10px;
+        padding-right: 10px;
+        font-style: italic;
+        font-weight: 300;
+      }
+
+      .schedule-subcontainer {
+        
+        .workday-container {
+          width: 14.28% !important;
+          padding: 0 !important;
+          padding-left: 0.3% !important;
+          padding-right: 0.3% !important;
+          input:checked + .day-label {
+            background-color: $blue4-msc;
+            border: 2px solid white;
+            label {
+              color: white;
+              font-weight: 700;
+              border: none;
+            }
+          }
+          label {
+            text-align: center;
+            padding-left: 0 !important;
+            font-size: 1.4em;
+            border: 1px solid $gray-msc4;
+            color: $gray-msc1;
+            &:hover {
+              background-color: $blue4-msc;
+              color: white;
+            }
+          }
+          input {
+            visibility: none;
+            display: none;  
+          }
+        }
+        #letter-mid-col {
+          font-size: 2em;
+          font-weight: 800;
+          color: $gray-msc4;
+          padding-left: 0;
+          padding-right: 0;
+          width: 4%;
+        }
+        .field-col {
+          float: left;
+          text-align: left;
+          // text-align: center;
+          padding-left: 0;
+          padding-right: 0;
+          width: auto;
+          select {
+            width: 60px;
+            font-style: italic;
+            color: $gray-msc1;
+          }
+        }
+
+        #duration-label-col {
+          float: left;
+          padding-right: 0;
+          label {
+            text-align: right;
+            padding-right: 0;
+          }
+        }
+        .appointment-block {
+          width: 100px;
+          font-style: italic;
+          color: $gray-msc1;
+          display: inline-block;
+          float: left;
+        }
+        span {
+          display: inline-block;
+          float: left;
+          line-height: 37px;
+          float: left;
+          font-size: 1.2em;
+          color: gray;
+          font-style: italic;
+          font-weight: 400;
+          padding-left: 10px;
+        }
+      }
+      #appointment_submit_button {
+        margin-top: 20px;
+        background-color: $blue4-msc;
+        color: white;
+        font-size: 1.3em;
+        font-weight: 800;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 45px;
+        padding-left: 45px;
+        &:hover {
+          box-shadow: 4px 4px 0px #006272;
+        }
+      }
     }
   }
 }

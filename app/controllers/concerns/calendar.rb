@@ -7,19 +7,13 @@ module Calendar
   def init_calendar
     calendar = Google::Apis::CalendarV3::CalendarService.new
     calendar.authorization = user_credentials_for(calendar)
-    # #abort("potato")
     calendar.authorization.refresh!
-    #calendar.list_calendar_lists
     calendar
   end
 
   def user_credentials_for(calendar)
     secrets = Google::APIClient::ClientSecrets.new({"web" => {"access_token" => current_user.auth_token, "refresh_token" => current_user.token_refresh, "client_id" => "631237719552-t3mcqo5lgbp2a0akhmafg8c7smg2te92.apps.googleusercontent.com", "client_secret" => "I2zNUxSFlXF57IriG5Gn01Vs"}})
-    #cal = Google::Apis::CalendarV3::CalendarService.new
     secrets.to_authorization
-    # calendar.authorization = secrets.to_authorization
-    # calendar.authorization.refresh!
-    #calendar.list_calendar_lists
   end
 
   def get_credentials(calendar)
@@ -30,23 +24,66 @@ module Calendar
     calendar.list_calendar_lists
   end
 
-  def set_default_calendar
-    set = Setting.find_by_user_id(current_user.id)
-    if set.nil?
-      set = Setting.create(user: current_user, calendar_id: params[:calendar_id])
+  # 
+  # Set calendar_id in Settings. Border case not tested. by mosin.
+  # 
+
+  def set_calendar_in_settings
+    setting = Setting.find_by_user_id(current_user.id)
+    if setting.nil?
+      setting = Setting.create(user_id: current_user.id, calendar_id: params[:calendar_id])
     else
-      set.calendar_id = params[:calendar_id]
-      set.save
+      setting.calendar_id = params[:calendar_id]
+      setting.save
+    end
+    respond_to do |format|
+      if setting.persisted?
+        format.json {render json: setting, status: :accepted}
+      else
+        format.json {render json: setting.error, status: :internal_server_error}
+      end
+    end
+  end
+
+  def notification_status
+    setting = Setting.find_by_user_id(current_user.id)
+    logger.debug params[:notifications]
+    if setting.nil?
+      setting = Setting.create(user_id: current_user.id, send_notifications: params[:notifications])
+    else
+      setting.send_notifications = params[:notifications]
+      setting.save
     end
 
     respond_to do |format|
-      if set.persisted?
-        format.json {render json: set, status: :accepted}
+      if setting.persisted?
+        format.json {render json: setting, status: :accepted}
       else
-        format.json {render json: set.errors, status: :internal_server_error}
+        format.json {render json: setting.errors, status: :internal_server_error}
       end
     end
+  end
 
+  def calendar_sync
+    setting = Setting.find_by_user_id(current_user.id)
+    if setting.nil?
+      setting = Setting.create(user_id: current_user.id, cal_sync: params[:sync])
+    else
+      setting.cal_sync = params[:sync]
+      setting.save
+    end
+
+    respond_to do |format|
+      if setting.persisted?
+        format.json {render json: setting, status: :accepted}
+      else
+        format.json {render json: setting.errors, status: :internal_server_error}
+      end
+    end
+  end
+
+  def create_new_calendar
+    
   end
 
   def get_events

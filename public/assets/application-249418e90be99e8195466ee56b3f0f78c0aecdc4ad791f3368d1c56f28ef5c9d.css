@@ -1,3 +1,1978 @@
+@font-face {
+  font-family: "foundation-icons";
+  src: url("foundation-icons.eot");
+  src: url("foundation-icons.eot?#iefix") format("embedded-opentype"), url("foundation-icons.woff") format("woff"), url("foundation-icons.ttf") format("truetype"), url("foundation-icons.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 33, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-address-book:before,
+.fi-alert:before,
+.fi-align-center:before,
+.fi-align-justify:before,
+.fi-align-left:before,
+.fi-align-right:before,
+.fi-anchor:before,
+.fi-annotate:before,
+.fi-archive:before,
+.fi-arrow-down:before,
+.fi-arrow-left:before,
+.fi-arrow-right:before,
+.fi-arrow-up:before,
+.fi-arrows-compress:before,
+.fi-arrows-expand:before,
+.fi-arrows-in:before,
+.fi-arrows-out:before,
+.fi-asl:before,
+.fi-asterisk:before,
+.fi-at-sign:before,
+.fi-background-color:before,
+.fi-battery-empty:before,
+.fi-battery-full:before,
+.fi-battery-half:before,
+.fi-bitcoin-circle:before,
+.fi-bitcoin:before,
+.fi-blind:before,
+.fi-bluetooth:before,
+.fi-bold:before,
+.fi-book-bookmark:before,
+.fi-book:before,
+.fi-bookmark:before,
+.fi-braille:before,
+.fi-burst-new:before,
+.fi-burst-sale:before,
+.fi-burst:before,
+.fi-calendar:before,
+.fi-camera:before,
+.fi-check:before,
+.fi-checkbox:before,
+.fi-clipboard-notes:before,
+.fi-clipboard-pencil:before,
+.fi-clipboard:before,
+.fi-clock:before,
+.fi-closed-caption:before,
+.fi-cloud:before,
+.fi-comment-minus:before,
+.fi-comment-quotes:before,
+.fi-comment-video:before,
+.fi-comment:before,
+.fi-comments:before,
+.fi-compass:before,
+.fi-contrast:before,
+.fi-credit-card:before,
+.fi-crop:before,
+.fi-crown:before,
+.fi-css3:before,
+.fi-database:before,
+.fi-die-five:before,
+.fi-die-four:before,
+.fi-die-one:before,
+.fi-die-six:before,
+.fi-die-three:before,
+.fi-die-two:before,
+.fi-dislike:before,
+.fi-dollar-bill:before,
+.fi-dollar:before,
+.fi-download:before,
+.fi-eject:before,
+.fi-elevator:before,
+.fi-euro:before,
+.fi-eye:before,
+.fi-fast-forward:before,
+.fi-female-symbol:before,
+.fi-female:before,
+.fi-filter:before,
+.fi-first-aid:before,
+.fi-flag:before,
+.fi-folder-add:before,
+.fi-folder-lock:before,
+.fi-folder:before,
+.fi-foot:before,
+.fi-foundation:before,
+.fi-graph-bar:before,
+.fi-graph-horizontal:before,
+.fi-graph-pie:before,
+.fi-graph-trend:before,
+.fi-guide-dog:before,
+.fi-hearing-aid:before,
+.fi-heart:before,
+.fi-home:before,
+.fi-html5:before,
+.fi-indent-less:before,
+.fi-indent-more:before,
+.fi-info:before,
+.fi-italic:before,
+.fi-key:before,
+.fi-laptop:before,
+.fi-layout:before,
+.fi-lightbulb:before,
+.fi-like:before,
+.fi-link:before,
+.fi-list-bullet:before,
+.fi-list-number:before,
+.fi-list-thumbnails:before,
+.fi-list:before,
+.fi-lock:before,
+.fi-loop:before,
+.fi-magnifying-glass:before,
+.fi-mail:before,
+.fi-male-female:before,
+.fi-male-symbol:before,
+.fi-male:before,
+.fi-map:before,
+.fi-marker:before,
+.fi-megaphone:before,
+.fi-microphone:before,
+.fi-minus-circle:before,
+.fi-minus:before,
+.fi-mobile-signal:before,
+.fi-mobile:before,
+.fi-monitor:before,
+.fi-mountains:before,
+.fi-music:before,
+.fi-next:before,
+.fi-no-dogs:before,
+.fi-no-smoking:before,
+.fi-page-add:before,
+.fi-page-copy:before,
+.fi-page-csv:before,
+.fi-page-delete:before,
+.fi-page-doc:before,
+.fi-page-edit:before,
+.fi-page-export-csv:before,
+.fi-page-export-doc:before,
+.fi-page-export-pdf:before,
+.fi-page-export:before,
+.fi-page-filled:before,
+.fi-page-multiple:before,
+.fi-page-pdf:before,
+.fi-page-remove:before,
+.fi-page-search:before,
+.fi-page:before,
+.fi-paint-bucket:before,
+.fi-paperclip:before,
+.fi-pause:before,
+.fi-paw:before,
+.fi-paypal:before,
+.fi-pencil:before,
+.fi-photo:before,
+.fi-play-circle:before,
+.fi-play-video:before,
+.fi-play:before,
+.fi-plus:before,
+.fi-pound:before,
+.fi-power:before,
+.fi-previous:before,
+.fi-price-tag:before,
+.fi-pricetag-multiple:before,
+.fi-print:before,
+.fi-prohibited:before,
+.fi-projection-screen:before,
+.fi-puzzle:before,
+.fi-quote:before,
+.fi-record:before,
+.fi-refresh:before,
+.fi-results-demographics:before,
+.fi-results:before,
+.fi-rewind-ten:before,
+.fi-rewind:before,
+.fi-rss:before,
+.fi-safety-cone:before,
+.fi-save:before,
+.fi-share:before,
+.fi-sheriff-badge:before,
+.fi-shield:before,
+.fi-shopping-bag:before,
+.fi-shopping-cart:before,
+.fi-shuffle:before,
+.fi-skull:before,
+.fi-social-500px:before,
+.fi-social-adobe:before,
+.fi-social-amazon:before,
+.fi-social-android:before,
+.fi-social-apple:before,
+.fi-social-behance:before,
+.fi-social-bing:before,
+.fi-social-blogger:before,
+.fi-social-delicious:before,
+.fi-social-designer-news:before,
+.fi-social-deviant-art:before,
+.fi-social-digg:before,
+.fi-social-dribbble:before,
+.fi-social-drive:before,
+.fi-social-dropbox:before,
+.fi-social-evernote:before,
+.fi-social-facebook:before,
+.fi-social-flickr:before,
+.fi-social-forrst:before,
+.fi-social-foursquare:before,
+.fi-social-game-center:before,
+.fi-social-github:before,
+.fi-social-google-plus:before,
+.fi-social-hacker-news:before,
+.fi-social-hi5:before,
+.fi-social-instagram:before,
+.fi-social-joomla:before,
+.fi-social-lastfm:before,
+.fi-social-linkedin:before,
+.fi-social-medium:before,
+.fi-social-myspace:before,
+.fi-social-orkut:before,
+.fi-social-path:before,
+.fi-social-picasa:before,
+.fi-social-pinterest:before,
+.fi-social-rdio:before,
+.fi-social-reddit:before,
+.fi-social-skillshare:before,
+.fi-social-skype:before,
+.fi-social-smashing-mag:before,
+.fi-social-snapchat:before,
+.fi-social-spotify:before,
+.fi-social-squidoo:before,
+.fi-social-stack-overflow:before,
+.fi-social-steam:before,
+.fi-social-stumbleupon:before,
+.fi-social-treehouse:before,
+.fi-social-tumblr:before,
+.fi-social-twitter:before,
+.fi-social-vimeo:before,
+.fi-social-windows:before,
+.fi-social-xbox:before,
+.fi-social-yahoo:before,
+.fi-social-yelp:before,
+.fi-social-youtube:before,
+.fi-social-zerply:before,
+.fi-social-zurb:before,
+.fi-sound:before,
+.fi-star:before,
+.fi-stop:before,
+.fi-strikethrough:before,
+.fi-subscript:before,
+.fi-superscript:before,
+.fi-tablet-landscape:before,
+.fi-tablet-portrait:before,
+.fi-target-two:before,
+.fi-target:before,
+.fi-telephone-accessible:before,
+.fi-telephone:before,
+.fi-text-color:before,
+.fi-thumbnails:before,
+.fi-ticket:before,
+.fi-torso-business:before,
+.fi-torso-female:before,
+.fi-torso:before,
+.fi-torsos-all-female:before,
+.fi-torsos-all:before,
+.fi-torsos-female-male:before,
+.fi-torsos-male-female:before,
+.fi-torsos:before,
+.fi-trash:before,
+.fi-trees:before,
+.fi-trophy:before,
+.fi-underline:before,
+.fi-universal-access:before,
+.fi-unlink:before,
+.fi-unlock:before,
+.fi-upload-cloud:before,
+.fi-upload:before,
+.fi-usb:before,
+.fi-video:before,
+.fi-volume-none:before,
+.fi-volume-strike:before,
+.fi-volume:before,
+.fi-web:before,
+.fi-wheelchair:before,
+.fi-widget:before,
+.fi-wrench:before,
+.fi-x-circle:before,
+.fi-x:before,
+.fi-yen:before,
+.fi-zoom-in:before,
+.fi-zoom-out:before {
+  font-family: "foundation-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+/* line 327, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-address-book:before {
+  content: "\f100";
+}
+
+/* line 328, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-alert:before {
+  content: "\f101";
+}
+
+/* line 329, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-align-center:before {
+  content: "\f102";
+}
+
+/* line 330, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-align-justify:before {
+  content: "\f103";
+}
+
+/* line 331, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-align-left:before {
+  content: "\f104";
+}
+
+/* line 332, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-align-right:before {
+  content: "\f105";
+}
+
+/* line 333, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-anchor:before {
+  content: "\f106";
+}
+
+/* line 334, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-annotate:before {
+  content: "\f107";
+}
+
+/* line 335, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-archive:before {
+  content: "\f108";
+}
+
+/* line 336, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-arrow-down:before {
+  content: "\f109";
+}
+
+/* line 337, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-arrow-left:before {
+  content: "\f10a";
+}
+
+/* line 338, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-arrow-right:before {
+  content: "\f10b";
+}
+
+/* line 339, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-arrow-up:before {
+  content: "\f10c";
+}
+
+/* line 340, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-arrows-compress:before {
+  content: "\f10d";
+}
+
+/* line 341, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-arrows-expand:before {
+  content: "\f10e";
+}
+
+/* line 342, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-arrows-in:before {
+  content: "\f10f";
+}
+
+/* line 343, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-arrows-out:before {
+  content: "\f110";
+}
+
+/* line 344, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-asl:before {
+  content: "\f111";
+}
+
+/* line 345, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-asterisk:before {
+  content: "\f112";
+}
+
+/* line 346, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-at-sign:before {
+  content: "\f113";
+}
+
+/* line 347, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-background-color:before {
+  content: "\f114";
+}
+
+/* line 348, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-battery-empty:before {
+  content: "\f115";
+}
+
+/* line 349, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-battery-full:before {
+  content: "\f116";
+}
+
+/* line 350, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-battery-half:before {
+  content: "\f117";
+}
+
+/* line 351, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-bitcoin-circle:before {
+  content: "\f118";
+}
+
+/* line 352, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-bitcoin:before {
+  content: "\f119";
+}
+
+/* line 353, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-blind:before {
+  content: "\f11a";
+}
+
+/* line 354, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-bluetooth:before {
+  content: "\f11b";
+}
+
+/* line 355, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-bold:before {
+  content: "\f11c";
+}
+
+/* line 356, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-book-bookmark:before {
+  content: "\f11d";
+}
+
+/* line 357, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-book:before {
+  content: "\f11e";
+}
+
+/* line 358, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-bookmark:before {
+  content: "\f11f";
+}
+
+/* line 359, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-braille:before {
+  content: "\f120";
+}
+
+/* line 360, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-burst-new:before {
+  content: "\f121";
+}
+
+/* line 361, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-burst-sale:before {
+  content: "\f122";
+}
+
+/* line 362, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-burst:before {
+  content: "\f123";
+}
+
+/* line 363, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-calendar:before {
+  content: "\f124";
+}
+
+/* line 364, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-camera:before {
+  content: "\f125";
+}
+
+/* line 365, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-check:before {
+  content: "\f126";
+}
+
+/* line 366, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-checkbox:before {
+  content: "\f127";
+}
+
+/* line 367, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-clipboard-notes:before {
+  content: "\f128";
+}
+
+/* line 368, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-clipboard-pencil:before {
+  content: "\f129";
+}
+
+/* line 369, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-clipboard:before {
+  content: "\f12a";
+}
+
+/* line 370, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-clock:before {
+  content: "\f12b";
+}
+
+/* line 371, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-closed-caption:before {
+  content: "\f12c";
+}
+
+/* line 372, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-cloud:before {
+  content: "\f12d";
+}
+
+/* line 373, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-comment-minus:before {
+  content: "\f12e";
+}
+
+/* line 374, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-comment-quotes:before {
+  content: "\f12f";
+}
+
+/* line 375, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-comment-video:before {
+  content: "\f130";
+}
+
+/* line 376, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-comment:before {
+  content: "\f131";
+}
+
+/* line 377, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-comments:before {
+  content: "\f132";
+}
+
+/* line 378, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-compass:before {
+  content: "\f133";
+}
+
+/* line 379, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-contrast:before {
+  content: "\f134";
+}
+
+/* line 380, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-credit-card:before {
+  content: "\f135";
+}
+
+/* line 381, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-crop:before {
+  content: "\f136";
+}
+
+/* line 382, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-crown:before {
+  content: "\f137";
+}
+
+/* line 383, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-css3:before {
+  content: "\f138";
+}
+
+/* line 384, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-database:before {
+  content: "\f139";
+}
+
+/* line 385, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-die-five:before {
+  content: "\f13a";
+}
+
+/* line 386, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-die-four:before {
+  content: "\f13b";
+}
+
+/* line 387, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-die-one:before {
+  content: "\f13c";
+}
+
+/* line 388, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-die-six:before {
+  content: "\f13d";
+}
+
+/* line 389, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-die-three:before {
+  content: "\f13e";
+}
+
+/* line 390, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-die-two:before {
+  content: "\f13f";
+}
+
+/* line 391, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-dislike:before {
+  content: "\f140";
+}
+
+/* line 392, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-dollar-bill:before {
+  content: "\f141";
+}
+
+/* line 393, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-dollar:before {
+  content: "\f142";
+}
+
+/* line 394, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-download:before {
+  content: "\f143";
+}
+
+/* line 395, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-eject:before {
+  content: "\f144";
+}
+
+/* line 396, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-elevator:before {
+  content: "\f145";
+}
+
+/* line 397, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-euro:before {
+  content: "\f146";
+}
+
+/* line 398, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-eye:before {
+  content: "\f147";
+}
+
+/* line 399, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-fast-forward:before {
+  content: "\f148";
+}
+
+/* line 400, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-female-symbol:before {
+  content: "\f149";
+}
+
+/* line 401, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-female:before {
+  content: "\f14a";
+}
+
+/* line 402, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-filter:before {
+  content: "\f14b";
+}
+
+/* line 403, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-first-aid:before {
+  content: "\f14c";
+}
+
+/* line 404, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-flag:before {
+  content: "\f14d";
+}
+
+/* line 405, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-folder-add:before {
+  content: "\f14e";
+}
+
+/* line 406, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-folder-lock:before {
+  content: "\f14f";
+}
+
+/* line 407, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-folder:before {
+  content: "\f150";
+}
+
+/* line 408, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-foot:before {
+  content: "\f151";
+}
+
+/* line 409, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-foundation:before {
+  content: "\f152";
+}
+
+/* line 410, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-graph-bar:before {
+  content: "\f153";
+}
+
+/* line 411, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-graph-horizontal:before {
+  content: "\f154";
+}
+
+/* line 412, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-graph-pie:before {
+  content: "\f155";
+}
+
+/* line 413, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-graph-trend:before {
+  content: "\f156";
+}
+
+/* line 414, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-guide-dog:before {
+  content: "\f157";
+}
+
+/* line 415, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-hearing-aid:before {
+  content: "\f158";
+}
+
+/* line 416, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-heart:before {
+  content: "\f159";
+}
+
+/* line 417, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-home:before {
+  content: "\f15a";
+}
+
+/* line 418, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-html5:before {
+  content: "\f15b";
+}
+
+/* line 419, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-indent-less:before {
+  content: "\f15c";
+}
+
+/* line 420, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-indent-more:before {
+  content: "\f15d";
+}
+
+/* line 421, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-info:before {
+  content: "\f15e";
+}
+
+/* line 422, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-italic:before {
+  content: "\f15f";
+}
+
+/* line 423, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-key:before {
+  content: "\f160";
+}
+
+/* line 424, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-laptop:before {
+  content: "\f161";
+}
+
+/* line 425, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-layout:before {
+  content: "\f162";
+}
+
+/* line 426, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-lightbulb:before {
+  content: "\f163";
+}
+
+/* line 427, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-like:before {
+  content: "\f164";
+}
+
+/* line 428, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-link:before {
+  content: "\f165";
+}
+
+/* line 429, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-list-bullet:before {
+  content: "\f166";
+}
+
+/* line 430, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-list-number:before {
+  content: "\f167";
+}
+
+/* line 431, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-list-thumbnails:before {
+  content: "\f168";
+}
+
+/* line 432, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-list:before {
+  content: "\f169";
+}
+
+/* line 433, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-lock:before {
+  content: "\f16a";
+}
+
+/* line 434, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-loop:before {
+  content: "\f16b";
+}
+
+/* line 435, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-magnifying-glass:before {
+  content: "\f16c";
+}
+
+/* line 436, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-mail:before {
+  content: "\f16d";
+}
+
+/* line 437, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-male-female:before {
+  content: "\f16e";
+}
+
+/* line 438, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-male-symbol:before {
+  content: "\f16f";
+}
+
+/* line 439, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-male:before {
+  content: "\f170";
+}
+
+/* line 440, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-map:before {
+  content: "\f171";
+}
+
+/* line 441, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-marker:before {
+  content: "\f172";
+}
+
+/* line 442, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-megaphone:before {
+  content: "\f173";
+}
+
+/* line 443, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-microphone:before {
+  content: "\f174";
+}
+
+/* line 444, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-minus-circle:before {
+  content: "\f175";
+}
+
+/* line 445, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-minus:before {
+  content: "\f176";
+}
+
+/* line 446, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-mobile-signal:before {
+  content: "\f177";
+}
+
+/* line 447, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-mobile:before {
+  content: "\f178";
+}
+
+/* line 448, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-monitor:before {
+  content: "\f179";
+}
+
+/* line 449, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-mountains:before {
+  content: "\f17a";
+}
+
+/* line 450, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-music:before {
+  content: "\f17b";
+}
+
+/* line 451, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-next:before {
+  content: "\f17c";
+}
+
+/* line 452, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-no-dogs:before {
+  content: "\f17d";
+}
+
+/* line 453, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-no-smoking:before {
+  content: "\f17e";
+}
+
+/* line 454, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-add:before {
+  content: "\f17f";
+}
+
+/* line 455, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-copy:before {
+  content: "\f180";
+}
+
+/* line 456, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-csv:before {
+  content: "\f181";
+}
+
+/* line 457, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-delete:before {
+  content: "\f182";
+}
+
+/* line 458, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-doc:before {
+  content: "\f183";
+}
+
+/* line 459, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-edit:before {
+  content: "\f184";
+}
+
+/* line 460, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-export-csv:before {
+  content: "\f185";
+}
+
+/* line 461, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-export-doc:before {
+  content: "\f186";
+}
+
+/* line 462, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-export-pdf:before {
+  content: "\f187";
+}
+
+/* line 463, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-export:before {
+  content: "\f188";
+}
+
+/* line 464, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-filled:before {
+  content: "\f189";
+}
+
+/* line 465, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-multiple:before {
+  content: "\f18a";
+}
+
+/* line 466, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-pdf:before {
+  content: "\f18b";
+}
+
+/* line 467, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-remove:before {
+  content: "\f18c";
+}
+
+/* line 468, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page-search:before {
+  content: "\f18d";
+}
+
+/* line 469, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-page:before {
+  content: "\f18e";
+}
+
+/* line 470, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-paint-bucket:before {
+  content: "\f18f";
+}
+
+/* line 471, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-paperclip:before {
+  content: "\f190";
+}
+
+/* line 472, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-pause:before {
+  content: "\f191";
+}
+
+/* line 473, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-paw:before {
+  content: "\f192";
+}
+
+/* line 474, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-paypal:before {
+  content: "\f193";
+}
+
+/* line 475, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-pencil:before {
+  content: "\f194";
+}
+
+/* line 476, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-photo:before {
+  content: "\f195";
+}
+
+/* line 477, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-play-circle:before {
+  content: "\f196";
+}
+
+/* line 478, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-play-video:before {
+  content: "\f197";
+}
+
+/* line 479, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-play:before {
+  content: "\f198";
+}
+
+/* line 480, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-plus:before {
+  content: "\f199";
+}
+
+/* line 481, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-pound:before {
+  content: "\f19a";
+}
+
+/* line 482, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-power:before {
+  content: "\f19b";
+}
+
+/* line 483, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-previous:before {
+  content: "\f19c";
+}
+
+/* line 484, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-price-tag:before {
+  content: "\f19d";
+}
+
+/* line 485, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-pricetag-multiple:before {
+  content: "\f19e";
+}
+
+/* line 486, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-print:before {
+  content: "\f19f";
+}
+
+/* line 487, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-prohibited:before {
+  content: "\f1a0";
+}
+
+/* line 488, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-projection-screen:before {
+  content: "\f1a1";
+}
+
+/* line 489, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-puzzle:before {
+  content: "\f1a2";
+}
+
+/* line 490, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-quote:before {
+  content: "\f1a3";
+}
+
+/* line 491, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-record:before {
+  content: "\f1a4";
+}
+
+/* line 492, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-refresh:before {
+  content: "\f1a5";
+}
+
+/* line 493, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-results-demographics:before {
+  content: "\f1a6";
+}
+
+/* line 494, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-results:before {
+  content: "\f1a7";
+}
+
+/* line 495, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-rewind-ten:before {
+  content: "\f1a8";
+}
+
+/* line 496, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-rewind:before {
+  content: "\f1a9";
+}
+
+/* line 497, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-rss:before {
+  content: "\f1aa";
+}
+
+/* line 498, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-safety-cone:before {
+  content: "\f1ab";
+}
+
+/* line 499, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-save:before {
+  content: "\f1ac";
+}
+
+/* line 500, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-share:before {
+  content: "\f1ad";
+}
+
+/* line 501, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-sheriff-badge:before {
+  content: "\f1ae";
+}
+
+/* line 502, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-shield:before {
+  content: "\f1af";
+}
+
+/* line 503, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-shopping-bag:before {
+  content: "\f1b0";
+}
+
+/* line 504, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-shopping-cart:before {
+  content: "\f1b1";
+}
+
+/* line 505, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-shuffle:before {
+  content: "\f1b2";
+}
+
+/* line 506, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-skull:before {
+  content: "\f1b3";
+}
+
+/* line 507, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-500px:before {
+  content: "\f1b4";
+}
+
+/* line 508, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-adobe:before {
+  content: "\f1b5";
+}
+
+/* line 509, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-amazon:before {
+  content: "\f1b6";
+}
+
+/* line 510, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-android:before {
+  content: "\f1b7";
+}
+
+/* line 511, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-apple:before {
+  content: "\f1b8";
+}
+
+/* line 512, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-behance:before {
+  content: "\f1b9";
+}
+
+/* line 513, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-bing:before {
+  content: "\f1ba";
+}
+
+/* line 514, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-blogger:before {
+  content: "\f1bb";
+}
+
+/* line 515, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-delicious:before {
+  content: "\f1bc";
+}
+
+/* line 516, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-designer-news:before {
+  content: "\f1bd";
+}
+
+/* line 517, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-deviant-art:before {
+  content: "\f1be";
+}
+
+/* line 518, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-digg:before {
+  content: "\f1bf";
+}
+
+/* line 519, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-dribbble:before {
+  content: "\f1c0";
+}
+
+/* line 520, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-drive:before {
+  content: "\f1c1";
+}
+
+/* line 521, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-dropbox:before {
+  content: "\f1c2";
+}
+
+/* line 522, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-evernote:before {
+  content: "\f1c3";
+}
+
+/* line 523, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-facebook:before {
+  content: "\f1c4";
+}
+
+/* line 524, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-flickr:before {
+  content: "\f1c5";
+}
+
+/* line 525, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-forrst:before {
+  content: "\f1c6";
+}
+
+/* line 526, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-foursquare:before {
+  content: "\f1c7";
+}
+
+/* line 527, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-game-center:before {
+  content: "\f1c8";
+}
+
+/* line 528, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-github:before {
+  content: "\f1c9";
+}
+
+/* line 529, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-google-plus:before {
+  content: "\f1ca";
+}
+
+/* line 530, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-hacker-news:before {
+  content: "\f1cb";
+}
+
+/* line 531, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-hi5:before {
+  content: "\f1cc";
+}
+
+/* line 532, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-instagram:before {
+  content: "\f1cd";
+}
+
+/* line 533, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-joomla:before {
+  content: "\f1ce";
+}
+
+/* line 534, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-lastfm:before {
+  content: "\f1cf";
+}
+
+/* line 535, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-linkedin:before {
+  content: "\f1d0";
+}
+
+/* line 536, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-medium:before {
+  content: "\f1d1";
+}
+
+/* line 537, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-myspace:before {
+  content: "\f1d2";
+}
+
+/* line 538, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-orkut:before {
+  content: "\f1d3";
+}
+
+/* line 539, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-path:before {
+  content: "\f1d4";
+}
+
+/* line 540, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-picasa:before {
+  content: "\f1d5";
+}
+
+/* line 541, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-pinterest:before {
+  content: "\f1d6";
+}
+
+/* line 542, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-rdio:before {
+  content: "\f1d7";
+}
+
+/* line 543, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-reddit:before {
+  content: "\f1d8";
+}
+
+/* line 544, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-skillshare:before {
+  content: "\f1d9";
+}
+
+/* line 545, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-skype:before {
+  content: "\f1da";
+}
+
+/* line 546, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-smashing-mag:before {
+  content: "\f1db";
+}
+
+/* line 547, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-snapchat:before {
+  content: "\f1dc";
+}
+
+/* line 548, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-spotify:before {
+  content: "\f1dd";
+}
+
+/* line 549, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-squidoo:before {
+  content: "\f1de";
+}
+
+/* line 550, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-stack-overflow:before {
+  content: "\f1df";
+}
+
+/* line 551, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-steam:before {
+  content: "\f1e0";
+}
+
+/* line 552, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-stumbleupon:before {
+  content: "\f1e1";
+}
+
+/* line 553, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-treehouse:before {
+  content: "\f1e2";
+}
+
+/* line 554, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-tumblr:before {
+  content: "\f1e3";
+}
+
+/* line 555, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-twitter:before {
+  content: "\f1e4";
+}
+
+/* line 556, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-vimeo:before {
+  content: "\f1e5";
+}
+
+/* line 557, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-windows:before {
+  content: "\f1e6";
+}
+
+/* line 558, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-xbox:before {
+  content: "\f1e7";
+}
+
+/* line 559, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-yahoo:before {
+  content: "\f1e8";
+}
+
+/* line 560, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-yelp:before {
+  content: "\f1e9";
+}
+
+/* line 561, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-youtube:before {
+  content: "\f1ea";
+}
+
+/* line 562, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-zerply:before {
+  content: "\f1eb";
+}
+
+/* line 563, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-social-zurb:before {
+  content: "\f1ec";
+}
+
+/* line 564, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-sound:before {
+  content: "\f1ed";
+}
+
+/* line 565, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-star:before {
+  content: "\f1ee";
+}
+
+/* line 566, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-stop:before {
+  content: "\f1ef";
+}
+
+/* line 567, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-strikethrough:before {
+  content: "\f1f0";
+}
+
+/* line 568, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-subscript:before {
+  content: "\f1f1";
+}
+
+/* line 569, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-superscript:before {
+  content: "\f1f2";
+}
+
+/* line 570, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-tablet-landscape:before {
+  content: "\f1f3";
+}
+
+/* line 571, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-tablet-portrait:before {
+  content: "\f1f4";
+}
+
+/* line 572, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-target-two:before {
+  content: "\f1f5";
+}
+
+/* line 573, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-target:before {
+  content: "\f1f6";
+}
+
+/* line 574, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-telephone-accessible:before {
+  content: "\f1f7";
+}
+
+/* line 575, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-telephone:before {
+  content: "\f1f8";
+}
+
+/* line 576, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-text-color:before {
+  content: "\f1f9";
+}
+
+/* line 577, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-thumbnails:before {
+  content: "\f1fa";
+}
+
+/* line 578, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-ticket:before {
+  content: "\f1fb";
+}
+
+/* line 579, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-torso-business:before {
+  content: "\f1fc";
+}
+
+/* line 580, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-torso-female:before {
+  content: "\f1fd";
+}
+
+/* line 581, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-torso:before {
+  content: "\f1fe";
+}
+
+/* line 582, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-torsos-all-female:before {
+  content: "\f1ff";
+}
+
+/* line 583, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-torsos-all:before {
+  content: "\f200";
+}
+
+/* line 584, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-torsos-female-male:before {
+  content: "\f201";
+}
+
+/* line 585, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-torsos-male-female:before {
+  content: "\f202";
+}
+
+/* line 586, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-torsos:before {
+  content: "\f203";
+}
+
+/* line 587, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-trash:before {
+  content: "\f204";
+}
+
+/* line 588, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-trees:before {
+  content: "\f205";
+}
+
+/* line 589, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-trophy:before {
+  content: "\f206";
+}
+
+/* line 590, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-underline:before {
+  content: "\f207";
+}
+
+/* line 591, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-universal-access:before {
+  content: "\f208";
+}
+
+/* line 592, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-unlink:before {
+  content: "\f209";
+}
+
+/* line 593, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-unlock:before {
+  content: "\f20a";
+}
+
+/* line 594, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-upload-cloud:before {
+  content: "\f20b";
+}
+
+/* line 595, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-upload:before {
+  content: "\f20c";
+}
+
+/* line 596, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-usb:before {
+  content: "\f20d";
+}
+
+/* line 597, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-video:before {
+  content: "\f20e";
+}
+
+/* line 598, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-volume-none:before {
+  content: "\f20f";
+}
+
+/* line 599, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-volume-strike:before {
+  content: "\f210";
+}
+
+/* line 600, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-volume:before {
+  content: "\f211";
+}
+
+/* line 601, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-web:before {
+  content: "\f212";
+}
+
+/* line 602, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-wheelchair:before {
+  content: "\f213";
+}
+
+/* line 603, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-widget:before {
+  content: "\f214";
+}
+
+/* line 604, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-wrench:before {
+  content: "\f215";
+}
+
+/* line 605, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-x-circle:before {
+  content: "\f216";
+}
+
+/* line 606, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-x:before {
+  content: "\f217";
+}
+
+/* line 607, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-yen:before {
+  content: "\f218";
+}
+
+/* line 608, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-zoom-in:before {
+  content: "\f219";
+}
+
+/* line 609, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.fi-zoom-out:before {
+  content: "\f21a";
+}
+
+/* line 613, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.reveal {
+  text-align: center;
+  border-bottom: 5px solid #01ABC7 !important;
+}
+/* line 616, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.reveal h1 {
+  text-align: center;
+  color: #4C4C4C;
+  text-decoration: underline;
+  text-decoration-color: #01ABC7;
+  text-align: center;
+  font-size: 1.7em;
+  font-weight: 700;
+}
+/* line 626, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.reveal p .lead .modal-keyword {
+  font-weight: 800;
+}
+/* line 631, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.reveal .confirm-button {
+  color: #4C4C4C;
+  background-color: #DDDDDD;
+  padding-left: 9%;
+  padding-right: 9%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+/* line 638, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+.reveal .confirm-button:hover {
+  color: #F7F7F7;
+  background-color: #01ABC7;
+}
+
+/* line 680, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert {
+  margin-right: 10%;
+  margin-left: 10%;
+  font-size: 0.7em;
+  text-align: center;
+  background-color: transparent;
+  border: 0px;
+}
+/* line 687, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert .title-row {
+  background-color: #01ABC7;
+  color: white;
+}
+/* line 690, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert .title-row .title {
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 1.2em;
+  font-weight: 800;
+  line-height: 1.5em;
+  padding-left: 2%;
+  padding-top: 1%;
+}
+/* line 701, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-container {
+  background-color: #F7F7F7;
+}
+/* line 704, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-head {
+  background-color: #DDDDDD;
+  color: #4C4C4C;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-weight: 900;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+/* line 714, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+/* line 719, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row:hover {
+  background-color: #DDDDDD;
+}
+/* line 723, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col {
+  padding: 0;
+}
+/* line 725, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .middle-action-button {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+/* line 729, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .action-button, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .mail-button {
+  font-size: 1.4em;
+}
+/* line 731, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .action-button .has-tip, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .mail-button .has-tip {
+  border-bottom: none !important;
+}
+/* line 734, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .action-button i, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .action-button .check-not-accepted, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .action-button .x-accepted, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .mail-button i, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .mail-button .check-not-accepted, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .mail-button .x-accepted {
+  color: #DDDDDD;
+}
+/* line 737, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .action-button .check-accepted, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .mail-button .check-accepted {
+  color: #00AD96;
+}
+/* line 740, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .action-button .fi-check:hover, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .mail-button .fi-check:hover {
+  color: #00AD96;
+}
+/* line 743, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .action-button .fi-x, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .mail-button .fi-x {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+/* line 748, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .action-button .x-not-accepted, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .mail-button .x-not-accepted {
+  color: #BE0B00;
+}
+/* line 751, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .action-button .fi-mail, #harsh-desert #panel1 .appointment-list-elements-subcontainer .appointment-row .actions-col .mail-button .fi-mail {
+  color: #F78213;
+}
+/* line 760, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-title {
+  background-color: #DDDDDD;
+  color: #4C4C4C;
+  font-weight: 900;
+  font-size: 1.2em;
+  border-bottom: 2px solid #F7F7F7;
+  text-align: left;
+}
+/* line 769, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 3%;
+}
+/* line 774, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .calendar-notifications-row {
+  border-bottom: 2px solid white;
+  background-color: #DDDDDD;
+}
+/* line 777, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .calendar-notifications-row .checked-icon {
+  display: none !important;
+}
+/* line 780, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .calendar-notifications-row label {
+  display: inline-block;
+  text-align: left;
+  float: left;
+  width: 100%;
+}
+/* line 786, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .calendar-notifications-row input {
+  display: none;
+}
+/* line 789, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .calendar-notifications-row input:checked + .column .checked-icon {
+  display: inline-block !important;
+}
+/* line 795, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .calendar-notifications-row:hover {
+  background-color: #999999;
+}
+/* line 800, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .calendar-selection-list-head, #harsh-desert #panel5 .accordion-content .header {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  background-color: #01ABC7;
+  color: white;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: left;
+}
+/* line 810, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content input[type="radio"] {
+  visibility: hidden;
+  display: none;
+}
+/* line 814, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content input[type="radio"] + .column .checked-icon {
+  display: none;
+}
+/* line 817, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content input[type="radio"] + .column .no-checked-icon {
+  visibility: visible;
+  display: block;
+}
+/* line 824, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content input[type="radio"]:checked + .column .checked-icon {
+  visibility: visible;
+  display: block;
+}
+/* line 828, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content input[type="radio"]:checked + .column .no-checked-icon {
+  visibility: hidden !important;
+  display: none;
+}
+/* line 835, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .calendar-selection-list-element {
+  background-color: #DDDDDD;
+  border-bottom: 2px solid white !important;
+}
+/* line 838, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .calendar-selection-list-element:hover {
+  background-color: #999999;
+}
+/* line 844, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .icon-container .status-icon {
+  font-size: 1.8em !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+/* line 849, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .icon-container .checked-icon {
+  color: #00AD96;
+}
+/* line 853, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content .icon-container .no-checked-icon {
+  color: #BE0B00;
+}
+/* line 858, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content label {
+  cursor: pointer;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 1.2em;
+}
+/* line 871, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content #schedule-subcontainer .workday-container {
+  width: 14.28% !important;
+}
+/* line 873, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content #schedule-subcontainer .workday-container input:checked + .day-label {
+  background-color: #01ABC7;
+  border: 2px solid white;
+}
+/* line 876, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content #schedule-subcontainer .workday-container input:checked + .day-label label {
+  color: white;
+  font-weight: 700;
+}
+/* line 881, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content #schedule-subcontainer .workday-container label {
+  text-align: center;
+}
+/* line 885, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/doctor.scss */
+#harsh-desert #panel5 .accordion-content #schedule-subcontainer .workday-container input {
+  visibility: none;
+  display: none;
+}
 @charset "UTF-8";
 /**
  * Foundation for Sites by ZURB
@@ -5356,6 +7331,784 @@ table.hover tr:nth-of-type(even):hover {
 /* line 164, /home/mosin-nagant/.rvm/gems/ruby-2.3.0@msc/gems/foundation-rails-6.2.3.0/vendor/assets/scss/components/_top-bar.scss */
 .top-bar-right {
   float: right;
+}
+/* line 12, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+body, h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'Lato', sans-serif;
+}
+
+/* line 16, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+body {
+  background-image: url("home.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/* line 23, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+.background-snd {
+  background-image: url("pattern.png");
+  background-repeat: repeat-x repeat-y;
+  background-color: transparent;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/* line 35, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#the-wall {
+  position: relative;
+}
+
+/* line 41, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+.formbox .form-field .field {
+  font-style: italic;
+}
+
+/* line 47, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#login-form {
+  background-color: #01ABC7;
+  color: white;
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-top: 90%;
+  box-shadow: 6px 6px 5px #4C4C4C;
+}
+/* line 56, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#login-form .title-bold {
+  font-size: 1.6em;
+}
+/* line 60, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#login-form #button-container {
+  font-weight: bold;
+}
+/* line 62, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#login-form #button-container #remember-label {
+  color: white;
+}
+/* line 65, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#login-form #button-container #login-button {
+  float: right;
+  background-color: #01ABC7;
+  color: white;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  border: 0;
+}
+/* line 74, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#login-form #button-container #login-button:hover {
+  background-color: #FFFFFF;
+  color: #01ABC7;
+}
+/* line 80, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#login-form #recover-container {
+  font-size: 0.8em;
+  text-align: center;
+}
+/* line 84, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#login-form #pass-recover {
+  color: white;
+}
+
+/* line 89, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+.decoration-spd {
+  background-color: white;
+  height: 6px;
+  width: 90%;
+}
+
+/* line 95, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#rf-container {
+  margin-right: 10%;
+  width: 35%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 103, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#register {
+  background-color: #FFFFFF;
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-top: 15%;
+  box-shadow: 6px 6px 5px #4C4C4C;
+  width: 85%;
+  float: right;
+}
+/* line 115, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#register .title-bold {
+  color: #01ABC7;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+/* line 121, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#register .form-field {
+  font-style: italic;
+}
+/* line 123, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#register .form-field input {
+  border: 1px solid #01ABC7;
+  margin-bottom: 3% !important;
+}
+/* line 127, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#register .form-field .form-error {
+  display: block !important;
+}
+/* line 133, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#register .password-field input {
+  margin-bottom: 3% !important;
+}
+/* line 145, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#register #button-container {
+  text-align: right;
+}
+/* line 147, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#register #button-container #register-button {
+  padding-left: 6%;
+  padding-right: 6%;
+  color: white;
+  background-color: #01ABC7;
+  border: none;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+/* line 155, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+#register #button-container #register-button:hover {
+  color: #01ABC7;
+  background-color: white;
+}
+
+/* line 163, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/home.scss */
+.decoration-ha {
+  height: 6px;
+  width: 70%;
+  background-color: #01ABC7;
+  float: right;
+}
+/* line 19, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+input::-webkit-input-placeholder {
+  color: #999999;
+}
+
+/* line 23, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #999999;
+}
+
+/* line 27, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #999999;
+}
+
+/* line 31, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+input:-ms-input-placeholder {
+  color: #999999;
+}
+
+/* line 35, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+select option:first-child {
+  color: #999999 !important;
+}
+
+/* line 47, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+.form-error {
+  display: block;
+}
+
+/* line 51, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#msc-patients-tabs, .tabs {
+  margin-top: 2%;
+}
+/* line 53, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#msc-patients-tabs .tabs-title, #msc-patients-tabs .tabs-button, .tabs .tabs-title, .tabs .tabs-button {
+  float: left;
+  text-align: center;
+  width: 16.66%;
+}
+/* line 57, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#msc-patients-tabs .tabs-title a, #msc-patients-tabs .tabs-button a, .tabs .tabs-title a, .tabs .tabs-button a {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #4C4C4C;
+  padding-top: 6%;
+  padding-bottom: 6%;
+}
+/* line 65, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#msc-patients-tabs .is-active, .tabs .is-active {
+  background-color: #01ABC7;
+}
+/* line 67, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#msc-patients-tabs .is-active a, .tabs .is-active a {
+  background: none;
+  color: white;
+}
+
+/* line 75, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #msc-patients-tabs {
+  margin-top: 2%;
+}
+/* line 77, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #msc-patients-tabs .tabs-title {
+  float: left;
+  text-align: center;
+  width: 16.66%;
+}
+/* line 81, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #msc-patients-tabs .tabs-title a {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #4C4C4C;
+  padding-top: 6%;
+  padding-bottom: 6%;
+}
+/* line 89, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #msc-patients-tabs .is-active {
+  background-color: #01ABC7;
+}
+/* line 91, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #msc-patients-tabs .is-active a {
+  background: none;
+  color: white;
+}
+/* line 98, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower {
+  border: none;
+  background-color: transparent;
+}
+/* line 101, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 {
+  padding: 3rem;
+}
+/* line 103, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #new-appointment-form {
+  box-shadow: 6px 6px 5px #4C4C4C;
+  background-color: #01ABC7;
+  color: white;
+  padding-left: 13%;
+  padding-right: 13%;
+  padding-top: 7%;
+  padding-bottom: 4%;
+  -webkit-transition: background-color 100ms linear;
+  -moz-transition: background-color 100ms linear;
+  -o-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
+}
+/* line 112, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #new-appointment-form #appointment_date, #winterfell #broken-tower #panel1 #new-appointment-form #appointment_hour {
+  font-style: italic;
+}
+/* line 115, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #new-appointment-form #appointment-form-title {
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: 5%;
+}
+/* line 122, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #new-appointment-form .form-field input:hover, #winterfell #broken-tower #panel1 #new-appointment-form .form-field select:hover {
+  cursor: pointer !important;
+}
+/* line 127, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #new-appointment-form #appointment-form-text {
+  font-size: 0.77em;
+  font-style: italic;
+  padding-right: 3%;
+  padding-left: 3%;
+}
+/* line 133, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #new-appointment-form .disabled-select {
+  color: #C1C1C1;
+}
+/* line 136, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #new-appointment-form .button-container {
+  text-align: right;
+}
+/* line 138, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #new-appointment-form .button-container input {
+  color: #01ABC7;
+  border: none;
+  padding-right: 7%;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 7%;
+  font-size: 0.9em;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+/* line 148, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #new-appointment-form .button-container input:hover {
+  box-shadow: 4px 4px 0px #006272;
+}
+/* line 157, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 .disabled-appointment-form {
+  background-color: #E0E0E0 !important;
+}
+/* line 160, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 .disabled-appointment-form .button-container input {
+  color: #C1C1C1 !important;
+}
+/* line 162, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 .disabled-appointment-form .button-container input:hover {
+  background-color: #E6E6E6;
+  box-shadow: 4px 4px 0px #E0E0E0 !important;
+}
+/* line 169, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container {
+  color: white;
+  padding-right: 10%;
+  width: 100%;
+}
+/* line 173, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container #available-box {
+  box-shadow: 6px 6px 5px #4C4C4C;
+  background-color: #01ABC7;
+  padding: 5%;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-right: 9%;
+}
+/* line 180, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container #available-box .button-row {
+  margin-top: 2%;
+}
+/* line 183, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container #available-box .access-button {
+  color: #01ABC7;
+  background-color: white;
+  float: right;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+/* line 193, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container #available-box .access-button:hover {
+  box-shadow: 4px 4px 0px #006272;
+}
+/* line 198, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container #validation-form-box {
+  background-color: #01ABC7;
+}
+/* line 201, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container .decoration-right {
+  background-color: white;
+  height: 6px;
+  width: 90%;
+  float: right;
+}
+/* line 207, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container .verification-deco {
+  position: absolute;
+  bottom: -4%;
+  right: 0;
+}
+/* line 212, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container #validation-form-box {
+  box-shadow: 6px 6px 5px #4C4C4C;
+  background-color: #01ABC7;
+  padding: 3%;
+  padding-top: 6%;
+  position: absolute;
+  width: 90%;
+  top: 159%;
+}
+/* line 222, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container #validation-form-box #verification_token {
+  font-style: italic;
+}
+/* line 225, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container #validation-form-box #validation-form {
+  display: inline-block;
+  width: 100%;
+}
+/* line 228, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container #validation-form-box #validation-form .postfix {
+  background-color: white;
+  color: #01ABC7;
+  font-weight: bold;
+  background-color: white;
+  border: 0;
+  padding: 8%;
+  padding-left: 20%;
+  padding-right: 20%;
+  font-size: 0.8em;
+}
+/* line 238, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container #validation-form-box #validation-form .postfix:hover {
+  box-shadow: 4px 4px 0px #006272;
+}
+/* line 243, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container #validation-form-box #helptext-verification {
+  font-size: 0.77em;
+  font-style: italic;
+  padding-left: 3%;
+}
+/* line 250, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #validation-container .available-box-dissapeared {
+  -webkit-transition: top 250ms linear;
+  -moz-transition: top 250ms linear;
+  -o-transition: top 250ms linear;
+  -ms-transition: top 250ms linear;
+  transition: top 250ms linear;
+  top: 0% !important;
+}
+/* line 260, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container {
+  background-color: white;
+  box-shadow: 6px 6px 5px #4C4C4C;
+}
+/* line 264, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container .fc-not-available {
+  background-color: #ADADAD !important;
+}
+/* line 266, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container .fc-not-available:hover {
+  background-color: #ADADAD !important;
+  cursor: default !important;
+}
+/* line 272, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar-title {
+  background-color: #01ABC7;
+  color: white;
+  font-weight: 800;
+  font-size: 1.3em;
+  width: 25%;
+  text-align: center;
+  position: absolute;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  margin-top: 0%;
+  top: 4%;
+}
+/* line 287, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-head {
+  border: 0;
+}
+/* line 291, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-toolbar {
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+/* line 296, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-center {
+  text-align: center;
+}
+/* line 298, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-center h2 {
+  font-size: 1.2em;
+  color: #01ABC7;
+  font-weight: bold;
+  width: 40%;
+  display: inline-block;
+}
+/* line 307, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-head-container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 312, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-widget-content {
+  padding-top: 0;
+}
+/* line 316, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-today {
+  border: 4px solid #0D6A78 !important;
+}
+/* line 320, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-day-header {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 325, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-widget-header {
+  color: #01ABC7;
+  font-style: italic;
+}
+/* line 328, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-widget-header table {
+  margin-bottom: 0;
+}
+/* line 333, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-bg {
+  display: none;
+}
+/* line 337, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-content-skeleton tbody {
+  display: none;
+}
+/* line 341, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-view.fc-month-view.fc-basic-view {
+  margin-right: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
+/* line 347, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-day-number {
+  height: 60px;
+  width: 60px;
+  background-color: #01ABC7;
+  border: 2px solid white;
+  color: white;
+  padding-bottom: 0.3em;
+  padding-top: 0;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+}
+/* line 357, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-day-number:hover {
+  background-color: #0D6A78;
+  cursor: pointer;
+}
+/* line 363, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-view.fc-month-view.fc-basic-view {
+  margin-right: 8%;
+  margin-bottom: 8%;
+  margin-left: 8%;
+}
+/* line 369, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-day-header, #winterfell #broken-tower #panel1 #calendar-container #calendar .fc-day-number {
+  font-size: 0.67em;
+  text-align: center;
+  vertical-align: bottom;
+  font-weight: bold;
+}
+/* line 376, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar table {
+  border-collapse: initial;
+  border-spacing: 0;
+}
+/* line 382, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #calendar-container #calendar .fc-month-view table {
+  margin-bottom: 0;
+}
+/* line 391, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container {
+  background: white;
+  color: #01ABC7;
+}
+/* line 394, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hours-title {
+  color: white;
+  background-color: #01ABC7;
+  font-weight: bolder;
+  width: 30%;
+  text-align: center;
+  font-weight: 900;
+  margin-top: 8%;
+}
+/* line 404, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hour-day {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+/* line 409, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hour-day #hour-day-name {
+  font-weight: 900;
+}
+/* line 414, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hours {
+  margin: 5%;
+  padding: 5%;
+  margin-top: 0;
+  padding-top: 0;
+}
+/* line 420, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hours input[type="radio"] {
+  visibility: hidden;
+  display: none;
+}
+/* line 426, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hours .radio-label {
+  padding: 30%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  color: white;
+}
+/* line 433, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hours .left-side {
+  margin-right: 1%;
+}
+/* line 437, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hours .right-side {
+  margin-left: 1%;
+}
+/* line 441, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hours .fc-hour-available {
+  background-color: #01ABC7;
+  margin-bottom: 10%;
+}
+/* line 444, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hours .fc-hour-available:hover {
+  background-color: #0D6A78;
+}
+/* line 449, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hours .fc-hour-checked {
+  background-color: #00D3A3 !important;
+}
+/* line 453, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #hours .fc-hour-not-available {
+  background-color: #ADADAD !important;
+}
+/* line 459, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #color-explaining {
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 6%;
+}
+/* line 463, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #color-explaining #blue-color-exp {
+  background-color: #01ABC7;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}
+/* line 470, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #color-explaining #gray-color-exp {
+  background-color: #999999;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}
+/* line 477, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 #hours-container #color-explaining .exp-text {
+  display: inline-block;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 0.9em;
+}
+/* line 487, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel1 .major-container-deco {
+  background-color: #01ABC7;
+  height: 6px;
+  width: 90%;
+  float: left;
+  position: absolute;
+}
+/* line 508, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 {
+  padding-left: 10%;
+  padding-right: 10%;
+  position: relative;
+}
+/* line 512, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 .user-data-validation-form {
+  background-color: #01ABC7;
+  color: white;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  width: 80%;
+  position: absolute;
+  padding-left: 3%;
+  padding-right: 2%;
+}
+/* line 521, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 .user-data-validation-form .info-text {
+  font-style: italic;
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 2%;
+}
+/* line 527, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 .user-data-validation-form #button-container {
+  text-align: center;
+}
+/* line 530, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 .user-data-validation-form input[type="submit"] {
+  background-color: white;
+  color: #01ABC7;
+  border: none;
+  padding: 5%;
+  font-size: 0.8em;
+  font-weight: 700;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+/* line 539, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 .user-data-validation-form input[type="submit"]:hover {
+  box-shadow: 4px 4px 0px #006272;
+}
+/* line 545, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 #user-data-container {
+  margin-top: 11%;
+  background-color: white;
+  padding: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+/* line 551, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 #user-data-container #sub-tabs-patient-data {
+  text-align: center;
+}
+/* line 553, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 #user-data-container #sub-tabs-patient-data .tabs-title {
+  display: inline-block;
+  border: 1px solid #01ABC7;
+}
+/* line 556, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 #user-data-container #sub-tabs-patient-data .tabs-title a {
+  font-size: 0.9rem;
+  padding: 2%;
+  font-weight: 700;
+}
+/* line 563, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 #user-data-container #sub-tabs-patient-data .is-active {
+  background-color: #01ABC7;
+  color: white;
+  font-weight: 600;
+}
+/* line 567, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 #user-data-container #sub-tabs-patient-data .is-active a {
+  background-color: #01ABC7;
+  color: white;
+}
+/* line 575, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 #user-data-container #emergency-contact-subtab #em-fc-3 {
+  border: 1px dashed black;
+  padding: 3%;
+}
+/* line 579, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 #user-data-container #emergency-contact-subtab #em-fc-3 #em-aggregator #em-aggregator-title {
+  text-align: center;
+  padding: 25%;
+  padding-bottom: 30%;
+  padding-top: 30%;
+}
+/* line 589, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+#winterfell #broken-tower #panel5 #user-data-container .tabs-content {
+  border: none;
+}
+
+/* line 606, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+.panel-row #right-container {
+  position: relative;
+}
+/* line 609, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+.panel-row #right-container #validation-container {
+  position: absolute;
+}
+/* line 613, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+.panel-row #right-container #calendar-container {
+  position: absolute;
+  display: none;
+}
+/* line 618, /home/mosin-nagant/TheSocialUs/msc/app/assets/stylesheets/patients.scss */
+.panel-row #right-container #hours-container {
+  position: absolute;
+  display: none;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

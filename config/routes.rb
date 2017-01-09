@@ -27,6 +27,10 @@ Rails.application.routes.draw do
       post 'accept_appointment'
       post 'cancel_appointment'
       post 'set_default_calendar'
+      post 'set_calendar_in_settings'
+      post 'notification_status'
+      post 'calendar_sync'
+      post 'schedule_settings'
     end
   end
 
@@ -40,6 +44,11 @@ Rails.application.routes.draw do
   get 'admin/:id' => 'admin#index'
   post 'admin/update', to: 'admin#update_doctor', as: 'update_patient'
   post 'admin/appointment', to: 'admin#appointment_status', as: 'appointment_status'
+
+  post 'doctor/set_cal', to: 'doctors#set_calendar_in_settings', as: 'set_calendar'
+  post 'doctor/notification_status', to: 'doctors#notification_status', as: 'notification_status'
+  post 'doctor/calendar_sync', to: 'doctors#calendar_sync', as: 'calendar_sync'
+  post 'doctor/schedule_settings', to: 'doctors#schedule_settings', as: 'schedule_settings'
 
   get 'patient/:id' => 'patients#index'
   get 'q/avapp' => 'patients#available_appointment'

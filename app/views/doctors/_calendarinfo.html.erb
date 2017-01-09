@@ -1,29 +1,78 @@
 <% if !@cal.authorization.expired? && user_signed_in? %>
+  <% set = Setting.find_by_user_id(current_user.id) %>
   <div class="calendar-selection-list-container">
     <div class="calendar-selection-list-head row">
-      <div class="col-title column large-2 medium-2 small-2">
-        Nombre del Calendario
+      <div class="col-title column large-6 medium-6 small-6">
+        Notificaciones
+      </div>
+    </div>
+
+    <div class="calendar-notifications-row row">
+      <%= form_tag(controller: "doctors", action: "notification_status", method: "post", id: "gmail-notification-form") do %>
+        <div class="column large-11 medium-11 small-11 calendar-notifications-column">
+          <%= label_tag(:notifications, "¿Notificaciones de Gmail?", id: "gmail-notification-label")  %>
+        </div>
+        <% if !set.nil? && set.send_notifications %>
+          <%= check_box_tag(:notifications, true, true, class: "notification-check") %>
+        <% else %>
+          <%= check_box_tag(:notifications, true, false, class: "notification-check") %>
+        <% end %>
+        <div class="column large-1 medium-1 small-1 calendar-notifications-column">
+          <div class="column large-1 medium-1 small-1 icon-container">
+            <i class="status-icon checked-icon fi-check"></i>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="calendar-selection-list-head row">
+      <div class="col-title column large-6 medium-6 small-6">
+        Sincronización
+      </div>
+    </div>
+
+    <div class="calendar-notifications-row row">
+      <%= form_tag(controller: "doctors", action: "calendar_sync", method: "post", id: "gmail-sync-form") do %>
+        <div class="column large-11 medium-11 small-11 calendar-sync-column">
+          <%= label_tag(:sync, "¿Sincronizar las citas con el Calendario de Google?", id: "gmail-sync-label")  %>
+        </div>
+        <% if !set.nil? && set.cal_sync %>
+          <%= check_box_tag(:sync, true, true, class: "sync-check") %>
+        <% else %>
+          <%= check_box_tag(:sync, true, false, class: "sync-check") %>          
+        <% end %>
+        <div class="column large-1 medium-1 small-1 calendar-sync-column">
+          <div class="column large-1 medium-1 small-1 icon-container">
+            <i class="status-icon checked-icon fi-check"></i>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="calendar-selection-list-head row">
+      <div class="col-title column large-6 medium-6 small-6">
+        Seleccione el Calendario a sincronizar
       </div>
     </div>
     <div class="calendar-selection-list-subcontainer">
       <% if !@calendar.items.nil? %>
         <% @calendar.items.each do |item| %>
-          <!-- <a class="row calendar-selection-list-element" data-cal="<%= item.id %>">
-            <div class="calendar-inside-text">
-              <%= item.summary  %>
+          <div class="row calendar-selection-list-element" data-cal=<%= item.id %>>
+            <div class="column large-11 small-11 medium-11">
+              <%= label_tag "calendar_" + item.id, item.summary, class: "calendar-selection-label"  %>
             </div>
-          </a> -->
-          <div class="row calendar-selection-list-element">
-            <%= label_tag "calendar_" + item.id, item.summary, class: "calendar-selection-label"  %>
-            <%= radio_button_tag "calendar", item.id, false, "data-cal": item.id, class: "calendar-selection-item" %>
+            <% if !@setting.nil? && @setting.calendar_id == item.id %>
+              <%= radio_button_tag "calendar", item.id, false, class: "calendar-selection-item", checked: true %>
+            <% else %>
+              <%= radio_button_tag "calendar", item.id, false, "data-cal": item.id, class: "calendar-selection-item" %>
+            <% end %>
+            <div class="column large-1 medium-1 small-1 icon-container">
+              <i class="status-icon checked-icon fi-check"></i>
+              <i class="status-icon no-checked-icon fi-x-circle"></i>
+            </div>
           </div>
         <% end %>
       <% end %>
-      <a id="add-calendar-button" class="row calendar-selection-list-element">
-        <div class="calendar-inside-text">
-          <span>+</span> Agregar Calendario
-        </div>
-      </a>
     </div>
   </div>
 <% end %>

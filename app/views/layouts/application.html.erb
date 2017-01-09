@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     
@@ -12,13 +13,113 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script> 
-
-    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>    
   </head>
 
   <body>
     <div class="background-snd"></div>
+    <div class="header-cont-mobile">
+      <%= image_tag "LogoMSC.png", :class => "menu-logo-mobile" %>
+      <%= image_tag "search-icon.png", :class => "menu-search-mobile" %>
+    </div>  
+    <div class="search-bar-cont-mobile">
+      <div class="expanded row text-align-center">
+        <div class="large-6 medium-6 large-offset-4 medium-offset-4 columns search-box">
+          <form>
+            <input class="sb-search-input" placeholder="Ingresa lo que desees buscar" type="search" value="" name="search" id="search">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="header-cont-mobile-2">
+      <div class="flag-cont-mobile">
+        <a href="#"><%= image_tag "mex.jpg", :class => "flag-mobile" %></a>
+        <a href="#"><%= image_tag "usa.jpg", :class => "flag-mobile" %></a>
+      </div>
+      <div class="header-portal-mobile">
+        <span><a href="#"><p>PORTAL DEL <br> PACIENTE</p></a>
+      </div>
+    </div>  
+    <div class="mobile-menu">
+      <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+      <label for="drawer-toggle" id="drawer-toggle-label"></label>
+      <nav id="drawer">
+        <div id="menu-mobile-item-1">
+          <%= image_tag "LogoMSC.png", :class => "menu-logo-mobile-2" %> 
+        </div>
+        <ul>
+          <li id="top-li-mobile-menu"><a href="#">INICIO</a></li>
+          <li><a href="#">SOBRE NOSOTROS</a></li>
+          <li><a href="#">INFORMACIÓN PARA PACIENTES</a></li>
+          <li><a href="#">SERVICIOS</a></li>
+          <li><a href="#">CLÍNICAS</a></li>
+          <li><a href="#">¡REVISA TU RIÑÓN!</a></li>
+          <li><a href="#">NUESTRA DIFERENCIA</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-cont">
+      <div class="expanded row text-align-center header-col">
+        <div class="large-2 medium-2 columns">
+          <a href="http://test.medicasantacarmen.com"><%= image_tag "LogoMSC.png", :class => "menu-logo" %></a>
+        </div>
+        <div class="large-1 medium-1 columns header-col-i header-hover">
+          <span><a href="#">Acerca de nosotros</a></span>
+        </div>
+        <div class="large-1 medium-1 columns header-col-i header-hover">
+          <span><a href="#">Información del paciente</a></span>
+        </div>
+        <div class="large-1 medium-1 columns header-col-i header-hover">
+          <span><a href="http://www.medicasantacarmen.com/pages/servicios">Servicios</a></span>
+        </div>
+        <div class="large-1 medium-1 columns header-col-i header-hover">
+          <span><a href="http://www.medicasantacarmen.com/pages/contacto">Clínicas</a></span>
+        </div>
+        <div class="large-1 medium-1 columns header-col-i header-hover">
+          <span><a href="http://www.medicasantacarmen.com/pages/revisa">¡Revisa tu riñón!</a></span>
+        </div>
+        <div class="large-1 medium-1 columns header-col-i header-hover">
+          <span><a href="http://www.medicasantacarmen.com/pages/frecuentes">Nuestra Diferencia</a></span>
+        </div>
+        <div class="large-1 medium-1 columns header-col-i header-hover">
+          <span><a href="http://www.medicasantacarmen.com/articles/category">Blog</a></span>
+        </div>
+        <div class="large-1 medium-1 columns header-col-i header-col-search">
+          <span><a href="#"><%= image_tag "search-icon.png", :class => "menu-search" %></a>
+        </div>
+        <div class="large-1 medium-1 columns header-col-i header-portal">
+          <span><a href="#" class="orangee">PORTAL DEL PACIENTE</a>
+        </div>
+        <div class="large-1 medium-1 columns header-col-i">
+            <div class="row text-align-center">
+            <div class="large-6 medium-6 columns flag-col">
+              <a href="#"><%= image_tag "mex.jpg", :class => "flag" %></a>
+            </div>
+            <div class="large-6 medium-6 columns flag-col">
+              <a href="#"><%= image_tag "usa.jpg", :class => "flag" %></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="search-bar-cont">
+        <div class="expanded row text-align-center">
+          <div class="large-6 medium-6 large-offset-4 medium-offset-4 columns search-box">
+            <form>
+              <input class="sb-search-input" placeholder="Ingresa lo que desees buscar" type="search" value="" name="search" id="search">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="search-bar-cont">
+        <div class="expanded row text-align-center">
+          <div class="large-6 medium-6 large-offset-4 medium-offset-4 columns search-box">
+            <form>
+              <input class="sb-search-input" placeholder="Ingresa lo que desees buscar" type="search" value="" name="search" id="search">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <%= yield %>
     
   </body>

@@ -20,7 +20,8 @@
       <%= select_tag :service_id, options_for_select(@services.map { |c| [c.name, c.id, {:'data-clinic' => c.clinic_id}]}), prompt: "Area Medica", disabled: true, 'required': " ", class: 'disabled-select' %>
     </div>
     <div class=" form-field">
-      <%= text_field_tag('appointment_date', nil, placeholder: "Fecha", disabled: true, 'required': " ", readonly: true) %>
+      <%= text_field_tag('appointment_date', nil, placeholder: "Fecha", disabled: true, 'required': " ", readonly: true, class: "", id: "appointment_date") %>
+      <%# text_field_tag('appointment_date', nil, placeholder: "Fecha", disabled: true, 'required': " ", readonly: true, class: "in-mobile", id: "appointment_date_mobile") %>
     </div>
     <div class=" form-field">
       <%= text_field_tag("appointment_hour", nil, placeholder: "Hora", disabled: true, 'required': " ", readonly: true)  %>

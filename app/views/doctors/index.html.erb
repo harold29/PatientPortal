@@ -121,7 +121,7 @@
         <%# end #%>
       </div>
       <div class="tabs-panel" id="panel3">
-        <% patients = Patient.find_by_doctor_id(@doctor.id)  %>
+        <% patients = Patient.find_by_doctor_id(@doctor.id) if !patients.nil?  %>
         <div id="patients-list-container">
           <div id="patients-list-head">
             <div class="column large-4 medium-4 small-4 name-col-title">
@@ -172,17 +172,27 @@
             <li class="accordion-item" data-accordion-item>
               <a href="#" class="accordion-title">Google</a>
               <div class="accordion-content" data-tab-content>
-                <% if @cal.authorization.expired? %>
-                  <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+                <% if !current_user.token_refresh.nil? %>
+                  <% if @cal.authorization.expired? %>
+                    <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+                  <% else %>
+                    <%= render "calendarinfo"  %>
+                  <% end %>
                 <% else %>
-                  <%= render "calendarinfo"  %>
-                <% end %>        
+                  <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+                <% end %>       
               </div>
             </li>
             <li class="accordion-item" data-accordion-item>
               <a href="#" class="accordion-title">Datos del Usuario</a>
               <div class="accordion-content" data-tab-content>
                 I would start in the open state, due to using the `is-active` state class.
+              </div>
+            </li>
+            <li class="accordion-item" data-accordion-item>
+              <a href="#" class="accordion-title">Citas</a>
+              <div class="accordion-content" data-tab-content>
+                <%= render "appointmentconfig"  %>
               </div>
             </li>
           </ul>

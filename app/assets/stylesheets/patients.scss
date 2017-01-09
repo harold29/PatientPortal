@@ -12,6 +12,32 @@ $gray-occupied-day-msc: #ADADAD;
 $gray-disabled: #E0E0E0;
 $gray-font-disabled: #C1C1C1;
 
+//-----------------media queries-------------------
+$bp-778: 778px; //Ipad
+$bp-414: 414px; //iPhone6+
+$bp-375: 375px; //iPhone6
+$bp-360: 360px; //360x640 Nominal S6
+$bp-320: 320px; //320x568 
+//-----------------//media queries-----------------
+//-----------------MEDIA QUERY TEMPLATES ---------- 
+//
+// @media screen and (max-width: $bp-320){
+//
+// }
+// @media screen and (max-width: $bp-360){
+//
+// }
+// @media screen and (max-width: $bp-375){
+//
+// }
+// @media screen and (max-width: $bp-414){
+//
+// }
+// @media screen and (max-width: $bp-778){
+//
+// }
+//---------- END OF MEDIA QUERY TEMPLATES --------
+
 body {
   //background-image: url("home2.jpg");
 }
@@ -71,13 +97,36 @@ select option:first-child{
   }
 }
 
+.not-in-mobile {
+  @media screen and (max-width: $bp-778) {
+    display: none;
+  }
+}
+
+.in-mobile {
+  display: none;
+  @media screen and (max-width: $bp-778) {
+    display: inherit;
+  }
+}
+
 #winterfell {
+  @media screen and (max-width: $bp-320){
+    margin-top: 30%;
+  }
   #msc-patients-tabs {
     margin-top: 2%;
+    @media screen and (max-width: $bp-320){
+      // display: none;
+      font-size: 0.6em;
+    }
     .tabs-title {
       float: left;
       text-align: center;
       width: 16.66%;
+      @media screen and (max-width: $bp-320){
+        width: 25%;
+      }
       a {
         font-size: 0.9em;
         font-weight: bold;
@@ -94,12 +143,27 @@ select option:first-child{
       }
     }
   }
+
+  // #mobile-msc-patients-tabs {
+  //   display: none;
+  //   @media screen and (max-width: $bp-320){
+  //     display: inherit;
+  //   }
+  // }
   
   #broken-tower {
     border: none;
     background-color: transparent;
+    @media screen and (max-width: $bp-320) {
+      margin-bottom: 100px;
+    }
     #panel1 {
       padding: 3rem;
+      @media screen and (max-width: $bp-320){
+        padding-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
       #new-appointment-form {
         box-shadow: 6px 6px 5px $black-msc;
         background-color: $blue-msc;
@@ -170,6 +234,11 @@ select option:first-child{
         color: white;
         padding-right: 10%;
         width: 100%;
+        @media screen and (max-width: $bp-320) {
+          position: static !important;
+          padding-right: 0;
+          float: right;
+        }
         #available-box {
           box-shadow: 6px 6px 5px $black-msc;
           background-color: $blue-msc;
@@ -219,6 +288,12 @@ select option:first-child{
           position: absolute;
           width: 90%;
           top: 159%;
+          @media screen and (max-width: $bp-320) {
+            position: initial;
+            margin-top: 30px;
+            width: 100%;
+            text-align: center; 
+          }
           #verification_token {
             font-style: italic;
           }
@@ -235,6 +310,12 @@ select option:first-child{
               padding-left: 20%;
               padding-right: 20%;
               font-size: 0.8em;
+              @media screen and (max-width: $bp-320) {
+                padding: 10px;
+                padding-right: 30px;
+                padding-left: 30px;
+                margin-bottom: 10px;
+              }
               &:hover {
                 box-shadow: 4px 4px 0px #006272;
               }
@@ -260,7 +341,11 @@ select option:first-child{
       #calendar-container {
         background-color: white;
         box-shadow: 6px 6px 5px $black-msc;
-        
+        @media screen and (max-width: $bp-320) {
+          display: block;
+          position: absolute;
+          top: -510px;
+        }
         .fc-not-available {
           background-color: $gray-occupied-day-msc !important;
           &:hover {
@@ -311,6 +396,10 @@ select option:first-child{
           
           .fc-widget-content {
             padding-top: 0;
+            @media screen and (max-width: $bp-320) {
+              padding-left: 0;
+              padding-right: 0;
+            }
           }
 
           .fc-today {
@@ -354,6 +443,10 @@ select option:first-child{
             padding-top: 0;
             padding-left: 0.4em;
             padding-right: 0.4em;
+            @media screen and (max-width: $bp-320) {
+              width: 44px;
+              height: 65px;  
+            }
             &:hover {
               background-color: $blue-hover-msc;  
               cursor: pointer;
@@ -364,6 +457,10 @@ select option:first-child{
             margin-right: 8%;
             margin-bottom: 8%;
             margin-left: 8%;
+            @media screen and (max-width: $bp-320) {
+              margin-right: 0;
+              margin-left: 0;
+            }
           }
 
           .fc-day-header, .fc-day-number {
@@ -371,6 +468,8 @@ select option:first-child{
             text-align: center;
             vertical-align: bottom;
             font-weight: bold;
+
+
           }
 
           table {
@@ -605,6 +704,12 @@ select option:first-child{
 
   #right-container {
     position: relative;
+
+    @media screen and (max-width: $bp-320){
+      padding-top: 30px;
+      padding-left: 0;
+      padding-right: 20px;
+    }
     
     #validation-container {
       position: absolute;

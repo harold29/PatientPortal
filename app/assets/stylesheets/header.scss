@@ -1,0 +1,455 @@
+$white-msc: #FFFFFF;
+$gray-msc: #D8CDD0;
+$lightgray-msc: #999999;
+$blue-msc: #01ABC7;
+$black-msc: #4C4C4C;
+
+//---------------- header colors ------------------
+$graay:#CBCBCB;
+$bluehover: #01ABC7;
+$ocher: #F16323;
+$yallow: #F9C317;
+$notblack: #4C4C4C;
+$lightgrey: #7f7f7f;
+//------------- end of header colors -------------- 
+
+//------------------ HEADER STYLES -------------------
+
+.header-cont{
+  height: 100px;
+  position: fixed;
+  top: 0;
+  background: white;
+  left: 50%;
+  transform: translateX(-50%);
+  // width: 1550px;
+  width: 100%;
+  z-index: 10;
+  @media screen and (max-width: 1140px){
+    height: 80px
+  }
+  @media screen and (max-width: 755px){
+    display: none;
+  }
+}
+
+.header-cont-mobile{
+  display: none;
+  @media screen and (max-width: 755px){
+    display: inline-block;
+  }
+}
+
+.header-cont-mobile-2{
+  display: none;
+  z-index: 2;
+  @media screen and (max-width: 755px){
+    display: inline-block;
+    position: fixed;
+    top: 95%;
+    background: white;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+  }
+  @media screen and (max-width: 375px){
+    top: 93%;
+  }
+}
+
+.flag-cont-mobile{
+  width: 50%;
+}
+
+.flag-mobile{
+  width: 17%;
+  padding-right: 10px;
+  padding-top: 5px;
+  @media screen and (max-width: 375px){
+    padding-top: 7.5px;
+  }
+  @media screen and (max-width: 320px){
+    padding-top: 0px;
+  }
+}
+
+.header-portal-mobile {
+  position: absolute;
+  top: -150%;
+  right: 10%;
+  background: #F16323;
+  padding: 40px 30px;
+  span {
+    p{
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 13px;
+    }
+  }
+  @media screen and (max-width: 360px){
+    padding: 30px 30px;
+    top:-110%;
+  }
+  @media screen and (max-width: 320px){
+    padding: 20px 20px;
+    top: -85%;
+  }
+}
+
+.menu-logo{
+  padding-top: 5px;
+  @media screen and (max-width: 1380px){
+    padding-top: 10px;
+  }
+  @media screen and (max-width: 1284px){
+    padding-top: 15px;
+  }
+  @media screen and (max-width: 1200px){
+    padding-top: 17.5px;
+  }
+  @media screen and (max-width: 1140px){
+    padding-top: 10px;
+  }
+}
+
+.menu-logo-mobile{
+  margin: 10px 0px;
+  height: 60px;
+  position: absolute;
+  right: 5%;
+  top: 0;
+}
+
+.header-col{
+  line-height: 0.9em;
+  font-size: 14px;
+  text-transform: capitalize;
+  @media screen and (max-width: 1380px){
+    font-size: 13px;
+  }
+  @media screen and (max-width: 1284px){
+    font-size: 12px;
+  }
+  @media screen and (max-width: 1200px){
+    font-size: 11px;
+  }
+}
+
+.header-col-i{
+  padding-top: 40px;
+  padding-bottom: 25px;
+  line-height: 1.3em;
+  height: 100px;
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;      
+  }
+  a{
+    color: rgba(0,0,0,0.5);
+  }
+  @media screen and (max-width: 1140px){
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 80px;
+  }
+}
+
+.header-hover{
+  &:hover{
+    border-bottom: 7px $bluehover solid;
+    a{
+      color: $bluehover;
+      font-weight:700; 
+    }
+    @media screen and (max-width: 1200px){
+      border-bottom: 4px $bluehover solid;
+    }
+  }
+}
+
+.header-portal{
+  background-color: $ocher !important;
+  a{
+    color: white !important;
+    &:hover{
+      font-weight: 700;
+    }
+  }
+}
+
+.menu-search{
+  width: 33.33%;
+}
+
+.menu-search-mobile{
+  width: 10%;
+  float: right;
+  position: absolute;
+  top: 30px;
+  right: 8%;
+  display: none;
+}
+
+.flag{
+  width: 50%;
+}
+
+.flag-col{
+  padding: 0
+}
+
+.search-bar-cont{
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  display: none;
+  visibility: hidden;
+  .search-box{
+    padding: 0;  
+  }
+}
+
+.search-bar-cont-mobile{
+  position: absolute;
+  z-index: 5;
+  width: 80%;
+  display: none;
+  visibility: hidden;
+  right: 10%;
+  .search-box{
+    padding: 0;  
+  }
+}
+
+input[type="search"] {
+  background: $notblack;
+  border: none;
+  border-radius: 3px 0px 3px 3px;
+}
+
+input[type="search"]:focus{
+  background: $notblack;
+  color:white;
+  border:none;
+}
+
+.show{
+  display: block;
+  visibility: visible;
+  -webkit-animation-name: barappear; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
+  animation-name: barappear;
+  animation-duration: 0.5s;
+
+    /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes barappear {
+      from {opacity: 0;}
+      to {opacity: 1;}
+  }
+
+  /* Standard syntax */
+  @keyframes barappear {
+      from {opacity: 0;}
+      to {opacity: 1;}
+  }
+}
+
+.obscure{
+  background: $notblack;
+  -webkit-animation-name: bgtoblack; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
+  animation-name: bgtoblack;
+  animation-duration: 0.5s;
+
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes bgtoblack {
+      from {background-color: transparent;}
+      to {background-color: $notblack;}
+  }
+
+  /* Standard syntax */
+  @keyframes bgtoblack {
+      from {background-color: transparent;}
+      to {background-color: $notblack;}
+  }
+}
+
+// ------------------ END HEADER STYLES -----------------------
+//---------------------Burger menu---------------
+.mobile-menu{
+  position: absolute;
+  top: 0px;
+  display: none;
+  z-index: 10;
+  @media screen and (max-width: 775px){
+    display: block;
+  }
+}
+
+.menu-logo-mobile-2{
+  padding: 10%;
+  padding-bottom: 15%;
+  @media screen and (max-width: 320px){
+    padding: 6%;
+    padding-bottom: 11%;
+    width: 80%;
+  }
+}
+
+#menu-mobile-item-1{
+  background-color: #f0fbfd;
+}
+
+#top-li-mobile-menu{
+  margin-top: 30px;
+  @media screen and (max-width: 320px){
+    margin-top: 20px;
+  }
+}
+
+#drawer-toggle {
+  position: absolute;
+  opacity: 0;
+}
+
+#drawer-toggle-label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+  top: 20px;
+  display: block;
+  position: fixed;
+  // background: rgba(255, 255, 255, .0);
+  background: $blue-msc;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+/* adds our "hamburger" menu icon */
+
+#drawer-toggle-label:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 24px;
+  // background: #8d8d8d;
+  background: white;
+  left: 13px; //30%;
+  top: 18px; // 36px
+  // box-shadow: 0 6px 0 #8d8d8d, 0 12px 0 #8d8d8d;
+  box-shadow: 0 6px 0 white, 0 12px 0 white;
+}
+
+#drawer {
+  position: fixed;
+  top: 0;
+  left: -85%;
+  height: 100%;
+  width: 85%;
+  background: #2f2f2f;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  -webkit-overflow-scrolling: touch;
+  transition: all 0.5s ease-in-out;
+  background: $bluehover; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#54cadd, $bluehover); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#54cadd, $bluehover); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#54cadd, $bluehover); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#54cadd, $bluehover); /* Standard syntax */
+  ul{
+    margin-top: 0px;
+    text-align: left;
+    margin-left: 0px;
+    @media screen and (max-width: 320px){
+      margin-top: 20px;
+    }
+  }
+  li {
+    list-style: none;
+    height: 45px;
+    letter-spacing: 1px;
+    padding-left: 35px;
+    padding-top: 0.5em;
+    &:hover{
+      background-color: #76d7e6;
+    }
+    @media screen and (max-width: 360px){
+      height: 40px;
+      letter-spacing: 0px;
+    }
+    @media screen and (max-width: 320px){
+      height: 30px;
+      font-size: 12px;
+      margin-top: 0px;
+    }
+    a{
+      color: white;
+    }
+  }
+}
+/* actual page content pane */
+
+#page-content {
+  margin-left: 0px;
+  margin-top: 50px;
+  width: 100%;
+  height: calc(100% - 50px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px;
+}
+
+#drawer-toggle:checked ~ #drawer-toggle-label,
+#drawer-toggle:checked ~ header {
+  left: 85%;
+}
+
+#drawer-toggle:checked ~ #drawer {
+  left: 0px;
+}
+
+#drawer-toggle:checked ~ #page-content {
+  margin-left: 85%;
+}
+
+/* checked styles (menu open state) */
+
+#drawer-toggle:checked ~ #drawer-toggle-label {
+  height: 100%;
+  width: calc(100% - 85%);
+  background: rgba(0, 0, 0, .8);
+}
+
+#drawer-toggle:checked ~ #drawer-toggle-label,
+#drawer-toggle:checked ~ header {
+  left: 85%;
+}
+
+#drawer-toggle:checked ~ #drawer {
+  left: 0px;
+}
+
+#drawer-toggle:checked ~ #page-content {
+  margin-left: 350px;
+}
+
+[type="checkbox"] + label{
+  margin-left: 0px !important;
+}
+//---------------------//Burger menu------------- 

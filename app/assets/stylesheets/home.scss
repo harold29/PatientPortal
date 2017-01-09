@@ -8,6 +8,24 @@ $lightgray-msc: #999999;
 $blue-msc: #01ABC7;
 $black-msc: #4C4C4C;
 
+//---------------- header colors ------------------
+$graay:#CBCBCB;
+$bluehover: #01ABC7;
+$ocher: #F16323;
+$yallow: #F9C317;
+$notblack: #4C4C4C;
+$lightgrey: #7f7f7f;
+//------------- end of header colors -------------- 
+
+//-----------------media queries-------------------
+$bp-778: 778px; //Ipad
+$bp-414: 414px; //iPhone6+
+$bp-375: 375px; //iPhone6
+$bp-360: 360px; //360x640 Nominal S6
+$bp-320: 320px; //320x568 
+//-----------------//media queries-----------------
+
+
 
 body, h1, h2, h3, h4, h5, h6, p, a {
   font-family: 'Lato', sans-serif;
@@ -17,6 +35,38 @@ body {
   background-image: url("home.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
+  // @media screen and (max-width: $bp-320){
+  //   background-size: 250%;
+  //   background-attachment: fixed;
+  //   background-position-x: -460px;
+  //   background-position-y: 0px;
+  // }
+
+  // @media screen and (max-width: $bp-360){
+  //   background-size: 250%;
+  //   background-attachment: fixed;
+  //   background-position-x: -460px;
+  //   background-position-y: 0px;
+  // }
+
+  @media screen and (max-width: $bp-778) {
+    background-size: 140%;
+    background-position-x: -240px;
+  }
+
+  @media screen and (max-width: $bp-414) {
+    background-size: 250%;
+    background-attachment: fixed;
+    background-position-x: -510px;
+    background-position-y: 0px;
+  }
+
+  @media screen and (max-width: $bp-375){
+    background-size: 250%;
+    background-attachment: fixed;
+    background-position-x: -460px;
+    background-position-y: 0px;
+  }
 }
 
 
@@ -34,7 +84,17 @@ body {
 
 #the-wall {
   position: relative;
+  @media screen and (max-width: $bp-414) {
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+  @media screen and (max-width: $bp-360) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
+
+
 
 .formbox {
   .form-field {
@@ -53,6 +113,24 @@ body {
   padding-bottom: 3%;
   margin-top: 90%;
   box-shadow: 6px 6px 5px $black-msc;
+  @media screen and (max-width: $bp-414) {
+    margin-top: 40%;
+  }
+
+  @media screen and (max-width: $bp-375) {
+    margin-top: 45%;
+  }
+  
+  @media screen and (max-width: $bp-360) {
+    margin-top: 39%;
+  }
+  
+  @media screen and (max-width: $bp-320){
+    margin-top: 30%;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  
   .title-bold {
     font-size: 1.6em; 
   }
@@ -90,14 +168,45 @@ body {
   background-color: white;
   height: 6px;
   width: 90%;
+  @media screen and (max-width: $bp-320) {
+    width: 75%;
+    margin-left: 3%;
+  }
 }
 
 #rf-container {
-    margin-right: 10%;
-    width: 35%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  margin-right: 10%;
+  width: 35%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  @media screen and (max-width: $bp-414) {
+    position: inherit;
+    width: 100%;
+    margin-right: 0%;
+    margin-bottom: 70%;
+  }
+
+  @media screen and (max-width: $bp-375) {
+    position: inherit;
+    width: 100%;
+    margin-right: 0%;
+    margin-bottom: 30%; 
+  }
+  
+  @media screen and (max-width: $bp-360) {
+    position: inherit;
+    margin-top: 5%;
+    
+  }
+  
+  @media screen and (max-width: 320px){
+    // position: inherit;
+    // width: 100%;
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+  
 }
 
 #register {
@@ -108,10 +217,21 @@ body {
   padding-bottom: 5%;
   margin-top: 15%;
   box-shadow: 6px 6px 5px $black-msc;
-  //position: absolute;
   width: 85%;
   float: right;
+  @media screen and (max-width: $bp-778) {
+    width: 100%;
+  }
 
+  @media screen and (max-width: $bp-414) {
+    width: 100%;
+    margin-top: 25%;
+  }
+  
+  @media screen and (max-width: $bp-375) {
+    width: 100%;
+  }
+  
   .title-bold {
     color: $blue-msc;
     font-weight: bold;

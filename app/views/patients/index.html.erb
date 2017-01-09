@@ -1,26 +1,26 @@
 <div id="winterfell">
   <% if user_signed_in? %>
-    <ul class="tabs" data-tabs id="msc-patients-tabs">  
-      <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Solicitud de Citas</a></li>
+    <ul class="tabs" data-tabs data-responsive-accordion-tabs="tabs medium-tabs large-tabs" id="msc-patients-tabs">  
+      <li class="tabs-title is-active"><a href="#panel1" aria-selected="true"><span class="not-in-mobile">Solicitud de </span>Citas</a></li>
       <li class="tabs-title"><a class="title-link" href="#panel2">Reportes</a></li>
-      <li class="tabs-title"><a class="title-link" href="#panel3">Historial Médico</a></li>
-      <li class="tabs-title"><a class="title-link" href="#panel4">Guía del Paciente</a></li>
-      <li class="tabs-title"><a class="title-link" href="#panel5">Datos del Paciente</a></li>
+      <li class="tabs-title not-in-mobile"><a class="title-link" href="#panel3">Historial<span class="not-in-mobile"> Médico</span></a></li>
+      <li class="tabs-title not-in-mobile"><a class="title-link" href="#panel4">Guía<span class="in-mobile">s</span><span class="not-in-mobile"> del Paciente</span></a></li>
+      <li class="tabs-title"><a class="title-link" href="#panel5"><span class="not-in-mobile">Datos del Paciente</span><span class="in-mobile">Configuración</span></a></li>
       <li class="tabs-title" id="logout-button"><%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => :delete %></li>
     </ul>
     <div class="tabs-content" id="broken-tower" data-tabs-content="msc-patients-tabs">
       <div class="tabs-panel is-active" id="panel1">
         <div class="row panel-row">
-          <div class="large-4 medium-4 small-4 large-offset-1 medium-offset-1 column">
+          <div class="large-4 medium-4 small-12 large-offset-1 medium-offset-1 column">
             <%= render 'appointmentform'  %>
           </div>
-          <div class="large-6 medium-6 small-6 column" id="right-container">
+          <div class="large-6 medium-6 small-12 column" id="right-container">
 
             <%# Validator container - One of aux containers of right side of the screen by mosin #%>
             <div class="row" id="validation-container">
               <% if !current_user.validated %>
                 <div class="item visible-box" id="available-box">
-                  Usted posee solo <span id="available-apps"></span> solicitudes disponibles. Para obtener mas debe validar su cuenta.
+                  Usted posee sólo <span id="available-apps"></span> solicitudes disponibles. Para obtener mas debe validar su cuenta.
                   <div class="row button-row">
                     <%= button_tag("Acceder", class: "access-button", id: "access-button", type: "button") %>    
                   </div>
@@ -30,16 +30,16 @@
                 <div class="item" id="validation-form-box">
                   <%= form_tag(validate_user_patients_path, method: "post", remote: true, id: "validation-form", html: { "data-abide": "" }) do %>
                     <div class="">
-                      <div class="small-8 columns">
-                        <%= text_field_tag("verification_token", nil, placeholder: "Codigo de Validacion", 'data-validation': "length", 'data-validation-length': "7", 'data-validation-error-msg':"El codigo de validacion debe tener 7 caracteres")  %>  
+                      <div class="large-8 medium-8 small-12 columns">
+                        <%= text_field_tag("verification_token", nil, placeholder: "Codigo de Validacion", 'data-validation': "length", 'data-validation-length': "7", 'data-validation-error-msg':"El codigo de validación debe tener 7 caracteres")  %>  
                       </div>
-                      <div class="small-4 columns">
+                      <div class="large-4 medium-4 small-12 columns">
                         <%= submit_tag("Enviar Codigo", class: "postfix")  %>
                       </div>  
                     </div>
                   <% end %>
                   <div id="helptext-verification">
-                    Codigo de validacion entregado por Medica Santa Carmen
+                    Código de validación entregado por Medica Santa Carmen
                   </div>
                   <% if flash[:notice] %>
                     <div class="form-error">
@@ -90,10 +90,10 @@
       <div class="tabs-panel" id="panel2">
         <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
       </div>
-      <div class="tabs-panel" id="panel3">
+      <div class="not-in-mobile tabs-panel" id="panel3">
         <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
       </div>
-      <div class="tabs-panel" id="panel4">
+      <div class="not-in-mobile tabs-panel" id="panel4">
         <div class="row">
           <h1 class="section-title">
             Datos del Paciente
