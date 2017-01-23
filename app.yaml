@@ -12,7 +12,8 @@
 # limitations under the License.
 # bundle exec rackup -p 8080 -E production config.ru
 # [START runtime]
-runtime: ruby
+runtime: custom
 vm: true
-entrypoint: bundle exec rackup -E production -s Puma -p 3000
+entrypoint: bundle exec rackup -s Puma -p $PORT
+# entrypoint: bundle exec rackup -E production -s Puma -p 3000
 # [END runtime]
