@@ -1,6 +1,6 @@
-# 
+#
 # Postgresql database
-# 
+#
 #
 default: &default
   adapter: postgresql
@@ -35,5 +35,7 @@ postgresql_settings: &postgresql_settings
   pool: 5
   username: mscdbowner
   password: s1cs3mp3rtyr4nn15
-  host: 35.185.2.47
+  host: localhost
   database: santacarmen
+
+  #host: 35.185.2.47
