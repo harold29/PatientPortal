@@ -15,14 +15,14 @@ $ocher: #F16323;
 $yallow: #F9C317;
 $notblack: #4C4C4C;
 $lightgrey: #7f7f7f;
-//------------- end of header colors -------------- 
+//------------- end of header colors --------------
 
 //-----------------media queries-------------------
 $bp-778: 778px; //Ipad
 $bp-414: 414px; //iPhone6+
 $bp-375: 375px; //iPhone6
 $bp-360: 360px; //360x640 Nominal S6
-$bp-320: 320px; //320x568 
+$bp-320: 320px; //320x568
 //-----------------//media queries-----------------
 
 
@@ -32,7 +32,7 @@ body, h1, h2, h3, h4, h5, h6, p, a {
 }
 
 body {
-  background-image: url("home.jpg");
+  background-image: image-url("home.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   // @media screen and (max-width: $bp-320){
@@ -71,7 +71,7 @@ body {
 
 
 .background-snd {
-  background-image: url("pattern.png");
+  background-image: image-url("pattern.png");
   background-repeat: repeat-x repeat-y;
   background-color: transparent;
   width: 100%;
@@ -120,19 +120,19 @@ body {
   @media screen and (max-width: $bp-375) {
     margin-top: 45%;
   }
-  
+
   @media screen and (max-width: $bp-360) {
     margin-top: 39%;
   }
-  
+
   @media screen and (max-width: $bp-320){
     margin-top: 30%;
     margin-left: 3%;
     margin-right: 3%;
   }
-  
+
   .title-bold {
-    font-size: 1.6em; 
+    font-size: 1.6em;
   }
 
   #button-container {
@@ -148,7 +148,7 @@ body {
       padding-left: 5%;
       padding-bottom: 1%;
       padding-top: 1%;
-      border: 0;  
+      border: 0;
       &:hover {
         background-color: $white-msc;
         color: $blue-msc;
@@ -191,22 +191,22 @@ body {
     position: inherit;
     width: 100%;
     margin-right: 0%;
-    margin-bottom: 30%; 
+    margin-bottom: 30%;
   }
-  
+
   @media screen and (max-width: $bp-360) {
     position: inherit;
     margin-top: 5%;
-    
+
   }
-  
+
   @media screen and (max-width: 320px){
     // position: inherit;
     // width: 100%;
     padding-left: 6%;
     padding-right: 6%;
   }
-  
+
 }
 
 #register {
@@ -227,11 +227,11 @@ body {
     width: 100%;
     margin-top: 25%;
   }
-  
+
   @media screen and (max-width: $bp-375) {
     width: 100%;
   }
-  
+
   .title-bold {
     color: $blue-msc;
     font-weight: bold;
