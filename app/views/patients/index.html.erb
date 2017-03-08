@@ -1,12 +1,12 @@
 <div id="winterfell">
   <% if user_signed_in? %>
-    <ul class="tabs" data-tabs data-responsive-accordion-tabs="tabs medium-tabs large-tabs" id="msc-patients-tabs">  
+    <ul class="tabs" data-tabs data-responsive-accordion-tabs="tabs medium-tabs large-tabs" id="msc-patients-tabs">
       <li class="tabs-title is-active"><a href="#panel1" aria-selected="true"><span class="not-in-mobile">Solicitud de </span>Citas</a></li>
-      <li class="tabs-title"><a class="title-link" href="#panel2">Reportes</a></li>
-      <li class="tabs-title not-in-mobile"><a class="title-link" href="#panel3">Historial<span class="not-in-mobile"> Médico</span></a></li>
-      <li class="tabs-title not-in-mobile"><a class="title-link" href="#panel4">Guía<span class="in-mobile">s</span><span class="not-in-mobile"> del Paciente</span></a></li>
+      <!-- <li class="tabs-title"><a class="title-link" href="#panel2">Reportes</a></li> -->
+      <!-- <li class="tabs-title not-in-mobile"><a class="title-link" href="#panel3">Historial<span class="not-in-mobile"> Médico</span></a></li> -->
+      <!-- <li class="tabs-title not-in-mobile"><a class="title-link" href="#panel4">Guía<span class="in-mobile">s</span><span class="not-in-mobile"> del Paciente</span></a></li> -->
       <li class="tabs-title"><a class="title-link" href="#panel5"><span class="not-in-mobile">Datos del Paciente</span><span class="in-mobile">Configuración</span></a></li>
-      <li class="tabs-title" id="logout-button"><%= link_to 'Cerrar Sesion', destroy_user_session_path, :method => :delete %></li>
+      <li class="tabs-title" id="logout-button"><%= link_to 'Cerrar Sesión', destroy_user_session_path %></li>
     </ul>
     <div class="tabs-content" id="broken-tower" data-tabs-content="msc-patients-tabs">
       <div class="tabs-panel is-active" id="panel1">
@@ -20,32 +20,32 @@
             <div class="row" id="validation-container">
               <% if !current_user.validated %>
                 <div class="item visible-box" id="available-box">
-                  Usted posee sólo <span id="available-apps"></span> solicitudes disponibles. Para obtener mas debe validar su cuenta.
+                  Usted posee sólo <span id="available-apps"></span> solicitudes disponibles. Para obtener más debe validar su cuenta.
                   <div class="row button-row">
-                    <%= button_tag("Acceder", class: "access-button", id: "access-button", type: "button") %>    
+                    <%= button_tag("Acceder", class: "access-button", id: "access-button", type: "button") %>
                   </div>
                 </div>
                 <div id="vc-deco" class="item decoration-right"></div>
-              
+
                 <div class="item" id="validation-form-box">
                   <%= form_tag(validate_user_patients_path, method: "post", remote: true, id: "validation-form", html: { "data-abide": "" }) do %>
                     <div class="">
                       <div class="large-8 medium-8 small-12 columns">
-                        <%= text_field_tag("verification_token", nil, placeholder: "Codigo de Validacion", 'data-validation': "length", 'data-validation-length': "7", 'data-validation-error-msg':"El codigo de validación debe tener 7 caracteres")  %>  
+                        <%= text_field_tag("verification_token", nil, placeholder: "Código de Validación", 'data-validation': "length", 'data-validation-length': "7", 'data-validation-error-msg':"El codigo de validación debe tener 7 caracteres")  %>
                       </div>
                       <div class="large-4 medium-4 small-12 columns">
-                        <%= submit_tag("Enviar Codigo", class: "postfix")  %>
-                      </div>  
+                        <%= submit_tag("Enviar Código", class: "postfix")  %>
+                      </div>
                     </div>
                   <% end %>
                   <div id="helptext-verification">
-                    Código de validación entregado por Medica Santa Carmen
+                    Código de validación entregado por Médica Santa Carmen
                   </div>
-                  <% if flash[:notice] %>
+                  <!-- <% if flash[:notice] %>
                     <div class="form-error">
                       <%= flash[:notice] %>
                     </div>
-                  <% end %>
+                  <% end %> -->
                   <div class="decoration-right item verification-deco"></div>
                 </div>
               <% end  %>
@@ -57,20 +57,20 @@
                 Fecha
               </h4>
               <div id="calendar" class="">
-                
+
               </div>
             </div>
-  
+
             <%# Clock container - Aux container for appointment hour selection. by mosin #%>
             <div id="hours-container" class="row aux-container">
               <h4 id="hours-title">
                 Horas
               </h4>
               <h5 id="hour-day">
-                
+
               </h5>
               <div id="hours" class="row">
-                
+
               </div>
               <div class="row" id="color-explaining">
                 <div id="blue-exp" class="column large-6 medium-6 small-6">
@@ -87,13 +87,13 @@
           </div>
         </div>
       </div>
-      <div class="tabs-panel" id="panel2">
+      <!-- <div class="tabs-panel" id="panel2">
         <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
       </div>
       <div class="not-in-mobile tabs-panel" id="panel3">
         <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
-      </div>
-      <div class="not-in-mobile tabs-panel" id="panel4">
+      </div> -->
+      <!-- <div class="not-in-mobile tabs-panel" id="panel4">
         <div class="row">
           <h1 class="section-title">
             Datos del Paciente
@@ -109,10 +109,10 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
       <div class="tabs-panel" id="panel5">
         <%= render 'userdatashow'  %>
       </div>
     </div>
-  <% end %>  
+  <% end %>
 </div>

@@ -3,18 +3,18 @@
     <%= form_tag(validate_user_patients_path, method: "post", remote: true, id: "validation-form", html: { "data-abide": "" }) do %>
       <div class="">
         <div class="small-4 columns">
-          <%= text_field_tag("verification_token", nil, placeholder: "Codigo de Validacion", 'data-validation': "length", 'data-validation-length': "7", 'data-validation-error-msg':"El codigo de validacion debe tener 7 caracteres")  %>  
+          <%= text_field_tag("verification_token", nil, placeholder: "Codigo de Validacion", 'data-validation': "length", 'data-validation-length': "7", 'data-validation-error-msg':"El codigo de validacion debe tener 7 caracteres")  %>
         </div>
         <div class="small-5 columns">
           <p class="info-text">
-            Codigo de validacion entregado por Medica Santa Carmen          
+            Codigo de validacion entregado por Medica Santa Carmen
           </p>
         </div>
         <div class="small-3 columns" id="button-container">
           <%= submit_tag("Enviar Codigo", class: "postfix")  %>
-        </div>  
+        </div>
       </div>
-    <% end %>  
+    <% end %>
   </div>
 <% end %>
 
@@ -22,61 +22,152 @@
   <ul class="tabs" data-tabs id="sub-tabs-patient-data">
     <li class="tabs-title large-4 is-active"><a href="#patient-data-subtab" aria-selected="true">Datos del Paciente</a></li>
     <li class="tabs-title large-4"><a href="#emergency-contact-subtab">Contactos de Emergencia</a></li>
-    <li class="tabs-title large-4"><a href="#md-subtab">Medico Tratante</a></li>
+    <!-- <li class="tabs-title large-4"><a href="#md-subtab">Medico Tratante</a></li> -->
   </ul>
 
   <div class="tabs-content" data-tabs-content="sub-tabs-patient-data">
     <div class="tabs-panel is-active" id="patient-data-subtab">
-      <%= form_tag(update_sensitive_info_patients_path, method: 'post', remote: true, id: "update-patient-form", class: "form") do %>  
+      <% current_patient = Patient.find_by_user_id(current_user.id) %>
+      <% current_address = Address.find_by_id(current_patient.address_id) %>
+      <%= form_tag(update_sensitive_info_patients_path, method: 'post', remote: true, id: "update-patient-form", class: "form") do %>
         <div class="row field-container" id="name-field">
-          <%= text_field_tag('name', nil, value: current_user.name, disabled: true)  %>       <%= text_field_tag('last_name', nil, value: current_user.last_name, disabled: true)  %>
+          <div class="columns large-6 medium-6 small-12">
+            <%= label_tag 'name', "Nombre" %>
+            <%= text_field_tag('name', nil, value: current_user.name, disabled: true) %>
+          </div>
+          <div class="columns large-6 medium-6 small-12">
+            <%= label_tag 'last_name', "Apellido" %>
+            <%= text_field_tag('last_name', nil, value: current_user.last_name, disabled: true) %>
+          </div>
         </div>
-        <div class="large-6 medium-6 small-6 column">
-          <div class="row field-container" id="name-field"></div>
+        <div class="row field-container" id="general-field-1">
+          <div class="columns large-5 medium-6 small-12">
+            <%= label_tag 'email', "Correo Electrónico" %>
+            <%= text_field_tag('email', nil, value: current_user.email, disabled: true) %>
+          </div>
+          <div class="columns large-4 medium-6 small-12">
+            <%= label_tag 'birthday', "Fecha de Nacimiento" %>
+            <%= text_field_tag('birthday', nil, value: current_user.birthday, disabled: true) %>
+          </div>
+          <div class="columns large-3 medium-6 small-12">
+            <%= label_tag 'age', "Edad" %>
+            <%= text_field_tag('age', nil, value: current_user.age, disabled: true) %>
+          </div>
         </div>
-        <div class="large-6 medium-6 small-6 column">
-          <div class="row field-container" id="-field"></div>
+        <div class="row field-container" id="general-field-2">
+          <div class="columns large-2 medium-2 small-12">
+            <%= label_tag 'blood_type', "Tipo de Sangre" %>
+            <%= text_field_tag('blood_type', nil, value: current_patient.blood_type, disabled: true) %>
+          </div>
+          <div class="columns large-3 medium-3 small-12">
+            <%= label_tag 'married', "Estado Civil" %>
+            <% if current_patient.married %>
+              <%= text_field_tag('married', nil, value: 'Casado', disabled: true) %>
+            <% else %>
+              <%= text_field_tag('married', nil, value: 'Soltero', disabled: true) %>
+            <% end %>
+          </div>
+          <div class="columns large-3 medium-3 small-12">
+            <%= label_tag 'case_file', "Número de Caso" %>
+            <%= text_field_tag('case_file', nil, value: current_patient.case_file, disabled: true) %>
+          </div>
+          <div class="columns large-4 medium-4 small-12">
+
+          </div>
         </div>
-      <% end %>    
+        <% if !current_address.nil? %>
+          <div class="row field-container" id="title-field">
+            <h2 class="field-title">
+              Dirección
+            </h2>
+          </div>
+          <div class="row field-container" id="location-field-1">
+            <div class="columns large-4 medium-3 small-12">
+              <%= label_tag 'country', "País" %>
+              <% country = Country.find_by_id(current_address.country_id) %>
+              <%= text_field_tag('address_country', nil, value: country.name, disabled: true) %>
+            </div>
+            <div class="columns large-4 medium-3 small-12">
+              <%= label_tag 'state', "Estado" %>
+              <% state = State.find_by_id(current_address.state_id) %>
+              <%= text_field_tag('address_state', nil, value: state.name, disabled: true) %>
+            </div>
+            <div class="columns large-4 medium-3 small-12">
+              <%= label_tag 'municipality', "Municipio" %>
+              <% municipality = Municipality.find_by_id(current_address.municipality_id) %>
+              <%= text_field_tag('address_municipality', nil, value: municipality.name, disabled: true) %>
+            </div>
+          </div>
+          <div class="row field-container" id="location-field-2">
+            <div class="columns large-6 medium-6 small-12">
+              <%= label_tag 'address_location', "Dirección" %>
+              <%= text_area_tag('address_location', nil, value: municipality.name, disabled: true) %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
     <div class="tabs-panel" id="emergency-contact-subtab">
       <div class="form-container">
         <%#= form_for(patient_emc_patients_path, method: 'post', remote: true, id: 'em-patient-form', class: 'em-patient-form form') do %>
         <%# end #%>
-        <div id="em-fc-1" class="em-form-container large-4 medium-4 small-4 column">
+        <% rel = Relative.where("patient_id = ?", @patient.id)%>
+        <div id="em-fc-1" class="em-form-container large-offset-2 large-4 medium-4 small-4 column">
           <h4 class="form-title">
             Contacto Principal
           </h4>
-          <%= form_for(:relative, url: patient_emc_patients_path(:relative), html: {id: "em-patient-form-0", class: "em-patient-form"}) do |f|  %>
-            <%= f.text_field :name, placeholder: "Nombre y Apellido", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su nombre"  %>
-            <%= f.select :kinship, options_for_select([['Madre', 'madre'], ['Padre', 'padre'], ['Hermano', 'hermano'], ['Tio', 'tio'], ['Tia', 'tia'], ['Esposo', 'esposo'], ['Esposa', 'esposa'], ['Otro', 'otro'] ])  %>
-            <%= f.text_field :phone1, placeholder: "Telefono Movil", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Movil"  %>
-            <%= f.text_field :phone2, placeholder: "Telefono Particular", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Particular"  %>
-          <% end %>  
+          <%= form_for(!rel[0].nil? ? rel[0] : :relative, url: patient_emc_patients_path(:json), remote: true, method: 'post', html: {id: "em-patient-form-0", class: "em-patient-form", "data-id": rel[0].nil? ? "null" : rel[0].id }) do |f|  %>
+            <%# f.number_field :relative_id, class: "form-id", id: "form-id-0", disabled: false #%>
+            <%= f.text_field :name, placeholder: "Nombre y Apellido", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su nombre" %>
+            <%= f.select :kinship, options_for_select([['Madre', 'madre'], ['Padre', 'padre'], ['Hermano', 'hermano'], ['Tio', 'tio'], ['Tia', 'tia'], ['Esposo', 'esposo'], ['Esposa', 'esposa'], ['Otro', 'otro'] ]) %>
+            <%= f.text_field :phone1, placeholder: "Telefono Móvil", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Movil" %>
+            <%= f.text_field :phone2, placeholder: "Telefono Particular", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Particular" %>
+            <%= f.submit 'Guardar', id: 'em-submit-1' %>
+          <% end %>
         </div>
         <div id="em-fc-2" class="em-fc-2 em-form-container large-4 medium-4 small-4 column">
           <h4 class="form-title">
             Contacto Secundario
           </h4>
-          <%= form_for(:relative, url: patient_emc_patients_path(:relative), html: {id: "em-patient-form-1", class: "em-patient-form"}) do |f|  %>
-            <%= f.text_field :name, placeholder: "Nombre y Apellido", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su nombre"  %>
-            <%= f.select :kinship, options_for_select([['Madre', 'madre'], ['Padre', 'padre'], ['Hermano', 'hermano'], ['Tio', 'tio'], ['Tia', 'tia'], ['Esposo', 'esposo'], ['Esposa', 'esposa'], ['Otro', 'otro'] ])  %>
-            <%= f.text_field :phone1, placeholder: "Telefono Movil", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Movil"  %>
-            <%= f.text_field :phone2, placeholder: "Telefono Particular", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Particular"  %>
-          <% end %>  
-          
+          <%= form_for(!rel[1].nil? ? rel[1] : :relative, url: patient_emc_patients_path(:json), remote: true, method: 'post', html: {id: "em-patient-form-1", class: "em-patient-form", "data-id": rel[1].nil? ? "null" : rel[1].id }) do |f|  %>
+            <%# f.number_field :relative_id, class: "form-id", id: "form-id-1", disabled: true #%>
+            <%= f.text_field :name, placeholder: "Nombre y Apellido", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su nombre" %>
+            <%= f.select :kinship, options_for_select([['Madre', 'madre'], ['Padre', 'padre'], ['Hermano', 'hermano'], ['Tio', 'tio'], ['Tia', 'tia'], ['Esposo', 'esposo'], ['Esposa', 'esposa'], ['Otro', 'otro'] ]) %>
+            <%= f.text_field :phone1, placeholder: "Telefono Móvil", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Movil" %>
+            <%= f.text_field :phone2, placeholder: "Telefono Particular", 'required':"required", 'data-validation-error-msg':"Por favor introduzca su Telefono Particular" %>
+            <%= f.submit 'Guardar', id: 'em-submit-2' %>
+          <% end %>
+
         </div>
-        <div id="em-fc-3" class="em-fc-3 em-form-container large-4 medium-4 small-4 column">
-          <div id="em-aggregator">
+        <div class="em-fc-3 large-4 medium-4 small-4 column">
+          <!-- <div id="em-aggregator">
             <h5 id="em-aggregator-title">
               Agregar Otro
             </h5>
-          </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="hidden feedback-container">
+        <div class="f-wrapper" id="p-f-wrapper">
+          <h3>
+            La información se ha guardado con éxito
+          </h3>
+          <h3>
+            <i class="fi-check large"></i>
+          </h3>
+        </div>
+        <div class="f-wrapper" id="n-f-wrapper">
+          <h3>
+            Ha habido un problema al guardar la información
+          </h3>
+          <h3>
+            <i class="fi-x large"></i>
+          </h3>
         </div>
       </div>
     </div>
-    <div class="tabs-panel" id="md-subtab">
-      
-    </div>
+    <!-- <div class="tabs-panel" id="md-subtab">
+
+    </div> -->
   </div>
 </div>

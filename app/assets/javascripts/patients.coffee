@@ -7,7 +7,7 @@ $ ->
   check_available_app()
   $("#validation-form").on("ajax:success", (e, data, status, xhr) ->
     console.log("success:" +  data)
-  ).on("ajax:error", (e, xhr, status, error) -> 
+  ).on("ajax:error", (e, xhr, status, error) ->
     console.log("error")
   )
 
@@ -15,17 +15,15 @@ $ ->
     form: '#validation-form',
     borderColorOnError: '#FE3102'
 
+# Functions calls
   on_change_fields()
   calendar_management()
-
   on_validation_click()
-
   verification_form_status()
+  add_em_response()
 
-  add_form_em()
 
 
-  
 
 
 
@@ -52,16 +50,16 @@ on_change_fields = () ->
     service_id = $(this).val()
     console.log("service_id retrieved: " + service_id)
     $('#appointment_date').removeAttr('disabled')
-    console.log("date enabled")    
+    console.log("date enabled")
   )
 
   $("#appointment_date").on('input', (e) ->
-    console.log("date triggered!")    
+    console.log("date triggered!")
     app_date = $(this).val()
-    console.log("date retrieved: " + app_date)    
+    console.log("date retrieved: " + app_date)
     $('#appointment_hour').removeAttr('disabled')
     console.log("app_date: " + app_date)
-    schedule_ajax app_date,service_id 
+    schedule_ajax app_date,service_id
   )
 
 
@@ -83,10 +81,10 @@ calendar_management = () ->
     $("#hours-container").hide()
     $("#calendar-container").show()
     $("#calendar").fullCalendar
-      dayClick: (date, jsEvent, view) -> 
+      dayClick: (date, jsEvent, view) ->
         $("#appointment_date").val(date.format("DD-MM-YYYY"))
         $("#appointment_date").attr("data-date",date.format("YYYY-MM-DD"))
-        serviceid = $("#service_id").val() 
+        serviceid = $("#service_id").val()
         schedule_ajax date.format("YYYY-MM-DD"), serviceid #ajax request sending for schedule hours
       monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
       monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
@@ -104,7 +102,7 @@ calendar_management = () ->
     on_calendar_change_event()
     available_days()
 
-      
+
 hours_management = (schedule_hours, day) ->
   $('#appointment_hour').click (event) ->
     $('#validation-container').hide()
@@ -122,7 +120,7 @@ hours_management = (schedule_hours, day) ->
         radio_button = radio_button + "</div>"
       else
         #
-        # Returns a string with the hour in second position
+        # Returns a string with hour in second position
         #
         if hour.available = true
           if i < half
@@ -133,7 +131,7 @@ hours_management = (schedule_hours, day) ->
           if i < half
             radio_button = radio_button + "<div class='row fc-hour-not-available left-side'><input type='radio' id='radio-" + i.toString() + "' class='hours-radio not-available-hour' name='schedule_hours' value='" + id.toString() + "' data-text='" + (hour.hour).toString() + "'><label class='radio-label' for='radio-"+i.toString()+"'>" + filtered_hour + "</label></div>"
           else if i > half
-            radio_button = radio_button + "<div class='row fc-hour-not-available right-side'><inp.ut type='radio' id='radio-" + i.toString() + "' class='hours-radio not-available-hour' name='schedule_hours' value='" + id.toString() + "' data-text='" + (hour.hour).toString() + "'><label class='radio-label' for='radio-"+i.toString()+"'>" + filtered_hour + "</label></div>"          
+            radio_button = radio_button + "<div class='row fc-hour-not-available right-side'><inp.ut type='radio' id='radio-" + i.toString() + "' class='hours-radio not-available-hour' name='schedule_hours' value='" + id.toString() + "' data-text='" + (hour.hour).toString() + "'><label class='radio-label' for='radio-"+i.toString()+"'>" + filtered_hour + "</label></div>"
     $('#hours').html(radio_button)
     $('.hours-radio').on('change', (e) ->
       if $(this).hasClass("available-hour")
@@ -167,9 +165,9 @@ on_validation_click = () ->
     $("#clinic").removeAttr('disabled')
     $("#clinic").removeClass('disabled-select')
     $("#validation-form-box").addClass("available-box-dissapeared")
-# 
-# 
-# 
+#
+#
+#
 
 get_date_cal = () ->
   $(".fc-day-number").each (index, element) ->
@@ -183,7 +181,7 @@ get_date_cal = () ->
           $("#calendar-container").hide()
         else
           $("#calendar-container").hide()
-  
+
 
 on_calendar_change_event = () ->
   $(".fc-button").click (event) ->
@@ -208,7 +206,7 @@ available_days = () ->
 verification_form_status = () ->
   $("#validation-form").on("ajax:success", (e, data, status, xhr) ->
     if xhr.responseText == 'true'
-      $("#helptext-verification").append "<div> Su usuario fue verificado exitosamente </div>" 
+      $("#helptext-verification").append "<div> Su usuario fue verificado exitosamente </div>"
     else if xhr.responseText == 'false'
       $("#helptext-verification").append "<div class='form-error'> El codigo introducido no es correcto </div>"
   ).on("ajax:error", (e, data, status, xhr) ->
@@ -218,6 +216,22 @@ verification_form_status = () ->
 add_form_em = () ->
   $("#em-fc-3").click (event) ->
     $(this).html($("#em-fc-1").clone())
+
+add_em_response = () ->
+  $("form[data-remote]").on "ajax:success", (e, data, status, xhr) ->
+    console.log($(this))
+    $(this).children('input').hide()
+    $(this).children('select').hide()
+    $('#p-f-wrapper').attr('none')
+    $('#p-f-wrapper').clone().appendTo($(this))
+    $(this).children('#p-f-wrapper').addClass('visible-f-wrapper')
+
+  $("form[data-remote]").on "ajax:error", (e, data, status, xhr) ->
+    $(this).children('input').hide()
+    $(this).children('select').hide()
+    $('#n-f-wrapper').clone().appendTo($(this))
+
+
 # disabled_form = () ->
 #   $("#access-button").click (event) ->
 

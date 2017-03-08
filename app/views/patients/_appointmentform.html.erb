@@ -2,7 +2,7 @@
   <div id="new-appointment-form" class="formbox disabled-appointment-form">
 <% else %>
   <div id="new-appointment-form" class="formbox">
-<% end %>  
+<% end %>
   <h4 class="form-title" id="appointment-form-title">
     Solicitud de Citas
   </h4>
@@ -10,14 +10,14 @@
     <div class="form-field">
       <% @clinics = Clinic.all %>
       <% if !current_user.validated %>
-        <%= select_tag "clinic", options_from_collection_for_select(@clinics, "id", "name", prompt: "Centro Medico"), prompt:  "Centro Medico", 'required': " ", disabled: true, class: 'disabled-select' %>
+        <%= select_tag "clinic", options_from_collection_for_select(@clinics, "id", "name", prompt: "Centro Médico"), prompt:  "Centro Médico", 'required': " ", disabled: true, class: 'disabled-select' %>
       <% else %>
-        <%= select_tag "clinic", options_from_collection_for_select(@clinics, "id", "name", prompt: "Centro Medico"), prompt:  "Centro Medico", 'required': " ", class: '' %>
+        <%= select_tag "clinic", options_from_collection_for_select(@clinics, "id", "name", prompt: "Centro Médico"), prompt:  "Centro Médico", 'required': " ", class: '' %>
       <% end %>
     </div>
     <div class=" form-field">
       <% @services = Service.all %>
-      <%= select_tag :service_id, options_for_select(@services.map { |c| [c.name, c.id, {:'data-clinic' => c.clinic_id}]}), prompt: "Area Medica", disabled: true, 'required': " ", class: 'disabled-select' %>
+      <%= select_tag :service_id, options_for_select(@services.map { |c| [c.name, c.id, {:'data-clinic' => c.clinic_id}]}), prompt: "Área Médica", disabled: true, 'required': " ", class: 'disabled-select' %>
     </div>
     <div class=" form-field">
       <%= text_field_tag('appointment_date', nil, placeholder: "Fecha", disabled: true, 'required': " ", readonly: true, class: "", id: "appointment_date") %>
@@ -28,7 +28,7 @@
     </div>
     <div class="">
       <p class="alert-text" id="appointment-form-text">
-        El centro médico de su elección lo contactará por vía telefónica para confirmar su cita. 
+        El centro médico de su elección lo contactará por vía telefónica para confirmar su cita.
       </p>
     </div>
     <div class=" form-field button-container">

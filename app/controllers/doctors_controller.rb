@@ -23,9 +23,9 @@ class DoctorsController < ApplicationController
     end
   end
 
-  # 
+  #
   # Set calendar_id in Settings. Border case not tested. by mosin.
-  # 
+  #
 
   # def set_calendar_in_settings
   #   setting = Setting.find_by_user_id(current_user.id)
@@ -44,9 +44,9 @@ class DoctorsController < ApplicationController
   #   end
   # end
 
-  # 
+  #
   # in Use? by mosin 14/12/16
-  # 
+  #
 
   def appointment_actions
     if user_signed_in?
@@ -63,10 +63,17 @@ class DoctorsController < ApplicationController
   def accept_appointment #ajax
     if user_signed_in? && current_user.id == session[:user_id]
       app = Appointment.find_by_id(params[:appointment_id])
+      patient = app.patient
+      clinic_name = Service.find_by_id(app.service_id).clinic.name
+      schedule = Schedule.find_by_id(app.schedule_id)
+      setting = Setting.find_by_user_id(current_user.id)
       app.accepted = true
       app.save
       respond_to do |format|
         if app.persisted?
+          if setting.send_notifications
+            insert_events(patient, clinic_name, schedule, setting)
+          end
           format.json {render json: app, status: :accepted}
         else
           format.json {render json: app.errors, status: :internal_server_error}

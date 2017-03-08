@@ -24,9 +24,9 @@ module Calendar
     calendar.list_calendar_lists
   end
 
-  # 
+  #
   # Set calendar_id in Settings. Border case not tested. by mosin.
-  # 
+  #
 
   def set_calendar_in_settings
     setting = Setting.find_by_user_id(current_user.id)
@@ -82,17 +82,57 @@ module Calendar
     end
   end
 
+  def insert_events(patient, clinic_name, schedule, setting)
+    hour = schedule.hour.in_time_zone('America/Mexico_City')
+    start_hour = hour.strftime("%H:%M:%S")
+    day = schedule.day.strftime
+    time_zone = hour.strftime("%z")
+    start_date_time = day + "T" + start_hour + time_zone
+    ab = setting.appointment_block*60
+    user = patient.user
+    end_hour = (hour + ab).strftime("%H:%M:%S")
+    end_date_time = day + "T" + end_hour + time_zone
+
+    summary = 'Cita médica con: ' + user.name + " " + user.last_name
+
+    event = Google::Apis::CalendarV3::Event.new({
+      summary: summary,
+      # location: ,
+      description: 'Cita médica con: ' + user.name + " " + user.last_name + ' en: ' + clinic_name,
+      start: {
+        date_time: start_date_time,
+        time_zone: 'America/Mexico_City',
+      },
+      end: {
+        date_time: end_date_time,
+        time_zone: 'America/Mexico_City',
+      },
+      attendees: [
+        { email: user.email },
+        { email: current_user.email },
+      ]#,
+      # reminders: {
+      #   use_default: true,
+      #   override: [
+      #     { method => 'email', 'minutes: 24 * 60 },
+      #     { method => 'popup', 'minutes: 10 },
+      #   ],
+      # },
+    })
+
+    calendar = init_calendar
+    result = calendar.insert_event(setting.calendar_id, event)
+  end
+
   def create_new_calendar
-    
+
   end
 
   def get_events
-  
+
   end
 
-  def insert_events
-    
-  end
+
 
   def update_events
 

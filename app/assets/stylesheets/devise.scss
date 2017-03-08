@@ -1,0 +1,47 @@
+
+
+$white-msc: #FFFFFF;
+$gray-msc: #D8CDD0;
+$lightgray-msc: #999999;
+$blue-msc: #01ABC7;
+$black-msc: #4C4C4C;
+
+
+#pr-container {
+  margin-top: 10%;
+  width: 100%;
+  .sub-container {
+    background-color: white;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    box-shadow: 6px 6px 5px $black-msc;
+    h2 {
+      color: $blue-msc;
+      font-size: 1.5em;
+    }
+    .actions {
+      text-align: center;
+      margin-top: 5%;
+      input {
+        background-color: $blue-msc;
+        color: white;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-bottom: 1%;
+        padding-top: 1%;
+        border: 0;
+        &:hover {
+          box-shadow: 4px 4px 0px #006272;
+        }
+      }
+    }
+    .alt-actions {
+      margin-top: 25px;
+      text-align: center;
+    }
+  }
+}

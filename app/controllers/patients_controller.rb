@@ -2,9 +2,10 @@ class PatientsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @patient = Patient.find_by_user_id(current_user.id)
     if params[:id].to_i != session[:user_id]
       not_found
-    end    
+    end
   end
 
   def available_appointment
@@ -21,7 +22,7 @@ class PatientsController < ApplicationController
       end
     else
       not_found
-    end 
+    end
   end
 
   def pre_add
@@ -30,7 +31,7 @@ class PatientsController < ApplicationController
       add_appointment
     else
       current_appointments = Appointment.find_by_patient_id(patient.id)
-      if current_appointments >= 0 && current_appointments < 2 
+      if current_appointments >= 0 && current_appointments < 2
         add_appointment
       else
         respond_to do |format|
@@ -48,12 +49,10 @@ class PatientsController < ApplicationController
       if (appointment.persisted?)
         service = Service.find_by_id(params[:service_id])
         clinic = Clinic.find_by_id(service.clinic_id)
-        #schedule = Schedule.where("day = ? AND hour = ?", params[:appointment_date], params[:appointment_hour])
         schedule.update(available: false)
         UserMailer.appointment_email(appointment, current_user, service, clinic).deliver_later
         respond_to do |format|
           format.json { render json: appointment, status: :created }
-          #format.html { render }
         end
       else
         format.json { render json: appointment.errors, status: :unprocessable_entity }
@@ -71,7 +70,7 @@ class PatientsController < ApplicationController
     end
 
     respond_to do |format|
-      format.json {render json: json_resp} 
+      format.json {render json: json_resp}
     end
   end
 
@@ -79,10 +78,10 @@ class PatientsController < ApplicationController
     schedules = Schedule.where("service_id = ? AND available = ? AND day = ?", params[:service_id], true, params[:app_date])
     respond_to do |format|
       format.json {render json: schedules.reverse}
-    end    
+    end
   end
 
-  def available_days 
+  def available_days
     #hours = Schedule.where("name_id = ?")
 
   end
@@ -92,7 +91,7 @@ class PatientsController < ApplicationController
     logger.debug schedules.size
     if schedules.size != 0
       true
-    else 
+    else
       false
     end
   end
@@ -114,24 +113,42 @@ class PatientsController < ApplicationController
   end
 
   def patient_emc
+    # TODO: When patient updates the emc's, this models duplicates, see why
     if user_signed_in?
       patient = Patient.find_by_user_id(current_user.id)
-      #rel = Relative.create(params[:relative], patient_id: patient.id)
-      rel = Relative.create(params.require(:relative).permit(:name, :kinship, :phone1, :phone2))
-      if (rel.persisted?)
-        respond_to do |format|
-          format.json {render json: rel, status: :created}
-        end
+      logger.debug patient.inspect
+      aux = Relative.new(relative_params)
+      logger.debug relative_params.inspect
+      logger.debug aux.inspect
+      rel = Relative.find_by_id(aux.id)
+
+      if !rel.nil?
+        logger.debug "condition 1 accomplished"
+        rel.update_attributes(name: aux.name, kinship: aux.kinship, phone1: aux.phone1, phone2: aux.phone2)
       else
-        format.json { render json: rel.errors, status: :unprocessable_entity }
+        logger.debug "condition 2 accomplished"
+        rel = Relative.create(name: aux.name, kinship: aux.kinship, phone1: aux.phone1, phone2: aux.phone2)
+        rel.patient = patient
       end
+      rel.save
+      respond_to do |format|
+        format.json {render json: rel.persisted? ? rel : rel.errors, status: rel.persisted? ? :ok : :unprocessable_entity }
+      end
+      # respond_to do |format|
+      #   # if rel.persisted?
+      #   #   format.json {render json: rel, status: :ok}
+      #   # else
+      #   #   format.json { render json: rel.errors, status: :unprocessable_entity }
+      #   # end
+      # end
     else
       not_found
     end
   end
 
-  def update_sensitive_info
+  private
+    def relative_params
+      params.require(:relative).permit(:id, :name, :kinship, :phone1, :phone2)
+    end
 
-  end
-  
 end
