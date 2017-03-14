@@ -1,6 +1,6 @@
 <div id="dorne">
   <% if user_signed_in? %>
-    <ul class="tabs" data-tabs id="msc-doctors-tabs">  
+    <ul class="tabs" data-tabs id="msc-doctors-tabs">
       <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Citas</a></li>
       <li class="tabs-title"><a class="title-link" href="#panel2">Reportes</a></li>
       <li class="tabs-title"><a class="title-link" href="#panel3">Historial de Citas</a></li>
@@ -57,7 +57,7 @@
                   <div class="date-col column large-2 medium-2 small-2">
                     <% schedule = Schedule.find_by_id(app.schedule_id) %>
                     <% if !schedule.nil? %>
-                      <%= schedule.day.strftime("%d/%m/%Y") %> <%= schedule.hour.strftime("%H:%M") %> 
+                      <%= schedule.day.strftime("%d/%m/%Y") %> <%= schedule.hour.strftime("%H:%M") %>
                     <% else %>
                       <div class="table-error-msg">
                         ¡Error 501!
@@ -69,7 +69,7 @@
                       <% if app.accepted %>
                         <i id="check-<%= app.id.to_s %>" class="fi-check check-accepted" data-appointment=<%= app.id.to_s %>></i>
                       <% else %>
-                        <i id="check-<%= app.id.to_s %>" data-appointment=<%= app.id.to_s %> class="fi-check check-not-accepted"></i>             
+                        <i id="check-<%= app.id.to_s %>" data-appointment=<%= app.id.to_s %> class="fi-check check-not-accepted"></i>
                       <% end %>
                     </a>
                     <%# if !app.accepted #%>
@@ -86,7 +86,7 @@
                       <% if app.accepted %>
                         <i id="x-<%= app.id.to_s %>" data-appointment=<%= app.id.to_s %> class="fi-x x-accepted"></i>
                       <% else %>
-                        <i id="x-<%= app.id.to_s %>" class="fi-x x-not-accepted" data-appointment=<%= app.id.to_s %>></i>   
+                        <i id="x-<%= app.id.to_s %>" class="fi-x x-not-accepted" data-appointment=<%= app.id.to_s %>></i>
                       <% end %>
                     </a>
                     <%# if app.accepted #%>
@@ -159,7 +159,7 @@
         </div>
       </div>
       <div id="panel4" class="tabs-panel">
-        
+
       </div>
       <div id="panel5" class="tabs-panel">
         <div class="" id="configuration-options-container">
@@ -180,7 +180,7 @@
                   <% end %>
                 <% else %>
                   <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
-                <% end %>       
+                <% end %>
               </div>
             </li>
             <li class="accordion-item" data-accordion-item>
@@ -202,5 +202,5 @@
   <% end %>
 </div>
 <div class="modal-container">
-  
+
 </div>

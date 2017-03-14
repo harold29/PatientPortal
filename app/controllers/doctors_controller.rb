@@ -68,14 +68,16 @@ class DoctorsController < ApplicationController
       schedule = Schedule.find_by_id(app.schedule_id)
       setting = Setting.find_by_user_id(current_user.id)
       app.accepted = true
+      if setting.send_notifications
+        event = insert_events(patient, clinic_name, schedule, setting, app)
+      end
+      app.event_id = event.id
       app.save
       respond_to do |format|
         if app.persisted?
-          if setting.send_notifications
-            insert_events(patient, clinic_name, schedule, setting)
-          end
           format.json {render json: app, status: :accepted}
         else
+          delete_events(setting, event.id)
           format.json {render json: app.errors, status: :internal_server_error}
         end
       end
@@ -88,11 +90,17 @@ class DoctorsController < ApplicationController
 
   def cancel_appointment #ajax
     if user_signed_in? && current_user.id == session[:user_id]
+      setting = Setting.find_by_user_id(current_user.id)
       app = Appointment.find_by_id(params[:appointment_id])
       app.accepted = false
+      event_id = app.event_id
+      app.event_id = nil
       app.save
       respond_to do |format|
         if app.persisted?
+          if setting.send_notifications
+            delete_events(setting, event_id)
+          end
           format.json {render json: app, status: :accepted}
         else
           format.json {render json: app.errors, status: :internal_server_error}

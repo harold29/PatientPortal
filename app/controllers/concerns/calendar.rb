@@ -82,7 +82,7 @@ module Calendar
     end
   end
 
-  def insert_events(patient, clinic_name, schedule, setting)
+  def insert_events(patient, clinic_name, schedule, setting, appointment)
     hour = schedule.hour.in_time_zone('America/Mexico_City')
     start_hour = hour.strftime("%H:%M:%S")
     day = schedule.day.strftime
@@ -110,35 +110,22 @@ module Calendar
       attendees: [
         { email: user.email },
         { email: current_user.email },
-      ]#,
-      # reminders: {
-      #   use_default: true,
-      #   override: [
-      #     { method => 'email', 'minutes: 24 * 60 },
-      #     { method => 'popup', 'minutes: 10 },
-      #   ],
-      # },
+      ]
     })
 
     calendar = init_calendar
     result = calendar.insert_event(setting.calendar_id, event)
+
+    event
   end
 
-  def create_new_calendar
-
+  def delete_events(settings, event_id) # Not working
+    calendar = init_calendar
+    result = calendar.delete_event(settings.calendar_id, event_id)
+    # result = delete_event()
   end
-
-  def get_events
-
-  end
-
-
 
   def update_events
-
-  end
-
-  def delete_events
 
   end
 
