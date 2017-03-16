@@ -120,6 +120,11 @@ module Calendar
     result = calendar.insert_event(setting.calendar_id, event)
   end
 
+  # Description of method
+  #
+  # @param [Type] settings describe settings
+  # @param [Type] event_id describe event_id
+  # @return [Type] description of returned object
   def delete_events(settings, event_id)
     calendar = init_calendar
     result = calendar.delete_event(settings.calendar_id, event_id)
