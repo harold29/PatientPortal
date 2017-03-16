@@ -70,8 +70,8 @@ class DoctorsController < ApplicationController
       app.accepted = true
       if setting.send_notifications
         event = insert_events(patient, clinic_name, schedule, setting, app)
+        app.event_id = event.id
       end
-      app.event_id = event.id
       app.save
       respond_to do |format|
         if app.persisted?

@@ -113,13 +113,14 @@ module Calendar
       ]
     })
 
-    calendar = init_calendar
-    result = calendar.insert_event(setting.calendar_id, event)
+    logger.debug event.inspect
 
-    event
+    calendar = init_calendar
+    logger.debug calendar.inspect
+    result = calendar.insert_event(setting.calendar_id, event)
   end
 
-  def delete_events(settings, event_id) # Not working
+  def delete_events(settings, event_id)
     calendar = init_calendar
     result = calendar.delete_event(settings.calendar_id, event_id)
     # result = delete_event()
